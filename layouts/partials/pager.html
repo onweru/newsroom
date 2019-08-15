@@ -1,5 +1,6 @@
 {{- $paginator := .Paginator }}
-{{- if gt $paginator.TotalPages 1 }}
+{{- $pages := $paginator.TotalPages -}}
+{{- if gt $pages 1 }}
   <div class = 'pager'>
     {{ if $paginator.HasPrev }}
       <a href = '{{ $paginator.Prev.URL }}'  class = ' pager_item pager_prev'></a>
@@ -7,9 +8,7 @@
       <span class = ' pager_item pager_active pager_prev'></span>
     {{- end }}
 
-    {{ range $paginator.Pagers -}}
-      <a href="{{ .URL }}" class = 'pager_item{{ if eq . $paginator }} pager_active{{ end }}'>{{ .PageNumber }}</a>
-    {{ end }}
+    <span>{{ $paginator.PageNumber }} of {{ $pages }}</span>
 
     {{- if $paginator.HasNext -}}
       <a href = '{{ $paginator.Next.URL }}' class = ' pager_item pager_next'></a>
