@@ -46,7 +46,9 @@ You can configure the site using as follows:
 
     See the **data** files inside the `data/` directory.
 
-> Follow the `exampleSite/`.
+## Start publishing
+
+Follow the `exampleSite/`; specifically, the [content](https://github.com/onweru/hugo-newsroom-theme/tree/master/exampleSite/content/post) directory
 
 ## License
 
