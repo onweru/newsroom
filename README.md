@@ -1,8 +1,8 @@
 # Newsroom Theme
 
-This a simple theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/).
+This a simple, minimalistic theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/). You won't find a single reference of monolithic libraries such e.g jquery, bootstrap.
 
-At its core, it's minimalistic; it doesn't rely on monolithic libraries such e.g jquery, bootstrap. Instead, it uses *grid css*, *flexbox* & *vanilla js* to facilitate the `features` outlined below:
+All the templates herein use *grid css*, *flexbox* & *vanilla js*.
 
 ![Hugo Newsroom Theme](https://github.com/onweru/hugo-newsroom-theme/blob/master/images/screenshot.png)
 
