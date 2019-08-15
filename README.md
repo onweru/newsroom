@@ -22,7 +22,7 @@ For all content published using markdown, deeplinks will be added to the pages s
 
 Today most operating systems & browsers support dark mode. Like twitter, which automatically turns into dark mode when the user chooses darkmode, this theme does the same thing.
 
-![Dark Mode](https://github.com/onweru/hugo-newsroom-theme/blob/master/images/screenshot-dark.jpg)
+![Dark Mode](https://github.com/onweru/hugo-newsroom-theme/blob/master/images/screenshot-dark.png)
 
 ## Installation
 
