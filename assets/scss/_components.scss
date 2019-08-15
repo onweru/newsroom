@@ -99,26 +99,6 @@
     display: none;
   }
 }
-.post {
-  ol {
-    padding: 1rem 1.25rem;
-  }
-  &_body {
-    img {
-      width: 100%;
-    }
-  }
-  &_inner {
-    a{
-      color: $theme;
-      transition: all 0.3s;
-      &:hover {
-        opacity: 0.8;
-        text-decoration: underline;
-      }
-    }
-  }
-}
 
 .highlight {
   margin: 1.25rem 0;

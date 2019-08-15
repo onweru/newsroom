@@ -32,6 +32,24 @@
   &s:not(.aside) {
     padding: 0 30px;
   }
+  ol {
+    padding: 1rem 1.25rem;
+  }
+  &_body {
+    img {
+      width: 100%;
+    }
+  }
+  &_inner {
+    a{
+      color: $theme;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+    }
+  }
   &_date {
     margin-bottom: -1.25rem;
   }
