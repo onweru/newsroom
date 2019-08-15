@@ -1,0 +1,190 @@
+.post{
+  margin:0 auto;
+  width:100%;
+  p, h1, h2, h3, h4, h5, blockquote, ol, ul {
+    max-width: 840px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img:not(.icon) {
+    @media screen and (min-width: 1025px) {
+      width: 100vw;
+      max-width: 1024px;
+    }
+  }
+  h2,h3,h4{
+    margin:1rem auto;
+    text-align:left;
+    padding:5px 0 0 0;
+  }
+  p{
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1.05rem;
+  }
+  &s{
+    display:flex;
+    justify-content: space-between;
+    flex-flow:row wrap;
+    width: 100%;
+    align-items: stretch;
+  }
+  &s:not(.aside) {
+    padding: 0 30px;
+  }
+  &_date {
+    margin-bottom: -1.25rem;
+  }
+  &_copy {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  &_item{
+    @include shadow;
+    margin: 1.25rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    @media screen and (min-width:667px) {
+      width: 47%;
+    }
+  }
+  &_item:hover &_copy{
+    opacity: 1;
+  }
+  &_link{
+    padding:2.5px 0;
+    font-size:1.25em;
+    margin:2.5px 0;
+    text-align:left;
+  }
+  &_meta {
+    overflow: hidden;
+    opacity: 0.8;
+    font-size: 0.84rem;
+    font-weight: 500;
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    background-color: $light;
+    padding: 0;
+    align-items: center;
+    border-radius: 0.3rem;
+    color: $dark;
+    text-transform: capitalize;
+    a {
+      &:hover {
+        color: $theme;
+        text-decoration: underline;
+        opacity: 0.9;
+      }
+    }
+  }
+  &_extra {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &_tag {
+    font-size: 0.75rem !important;
+    font-weight: 500;
+    background: $theme;
+    color: $light;
+    padding: 0.25rem 0.67rem !important;
+    text-transform: uppercase;
+    display: inline-flex;
+    border-radius: 5px;
+  }
+  &_title{
+    margin:5px 0;;
+  }
+  &_time {
+    background: $theme;
+    display: inline-grid;
+    padding: 0.2rem 0.75rem;
+    color: $light;
+  }
+  &_thumbnail {
+    width: 100%;
+    margin: 0;
+  }
+  &_nav {
+    padding: 3rem 1.5rem;
+    display: grid;
+    margin: 3.5rem auto 1rem;
+    text-align: center;
+    color: $theme;
+    text-transform: uppercase;
+    &, span {
+      position: relative;
+      z-index: 3;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background: var(--accent);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.pager {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 30px auto 0 auto;
+  &, &_item {
+    justify-content: center;
+    align-items: center;
+  }
+  &_item {
+    height: 36px;
+    width: 36px;
+    display: inline-flex;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: $theme;
+    color: $light;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &_prev, &_next {
+    background: transparent;
+    background-size: 100%;
+    background-position: center;
+  }
+  &_prev {
+    background-image: url(#{$prev-icon-path});
+  }
+  &_next {
+    background-image: url(#{$next-icon-path});
+  }
+  &_active{
+    opacity: 0.5;
+  }
+}
+
+.excerpt{
+  padding: 0 10px 1.5rem 10px;
+  position: relative;
+  z-index: 1;
+  &_meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-2.5rem);
+    position: relative;
+    z-index: 5;
+  }
+}
+.archive {
+  &_item {
+    display: grid;
+    padding: 1.5rem 0;
+  }
+}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class = 'wrap_min pt-2 mt-2'>
+  {{- $size := (len (.Paginator 3).Pages) }}
+  {{ $pages := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
+  {{- range $index, $value := $pages.Pages }}
+  <article class = 'article mb-2'>
+    <a href = '{{ $value.RelPermalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
+      <div class = 'article_thumb' style='background-image: url({{ absURL (printf "images/%s" $value.Params.image) }})'></div>
+      <div class = 'article_meta {{ if eq $index 0 }} center_y {{ end }}'>
+        <time class = 'pale'>{{ dateFormat "January 02, 2006" $value.Date }}</time>
+        <h3 class = 'article_title'>{{ $value.Title }}</h3>
+        <div class = 'article_excerpt {{ if eq $index 0 }} visible {{ end }}'>
+        <p>{{ $value.Summary | truncate 100 }}</p>
+        </div>
+      </div>
+    </a>
+  </article>
+  {{- if and (eq $index 0) (gt $size 1)  }}<div class = 'grid-2 article_showcase'>{{ end }}
+  {{- if and (eq $index (add $size -1)) (gt $size 1) }}</div>{{ end }}
+  {{- end }}
+</div>
+<a href = '{{ absURL (printf "post/%s" "") }}' class = 'post_nav'><span>View Archive</span></a>
+{{ end }}

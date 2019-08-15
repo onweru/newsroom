@@ -1,0 +1,11 @@
+@mixin viewport($width: 1024px, $margin: 25px) {
+  max-width: $width;
+  margin: $margin auto;
+  @content;
+}
+@mixin shadow($opacity: 0.17) {
+  box-shadow: 0 0 3rem rgba(0,0,0,$opacity);
+  &:hover {
+    box-shadow: 0 0 5rem rgba(0,0,0, (1.5 * $opacity));
+  }
+}

@@ -1,0 +1,18 @@
+baseurl = "https://example.com/"  # Include trailing slash
+title = "Hugo Themes"
+theme = "hugo-newsroom-theme"
+author = "Weru"
+copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
+canonifyurls = true
+paginate = 4
+# Enable syntax highlighting
+# comment on delete the following lines 11 ~ 13
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+
+[params]
+  # ga_analytics = "" # google analytics ID e.g UA-116386578-1
+  
+  # ga_verify = "" # google verification code e.g 5jb-rxeBfITeJQKOuUss3ud6FPGTxXkCho-ZN5qlrZg
+  # twitter = "" # twitter handle e.g @weru
+

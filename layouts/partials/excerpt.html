@@ -1,0 +1,22 @@
+<li class = 'post_item'>
+  <a class = 'post_card' href='{{ .RelPermalink }}' title = '{{ .Title }}'>
+    <img class = 'post_thumbnail' src='{{ path.Join "images" .Params.image | absLangURL }}'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'>
+    {{ with .Params.tags -}}
+      {{ range first 1 . }}
+      {{ $tag := . | urlize }}
+      <a href = '{{ absURL (printf "tags/%s" $tag) }}' class = 'post_tag'>
+        {{ . }}
+      </a>
+      {{ end }}
+    {{- end }}
+      <div class = 'post_copy copy'></div>
+    </div>
+    <h3 class = 'post_link'>
+      <a href='{{ .RelPermalink }}'>{{ .Title  }}</a>
+    </h3>
+    <p class = 'pale'>{{ .Summary | truncate 90 }}</p>
+  </div>
+</li>

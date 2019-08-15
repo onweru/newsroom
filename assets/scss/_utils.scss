@@ -1,0 +1,107 @@
+.pale {
+  opacity: 0.7;
+}
+.hidden{
+  display: none;
+}
+.center{
+  text-align:center;
+  margin:5px auto;
+}
+.left{
+  text-align:left;
+}
+.link {
+  display: inline-block;
+  width: 2.5rem;
+  margin: 0 0.25rem;
+  padding: 0 0.25rem;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  &_owner:hover & {
+    opacity: 0.9;
+  }
+}
+.wrap{
+  &, &_min {
+    padding: 0 25px;
+    margin: 0 auto;
+  }
+  &_min {
+    max-width: 1024px;
+  }
+}
+
+@for $i from 1 through 2 {
+  $size: $i * 1.5rem;
+  $x-size: $size * 0.5; 
+  .pt-#{$i} {
+    padding-top: $size;
+  }
+  .pb-#{$i} {
+    padding-bottom: $size;
+  }
+  .mt-#{$i} {
+    margin-top: $size;
+  }
+  .mb-#{$i} {
+    margin-bottom: $size;
+  }
+}
+%grid{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+[class*='grid-']{
+  grid-gap: 2rem;
+}
+.grid-2, .grid-3, .grid-4, .grid-auto, .grid-reverse{
+  @extend %grid;
+}
+@media screen and (min-width: 42rem){
+  .grid-auto{
+    grid-template-columns: 1fr 3fr;
+  }
+  .grid-reverse{
+    // flip grid auto;
+    grid-template-columns: 3fr 1fr;
+  }
+  .grid-2{
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  }
+  .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+}
+        
+        .mt {
+          margin-top: 5rem;
+        }
+
+        // &::before{
+    //   width: 33%;
+    //   background: $theme;
+    // }
+    // &::after{
+      //   width: 100%;
+      //   background: rgba(39,48,57,.15); 
+      // }
+    //}
+    
+    // .state {
+      //   // engadget
+      //   transform: translate(0,-100%);
+      //   transition: transform 1.5s cubic-bezier(.19,1,.22,1);
+      //   will-change: transform;
+      //   position: fixed;
+      //   top: 0;
+      //   z-index: 999;
+      //   width: 100%;
+      //   &_visible {
+        //     transform: translate(0,0%)
+        //   }
+        // }
+        

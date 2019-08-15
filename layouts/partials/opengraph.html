@@ -1,0 +1,49 @@
+<meta name = 'keywords' content = '{{ .Site.Title }}'>
+<meta property = 'og:locale' content = 'en_US' />
+<meta property = 'og:type' content = 'article' />
+<meta property = 'og:title' content = '{{ .Title }}' />
+<meta property = 'og:description' content = '{{ with .Summary}}{{ . | truncate 150 }}{{ else }}{{ .Site.Params.description }}{{ end }}'>
+<meta property = 'og:url' content = '{{ .Permalink }}' />
+{{- with .Params.image }}
+<meta property = 'og:image' content = '{{ absURL (printf "images/%s" .) }}'/>
+{{- else }}
+<meta property = 'og:image' content = '{{ absURL (printf "images/%s" .Site.Params.logo) }}'/>
+{{- end }}
+{{- if eq .Section "blog" -}}
+  {{- $date := ( .Date.Format "2006-02-01") -}}
+  <meta property = 'article:published_time' content = '{{ htmlUnescape $date }}' />
+  <script type = "application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":"{{ .Permalink }}",
+      "name": "{{ .Site.Title }}",
+      "headline": "{{ .Title  }}",
+      "description": "{{ htmlUnescape (.Summary | truncate 150) }}",
+      "url": "{{ .Permalink }}",
+      "datePublished": "{{ $date }}",
+      "dateModified": "{{ $date }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Params.author }}"
+      },
+      "image":{
+        "@type":"ImageObject",
+        "url": "{{ absURL (printf "images/%s" .Params.image ) }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type":"ImageObject",
+          "url": "{{ absURL (printf "images/%s" .Site.Params.logo) }}"
+        },
+        "name": "{{ .Site.Title }}"
+      }
+    }
+  </script>
+  <meta name = 'twitter:card' content = 'summary_large_image' />
+  <meta name = 'twitter:creator' content = '{{ .Site.Params.twitter }}'>
+  <meta name = 'twitter:title' content = '{{ .Title }}' />
+  <meta property = 'twitter:description'  content = '{{ .Summary | truncate 250 }}'/>
+  <meta name = 'twitter:image' content = '{{ absURL (printf "images/%s" .Params.image) }}' />
+{{- end }}

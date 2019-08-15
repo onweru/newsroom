@@ -1,0 +1,17 @@
+$font-path: '{{ "fonts" | absURL }}';
+$copy-icon-path: '{{ "images/icons/copy.svg" | absURL }}';
+$copy-icon-b4: '{{ i18n "share_story" }}';
+$copy-icon-aft: '{{ i18n "link_copied" }}';
+$prev-icon-path: '{{ "images/icons/previous.svg" | absURL }}';
+$next-icon-path: '{{ "images/icons/next.svg" | absURL }}';
+
+@import
+'fonts',
+'variables',
+'mixins',
+'animate',
+'base',
+'components',
+'nav',
+'posts',
+'utils';

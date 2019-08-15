@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <div class = 'wrap_min mt post'>
+    <div>
+      {{- $date := (dateFormat "02. January 2006" .Date) -}}
+      <p class = 'post_date pale'>{{ $date }}</p>
+      <h1 class = 'post_title'>{{ .Title }}</h1>
+      <div class = 'post_body'>
+        <div class = 'post_inner'>
+        {{ with .Params.image }}
+          <img src = '{{ absURL (printf "images/%s" .) }}' alt = '{{ . }}' class = 'post_thumbnail'>
+        {{ end }}
+          {{ .Content }}
+        </div>
+        <div class ='post_extra'>
+          {{ partial "share.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href = '{{ $.Site.BaseURL }}' class = 'post_nav'><span>The Latest</span>T</a>
+{{ end }}

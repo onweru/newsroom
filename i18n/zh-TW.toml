@@ -1,0 +1,8 @@
+[designed_by]
+  other = "由 <a href = '{{ .url }}' target = '_blank' title = '領英個人檔案' rel = 'nonopener'>{{ .name }}</a> 設計"
+[share_story]
+  other = "分享故事"
+[link_copied]
+  other = "已複製"
+[author_profile]
+  other = "{{ . }} 的個人檔案"
