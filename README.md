@@ -1,6 +1,6 @@
 # Newsroom Theme
 
-This theme is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/).
+This a simple theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/).
 
 At its core, it's minimalistic; it doesn't rely on monolithic libraries such e.g jquery, bootstrap. Instead, it uses *grid css*, *flexbox* & *vanilla js* to facilitate the `features` outlined below:
 
