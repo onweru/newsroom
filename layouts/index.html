@@ -2,10 +2,18 @@
 <div class = 'wrap_min pt-2 mt-2'>
   {{- $size := (len (.Paginator 3).Pages) }}
   {{ $pages := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
+  {{ $scratch := newScratch }}
   {{- range $index, $value := $pages.Pages }}
+    {{ if isset .Params "image" }}
+      {{ $scratch.Set "image" .Params.image }}
+    {{ else }}
+      {{ $scratch.Set "image" "thumbnail.svg" }}
+    {{ end }}
+    {{ $image := $scratch.Get "image" }}
+    {{ $bg := (absURL (printf "images/%s" $image)) }}
   <article class = 'article mb-2'>
     <a href = '{{ $value.RelPermalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
-      <div class = 'article_thumb' style='background-image: url({{ absURL (printf "images/%s" $value.Params.image) }})'></div>
+      <div class = 'article_thumb' style='background-image: url({{ $bg }})'></div>
       <div class = 'article_meta {{ if eq $index 0 }} center_y {{ end }}'>
         <time class = 'pale'>{{ dateFormat "January 02, 2006" $value.Date }}</time>
         <h3 class = 'article_title'>{{ $value.Title }}</h3>
