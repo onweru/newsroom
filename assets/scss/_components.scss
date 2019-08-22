@@ -101,17 +101,46 @@
 }
 
 .highlight {
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 2.5rem rgba(0,0,0,0.12);
   & & {
     margin: 0;
   }
-  pre{
+  pre:not(.highlight) {
     padding: 1rem;
-    margin: 1.5rem 0;
-    background: var(--bubble) !important;
-    box-shadow: 0 0 2.5rem rgba(0,0,0,0.12);
+  }
+  pre{
+    background: var(--accent) !important;
+    color: var(--text);
     border-radius: 4px;
-    overflow-x: auto;
+    max-width: 100%;
+    overflow-x: scroll !important;
+  }
+  table {
+    width: 100%;
+    display: grid;
+    max-width: 100%;
+    overflow-x: scroll;
+    border-collapse: collapse;
+  }
+  .lntd {
+    width: 100%;
+    overflow-x: scroll;
+    &:first-child {
+      &, pre {
+        width: 2.75rem !important;
+        padding-left: 0;
+        padding-right: 0;
+        color: var(--light);
+      }
+      pre {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--theme) !important;
+      }
+    } 
   }
 }
 .btn{
