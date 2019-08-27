@@ -111,7 +111,7 @@
   }
   pre{
     background: var(--accent) !important;
-    color: var(--text);
+    color: var(--text) !important;
     border-radius: 4px;
     max-width: 100%;
     overflow-x: scroll !important;
@@ -131,7 +131,7 @@
         width: 2.5rem !important;
         padding-left: 0;
         padding-right: 0;
-        color: var(--light);
+        color: var(--light) !important;
         background-color: var(--theme) !important;
         border-radius: 0.25rem 0 0 0.25rem;
       }

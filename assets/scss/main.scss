@@ -1,9 +1,9 @@
-$font-path: '{{ "fonts" | absURL }}';
-$copy-icon-path: '{{ "images/icons/copy.svg" | absURL }}';
+$font-path: '{{ absURL "fonts" }}';
+$copy-icon-path: '{{ absURL "images/icons/copy.svg" }}';
 $copy-icon-b4: '{{ i18n "share_story" }}';
 $copy-icon-aft: '{{ i18n "link_copied" }}';
-$prev-icon-path: '{{ "images/icons/previous.svg" | absURL }}';
-$next-icon-path: '{{ "images/icons/next.svg" | absURL }}';
+$prev-icon-path: '{{ absURL "images/icons/previous.svg" }}';
+$next-icon-path: '{{ absURL "images/icons/next.svg" }}';
 
 @import
 'fonts',
