@@ -41,7 +41,6 @@ bah and humbug
 $
 ```
 
-
 ## Some Definitions
 
 There are a few concepts that you need to understand before creating a theme.
@@ -180,8 +179,6 @@ $
 
 Hugo created two XML files, which is standard, but there are no HTML files.
 
-
-
 ### Test the New Site
 
 Verify that you can run the built-in web server. It will dramatically shorten your development cycle if you do. Start it by running the "server" command. If it is successful, you will see output similar to the following:
@@ -294,8 +291,6 @@ $ find themes/zafta -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
 $
 ```
-
-
 
 ### Update the Configuration File to Use the Theme
 
