@@ -1,15 +1,18 @@
 baseurl = "https://example.com/"  # Include trailing slash
 title = "Hugo Themes"
-theme = "hugo-newsroom-theme"
+theme = "newsroom"
 author = "Weru"
 copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
 canonifyurls = true
-paginate = 4
+paginate = 3
 # Enable syntax highlighting
-# comment on delete the following lines 11 ~ 13
+# comment or delete the following lines 11 ~ 14
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses=true
+pygmentsOptions = "linenos=table"
 
+# ids used below are not valid. Replace with valid ones
 [params]
   # ga_analytics = "" # google analytics ID e.g UA-116386578-1
   
