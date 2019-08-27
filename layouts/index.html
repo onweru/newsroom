@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class = 'wrap_min pt-2 mt-2'>
-  {{- $size := (len (.Paginator 3).Pages) }}
-  {{ $pages := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
+  {{- $size := .Paginator.PageSize }}
+  {{ $pages := .Paginate (where .Site.RegularPages "Section" "!=" "").ByPublishDate.Reverse }}
   {{ $scratch := newScratch }}
   {{- range $index, $value := $pages.Pages }}
     {{ if isset .Params "image" }}
