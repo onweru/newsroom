@@ -3,12 +3,12 @@ function createEl(element) {
 }
 
 function elem(selector, parent = document){
-  let elem = document.querySelector(selector);
+  let elem = parent.querySelector(selector);
   return elem != false ? elem : false;
 }
 
-function elems(selector) {
-  let elems = document.querySelectorAll(selector);
+function elems(selector, parent = document) {
+  let elems = parent.querySelectorAll(selector);
   return elems.length ? elems : false;
 }
 
@@ -51,6 +51,7 @@ function isChild(node, parentClass) {
   var year = date.getFullYear();
   elem('.year').innerHTML = year;
 })();
+
 
 (function() {
   let bar = 'nav_bar-wrap';
@@ -112,106 +113,6 @@ function isChild(node, parentClass) {
   }
 })();
 
-(function comments(){
-
-  let comments = elem('.js-comments');
-  let form = elem('.form');
-  let body = elem('body');
-  let button = elem('.form_toggle');
-  let loading = 'form-loading';
-  let open = 'form-open';
-  let show = 'modal_show'
-  let toggled = 'toggled';
-
-  let successOutput = [
-    'Review submitted',
-    'Thanks for your review! It will show on the site once it has been approved.'
-  ];
-
-  let errorOutput = [
-    'Error',
-    'Sorry, there was an error with the submission!'
-  ];
-
-  function handleForm(form) {
-    form.addEventListener('submit', function (event) {
-      pushClass(form, loading);
-
-      function resetForm() {
-        deleteClass(form, loading);
-        // $("form").trigger("reset");
-      }
-
-      function formActions(message) {
-        showModal(...message) // array destructuring
-        resetForm();
-      }
-
-      event.preventDefault();
-
-      function formToJSON(obj) {
-        let rawData = Array.from(obj.elements);
-        let data = {};
-        rawData.forEach(function(element){
-          data[element.name] = element.value;
-        });
-
-        return JSON.stringify(data);
-      }
-
-      let data = formToJSON(form);
-      let url = form.getAttribute('action').trim();
-      fetch(url, {
-        method: "POST",
-        body: data,
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }).then(function(res) {
-        if(res.ok) {
-          formActions(successOutput);
-        } else {
-          formActions(errorOutput);
-        }
-      }).catch(function(error) {
-        formActions(errorOutput);
-        console.error('Error:', error);
-      });
-    });
-  }
-
-  form ? handleForm(form) : false;
-  function closeModal() {
-    elem('.modal_close').addEventListener('click', function () {
-      deleteClass(body, show);
-      deleteClass(form, loading);
-      deleteClass(form, open);
-      deleteClass(button, toggled);
-    });
-  }
-
-  containsClass(body, show) ? closeModal() : false;
-
-  function showModal(title, message) {
-    elem('.modal_title').textContent = title;
-    elem('.modal_text').innerHTML = message;
-
-    pushClass(body, show);
-  }
-
-
-  (function toggleForm() {
-    if(button) {
-      button.addEventListener('click', function() {
-        modifyClass(form, open);
-        modifyClass(this, toggled);
-        this.textContent  = containsClass(this, toggled) ?  'cancel' : 'comment';
-      });
-    }
-  })();
-
-})();
-
 function elemAttribute(elem, attr, value = null) {
   if (value) {
     elem.setAttribute(attr, value);
@@ -257,7 +158,8 @@ tags.forEach(function(tag){
 headingNodes.forEach(function(node){
   link = createEl('a');
   icon = createEl('img');
-  icon.src = 'http://localhost:1313/images/icons/link.svg';
+  icon.className = 'icon';
+  icon.src = '//localhost:1313/images/icons/link.svg';
   link.className = 'link';
   link.appendChild(icon);
   id = node.getAttribute('id');
@@ -295,8 +197,8 @@ const copyToClipboard = str => {
 }
 
 (function copyHeadingLink() {
-  let deeplinks = document.querySelectorAll;
   let deeplink = 'link';
+  let deeplinks = document.querySelectorAll(`.${deeplink}`);
   if(deeplinks) {
     document.body.addEventListener('click', function(event)
     {
@@ -336,4 +238,14 @@ const copyToClipboard = str => {
       } 
     }
   });
+})();
+
+(function hideAside(){
+  let aside, title, posts;
+  aside = elem('.aside');
+  title = aside ? aside.previousElementSibling : null;
+  if(aside && title.nodeName.toLowerCase() === 'h3') {
+    posts = Array.from(aside.children);
+    posts.length < 1 ? title.remove() : false;
+  }
 })();
