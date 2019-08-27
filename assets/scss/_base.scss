@@ -109,7 +109,14 @@ b, strong, em {
 hr {
   border: none;
   padding: 0.5px;
-  background: var(--text);
+  background: var(--theme);
   opacity: 0.5;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+}
+table {
+  width: 100%;
+}
+th {
+  text-align: left;
+  color: var(--light);
 }

@@ -1,7 +1,7 @@
 .post{
   margin:0 auto;
   width:100%;
-  p, h1, h2, h3, h4, h5, blockquote, ol, ul {
+  p, h1, h2, h3, h4, h5, h6, blockquote, ol, ul {
     max-width: 840px !important;
     margin-left: auto;
     margin-right: auto;
@@ -48,6 +48,20 @@
         opacity: 0.8;
         text-decoration: underline;
       }
+    }
+    table {
+      margin: 1rem 0;
+      background: transparent;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.12);
+      &:not(.ln-table) tr{
+        background-color: var(--accent);
+      }
+    }
+    thead tr{
+      background: var(--theme) !important;
+    }
+    td, th{
+      padding: 0.5rem 1rem;
     }
   }
   &_date {
