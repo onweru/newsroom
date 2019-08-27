@@ -159,7 +159,7 @@ headingNodes.forEach(function(node){
   link = createEl('a');
   icon = createEl('img');
   icon.className = 'icon';
-  icon.src = '//localhost:1313/images/icons/link.svg';
+  icon.src = 'http://localhost:1313/theme/newsroom/images/icons/link.svg';
   link.className = 'link';
   link.appendChild(icon);
   id = node.getAttribute('id');
