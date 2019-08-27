@@ -213,7 +213,7 @@ hr {
   padding: 0.5px;
   background: var(--theme);
   opacity: 0.5;
-  margin: 1.5rem 0;
+  margin: 2rem 0 0.75rem;
 }
 
 table {
@@ -687,7 +687,7 @@ aside h3 {
   width: 100%;
 }
 
-.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post blockquote, .post ol, .post ul {
+.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post blockquote, .post ol, .post ul, .post hr {
   max-width: 840px !important;
   margin-left: auto;
   margin-right: auto;
