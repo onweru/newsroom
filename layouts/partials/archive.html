@@ -2,7 +2,7 @@
   <h1>{{ .Title }}</h1>
   {{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
   {{- range $paginator.Pages }}
-  <a class = 'archive_item' href = '{{ .RelPermalink}}'>
+  <a class = 'archive_item' href = '{{ .Permalink }}'>
     {{- with .Date -}}
     <time class = 'pale'>{{ dateFormat "02. January 2006" . }}</time>
     {{- end -}}
