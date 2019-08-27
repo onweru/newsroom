@@ -3,6 +3,6 @@
 - item: Blog
   url: ""
 - item: Category
-  url: categories/development/
+  url: categories
 - item: Tag
-  url: tags/go/
+  url: tags

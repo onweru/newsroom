@@ -211,9 +211,18 @@ b, strong, em {
 hr {
   border: none;
   padding: 0.5px;
-  background: var(--text);
+  background: var(--theme);
   opacity: 0.5;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  color: var(--light);
 }
 
 .article {
@@ -678,7 +687,7 @@ aside h3 {
   width: 100%;
 }
 
-.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post blockquote, .post ol, .post ul {
+.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post blockquote, .post ol, .post ul {
   max-width: 840px !important;
   margin-left: auto;
   margin-right: auto;
@@ -731,6 +740,24 @@ aside h3 {
 .post_inner a:hover {
   opacity: 0.8;
   text-decoration: underline;
+}
+
+.post_inner table {
+  margin: 1rem 0;
+  background: transparent;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+}
+
+.post_inner table:not(.ln-table) tr {
+  background-color: var(--accent);
+}
+
+.post_inner thead tr {
+  background: var(--theme) !important;
+}
+
+.post_inner td, .post_inner th {
+  padding: 0.5rem 1rem;
 }
 
 .post_date {
