@@ -42,8 +42,21 @@ function containsClass(el, targetClass) {
 }
 
 function isChild(node, parentClass) {
-  let objectsAreValid = node && typeof node == 'object' && parentClass && typeof parentClass == 'string';
-  return (objectsAreValid && node.closest(parentClass)) ? true : false;
+  let isNode = node && typeof node == 'object';
+  if (isNode){
+    if (Array.isArray(parentClass)) {
+      // return true if at least one is child
+      let child = false;
+      parentClass.forEach(function(parent){
+        if (node.closest(parent) != null) {
+          child = true;
+        } 
+      });
+      return child ? true : false;
+    } else if (typeof parentClass == 'string') {
+      return node.closest(parentClass) ? true : false;
+    }
+  }
 }
 
 (function updateDate() {
@@ -128,7 +141,7 @@ function elemAttribute(elem, attr, value = null) {
     Array.from(links).forEach(function(link){
       let target, rel, blank, noopener, attr1, attr2, url, isExternal;
       url = elemAttribute(link, 'href');
-      isExternal = (url && typeof url == 'string' && url.startsWith('http')) && !containsClass(link, 'nav_item') && !isChild(link, '.article') && !isChild(link, '.pager') ? true : false;
+      isExternal = (url && typeof url == 'string' && url.startsWith('http')) && !containsClass(link, 'nav_item') && !isChild(link, ['.archive', '.article', '.post_nav', '.pager']) ? true : false;
       if(isExternal) {
         target = 'target';
         rel = 'rel';
@@ -138,7 +151,7 @@ function elemAttribute(elem, attr, value = null) {
         attr2 = elemAttribute(link, noopener);
 
         attr1 ? false : elemAttribute(link, target, blank);
-        attr2 ? false : elemAttribute(link, noopener, noopener);
+        attr2 ? false : elemAttribute(link, rel, noopener);
       }
     });
   }
