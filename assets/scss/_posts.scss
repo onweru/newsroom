@@ -52,7 +52,9 @@
     table {
       margin: 1rem 0;
       background: transparent;
-      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.12);
+      border-collapse: collapse;
+      border-style: hidden;
+      box-shadow: 0 1rem 4rem rgba(0,0,0,0.12);
       &:not(.ln-table) tr{
         background-color: var(--accent);
       }
@@ -62,6 +64,7 @@
     }
     td, th{
       padding: 0.5rem 1rem;
+      border: 2px solid var(--bg);
     }
   }
   &_date {
@@ -158,6 +161,19 @@
       bottom: 0;
       right: 0;
       z-index: 1;
+    }
+  }
+  &_next {
+    display: inline-grid;
+    margin: 0 auto;
+    width: 10rem;
+    grid-template-columns: 1fr 1.33rem;
+    &::after {
+      content: "";
+      background-image: url($next-icon-path);
+      background-repeat: repeat no-repeat;
+      background-size: 0.8rem;
+      background-position: center right;
     }
   }
 }

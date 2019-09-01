@@ -212,7 +212,7 @@ hr {
   border: none;
   padding: 0.5px;
   background: var(--theme);
-  opacity: 0.5;
+  opacity: 0.25;
   margin: 2rem 0 0.75rem;
 }
 
@@ -226,7 +226,7 @@ th {
 }
 
 .article {
-  box-shadow: 0 0 1rem rgba(19, 19, 19, 0.17);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
   overflow: hidden;
   border-radius: 0.5rem;
 }
@@ -336,7 +336,7 @@ th {
 }
 
 .article:hover {
-  box-shadow: 0 0 90px rgba(0, 0, 0, 0.27);
+  box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.17);
 }
 
 .article:hover a {
@@ -349,7 +349,6 @@ th {
 
 .highlight {
   margin: 1.5rem 0 2.5rem;
-  box-shadow: 0 0.75rem 3rem rgba(0, 0, 0, 0.12);
 }
 
 .highlight .highlight {
@@ -379,6 +378,7 @@ th {
 .highlight .lntd {
   width: 100%;
   overflow-x: scroll;
+  border: none;
 }
 
 .highlight .lntd:first-child, .highlight .lntd:first-child pre {
@@ -567,7 +567,7 @@ aside h3 {
 }
 
 .nav-body {
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.17);
+  box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.17);
   position: fixed;
   right: 10px;
   z-index: 1;
@@ -577,17 +577,15 @@ aside h3 {
   transition: top 0.33s linear;
   background: transparent;
   background-color: var(--accent);
-  width: 33.3%;
   width: 16rem;
   padding: 100px 0;
-  min-height: 67vh;
-  margin-top: 0.5rem;
+  min-height: 100vh;
   z-index: 1;
   border-radius: 0.33rem;
 }
 
 .nav-body:hover {
-  box-shadow: 0 0 5rem rgba(0, 0, 0, 0.255);
+  box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.27);
 }
 
 .nav-body a {
@@ -640,7 +638,7 @@ aside h3 {
 }
 
 .nav-drop {
-  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
   top: 0;
   bottom: 0;
   z-index: 1000;
@@ -745,7 +743,9 @@ aside h3 {
 .post_inner table {
   margin: 1rem 0;
   background: transparent;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+  border-collapse: collapse;
+  border-style: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
 }
 
 .post_inner table:not(.ln-table) tr {
@@ -758,6 +758,7 @@ aside h3 {
 
 .post_inner td, .post_inner th {
   padding: 0.5rem 1rem;
+  border: 2px solid var(--bg);
 }
 
 .post_date {
@@ -874,6 +875,21 @@ aside h3 {
   bottom: 0;
   right: 0;
   z-index: 1;
+}
+
+.post_next {
+  display: inline-grid;
+  margin: 0 auto;
+  width: 10rem;
+  grid-template-columns: 1fr 1.33rem;
+}
+
+.post_next::after {
+  content: "";
+  background-image: url("http://localhost:1313/theme/newsroom/images/icons/next.svg");
+  background-repeat: repeat no-repeat;
+  background-size: 0.8rem;
+  background-position: center right;
 }
 
 .pager {

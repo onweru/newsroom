@@ -1,5 +1,5 @@
 .article{
-  box-shadow: 0 0 1rem rgba($dark,0.17);
+  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
   overflow: hidden;
   border-radius: 0.5rem;
   &_title{ 
@@ -90,7 +90,7 @@
     }
   }
   &:hover{
-    box-shadow: 0 0 90px rgba(0,0,0,0.27);
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17);
     a{
       color: initial !important;
     }
@@ -102,7 +102,6 @@
 
 .highlight {
   margin: 1.5rem 0 2.5rem;
-  box-shadow: 0 0.75rem 3rem rgba(0,0,0,0.12);
   & & {
     margin: 0;
   }
@@ -126,6 +125,7 @@
   .lntd {
     width: 100%;
     overflow-x: scroll;
+    border: none;
     &:first-child {
       &, pre {
         width: 2.5rem !important;

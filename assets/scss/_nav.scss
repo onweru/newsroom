@@ -38,7 +38,7 @@
     }
   }
   &-body{
-    @include shadow;
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17);
     position:fixed;
     right:10px;
     z-index:1;
@@ -48,13 +48,14 @@
     transition:top 0.33s linear;
     background:transparent;
     background-color: var(--accent);
-    width:33.3%;
     width: 16rem;
     padding: 100px 0;
-    min-height: 67vh;
-    margin-top: 0.5rem;
+    min-height: 100vh;
     z-index:1;
     border-radius: 0.33rem;
+    &:hover {
+      box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.27);
+    }
     a{
       display:block;
       padding:12.5px 25px;
@@ -100,7 +101,7 @@
     }
   }
   &-drop {
-    background: rgba(0,0,0,0.15);
+    cursor: pointer;
     top:0;
     bottom:0;
     z-index:1000;
