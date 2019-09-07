@@ -218,6 +218,9 @@ hr {
 
 table {
   width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  border-collapse: collapse;
 }
 
 th {
@@ -364,20 +367,14 @@ th {
   color: var(--text) !important;
   border-radius: 4px;
   max-width: 100%;
-  overflow-x: scroll !important;
 }
 
 .highlight table {
-  width: 100%;
   display: grid;
-  max-width: 100%;
-  overflow-x: scroll;
-  border-collapse: collapse;
 }
 
 .highlight .lntd {
   width: 100%;
-  overflow-x: scroll;
   border: none;
 }
 
@@ -743,7 +740,6 @@ aside h3 {
 .post_inner table {
   margin: 1rem 0;
   background: transparent;
-  border-collapse: collapse;
   border-style: hidden;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
 }

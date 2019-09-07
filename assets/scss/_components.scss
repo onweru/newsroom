@@ -113,18 +113,14 @@
     color: var(--text) !important;
     border-radius: 4px;
     max-width: 100%;
-    overflow-x: scroll !important;
+    // overflow-x: scroll !important;
   }
   table {
-    width: 100%;
     display: grid;
-    max-width: 100%;
-    overflow-x: scroll;
-    border-collapse: collapse;
   }
   .lntd {
     width: 100%;
-    overflow-x: scroll;
+    // overflow-x: scroll;
     border: none;
     &:first-child {
       &, pre {
