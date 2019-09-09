@@ -23,12 +23,10 @@
   }
 }
 .wrap{
-  &, &_min {
+  max-width: 1024px;
+  &, & {
     padding: 0 25px;
     margin: 0 auto;
-  }
-  &_min {
-    max-width: 1024px;
   }
 }
 

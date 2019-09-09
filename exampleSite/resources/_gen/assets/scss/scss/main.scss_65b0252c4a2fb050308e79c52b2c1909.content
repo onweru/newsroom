@@ -980,13 +980,13 @@ aside h3 {
   opacity: 0.9;
 }
 
-.wrap, .wrap_min {
-  padding: 0 25px;
-  margin: 0 auto;
+.wrap {
+  max-width: 1024px;
 }
 
-.wrap_min {
-  max-width: 1024px;
+.wrap, .wrap {
+  padding: 0 25px;
+  margin: 0 auto;
 }
 
 .pt-1 {

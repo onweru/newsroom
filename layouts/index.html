@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class = 'wrap_min pt-2 mt-2'>
+<div class = 'wrap pt-2 mt-2'>
   {{- $size := .Paginator.PageSize }}
   {{ $pages := .Paginate (where .Site.RegularPages "Section" "!=" "").ByPublishDate.Reverse }}
   {{ $scratch := newScratch }}
