@@ -262,3 +262,13 @@ const copyToClipboard = str => {
     posts.length < 1 ? title.remove() : false;
   }
 })();
+
+(function goBack() {
+  let backBtn = elem('.btn_back');
+  let history = window.history;
+  if (backBtn) {
+    backBtn.addEventListener('click', function(){
+      history.back();
+    });
+  }
+})();

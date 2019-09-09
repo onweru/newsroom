@@ -76,32 +76,19 @@
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   }
 }
-        
-        .mt {
-          margin-top: 5rem;
-        }
 
-        // &::before{
-    //   width: 33%;
-    //   background: $theme;
-    // }
-    // &::after{
-      //   width: 100%;
-      //   background: rgba(39,48,57,.15); 
-      // }
-    //}
-    
-    // .state {
-      //   // engadget
-      //   transform: translate(0,-100%);
-      //   transition: transform 1.5s cubic-bezier(.19,1,.22,1);
-      //   will-change: transform;
-      //   position: fixed;
-      //   top: 0;
-      //   z-index: 999;
-      //   width: 100%;
-      //   &_visible {
-        //     transform: translate(0,0%)
-        //   }
-        // }
-        
+.mt {
+  margin-top: 5rem;
+}
+.never {
+  min-height: 60vh;
+  background: url($never-icon-path);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 1.5rem;
+  margin-top: 6rem;
+  &_title {
+    text-align: left;
+  }
+}

@@ -1052,4 +1052,18 @@ aside h3 {
   margin-top: 5rem;
 }
 
+.never {
+  min-height: 60vh;
+  background: url("http://localhost:1313/theme/newsroom/images/sitting.svg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 1.5rem;
+  margin-top: 6rem;
+}
+
+.never_title {
+  text-align: left;
+}
+
 /*# sourceMappingURL=main.css.map */

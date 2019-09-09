@@ -4,6 +4,7 @@ $prev-icon-path: '{{ absURL "images/icons/previous.svg" }}';
 $next-icon-path: '{{ absURL "images/icons/next.svg" }}';
 $copy-icon-b4: '{{ i18n "share_story" }}';
 $copy-icon-aft: '{{ i18n "link_copied" }}';
+$never-icon-path: '{{ absURL "images/sitting.svg"  }}';
 
 @import
 'fonts',
