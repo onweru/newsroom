@@ -51,9 +51,10 @@ Today most operating systems & browsers support dark mode. Like twitter, which a
 ![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
 
 ### Custom 404 Page
-![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png)
 
-![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)
+| Normal Mode | Dark Mode |
+|--- | ---|
+| ![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)|
 
 ## License
 
