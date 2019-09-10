@@ -18,12 +18,6 @@ All the templates herein use *grid css*, *flexbox* & *vanilla js*. You may,howev
 
 For all content published using markdown, deeplinks will be added to the pages so that you can share with precision :smiley: Just   hover on a heading and the link button will pop. Click it to copy.
 
-### Dark Mode
-
-Today most operating systems & browsers support dark mode. Like twitter, which automatically turns into dark mode when the user chooses darkmode, this theme does the same thing.
-
-![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
-
 ## Installation
 
 Add this theme as a Git submodule inside your Hugo site folder:
@@ -49,6 +43,17 @@ You can configure the site using as follows:
 ## Start publishing
 
 Follow the `exampleSite/`; specifically, the [content](https://github.com/onweru/newsroom/tree/master/exampleSite/content/post) directory
+
+### Dark Mode
+
+Today most operating systems & browsers support dark mode. Like twitter, which automatically turns into dark mode when the user chooses darkmode, this theme does the same thing.
+
+![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
+
+### Custom 404 Page
+![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png)
+
+![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)
 
 ## License
 
