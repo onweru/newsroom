@@ -2,28 +2,28 @@
 title = "(Hu)go Template Primer"
 description = ""
 tags = [
-    "go",
-    "golang",
-    "templates",
-    "themes",
-    "development",
+"go",
+"golang",
+"templates",
+"themes",
+"development",
 ]
 date = "2014-04-02"
 categories = [
-    "Development",
-    "golang",
+"Development",
+"golang",
 ]
-image = "fast-lane.jpg"
+image = "artist.jpg"
 +++
 
-Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
+Hugo uses the excellent [Go](https://golang.org/) [html/template](https://golang.org/pkg/html/template/) library for
 its template engine. It is an extremely lightweight engine that provides a very
 small amount of logic. In our experience that it is just the right amount of
 logic to be able to create a good static website. If you have used other
 template systems from different languages or frameworks you will find a lot of
 similarities in Go templates.
 
-This document is a brief primer on using Go templates. The [Go docs][gohtmltemplate]
+This document is a brief primer on using Go templates. The [Go docs](https://golang.org/pkg/html/template/)
 provide more details.
 
 ## Introduction to Go Templates
@@ -34,7 +34,7 @@ One consequence of this simplicity is that Go templates parse very quickly.
 
 A unique characteristic of Go templates is they are content aware. Variables and
 content will be sanitized depending on the context of where they are used. More
-details can be found in the [Go docs][gohtmltemplate].
+details can be found in the [Go docs](https://golang.org/pkg/html/template/).
 
 ## Basic Syntax
 
@@ -63,7 +63,6 @@ Accessing the Page Parameter "bar"
 
     {{ if or (isset .Params "alt") (isset .Params "caption") }} Caption {{ end }}
 
-
 ## Variables
 
 Each Go template has a struct (object) made available to it. In hugo each
@@ -79,7 +78,6 @@ Variables can also be defined and referenced.
 
     {{ $address := "123 Main St."}}
     {{ $address }}
-
 
 ## Functions
 
@@ -105,7 +103,6 @@ the /layout/ directory within Hugo.
 **Example:**
 
     {{ template "chrome/header.html" . }}
-
 
 ## Logic
 
@@ -140,7 +137,6 @@ range.
 
 If, else, with, or, & and provide the framework for handling conditional
 logic in Go Templates. Like range, each statement is closed with `end`.
-
 
 Go Templates treat the following values as false:
 
@@ -225,7 +221,6 @@ Could be rewritten as
     Stuff Here
     {{ end }}
 
-
 ## Context (aka. the dot)
 
 The most easily overlooked concept to understand about Go templates is that {{ . }}
@@ -255,7 +250,6 @@ data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.
 
-
 ## Using Content (page) Parameters
 
 In each piece of content you can provide variables to be used by the
@@ -268,12 +262,12 @@ of some pages to turn off the TOC from being displayed.
 
 Here is the example front matter:
 
-```
+```markdown
 ---
 title: "Permalinks"
 date: "2013-11-18"
 aliases:
-  - "/doc/permalinks/"
+    - "/doc/permalinks/"
 groups: ["extras"]
 groups_weight: 30
 notoc: true
@@ -282,15 +276,16 @@ notoc: true
 
 Here is the corresponding code inside of the template:
 
-      {{ if not .Params.notoc }}
-        <div id="toc" class="well col-md-4 col-sm-6">
-        {{ .TableOfContents }}
-        </div>
-      {{ end }}
-
-
+```html
+    {{ if not .Params.notoc }}
+    <div id="toc" class="well col-md-4 col-sm-6">
+    {{ .TableOfContents }}
+    </div>
+    {{ end }}
+```
 
 ## Using Site (config) Parameters
+
 In your top-level configuration file (eg, `config.yaml`) you can define site
 parameters, which are values which will be available to you in chrome.
 
@@ -309,36 +304,36 @@ you would declare it to be HTML-safe, so that the HTML entity is not escaped
 again.  This would let you easily update just your top-level config file each
 January 1st, instead of hunting through your templates.
 
-```
-{{if .Site.Params.CopyrightHTML}}<footer>
-<div class="text-center">{{.Site.Params.CopyrightHTML | safeHtml}}</div>
-</footer>{{end}}
+```html
+    {{if .Site.Params.CopyrightHTML}}
+    <footer>
+    <div class="text-center">{{.Site.Params.CopyrightHTML | safeHtml}}</div>
+    </footer>
+    {{end}}
 ```
 
 An alternative way of writing the "if" and then referencing the same value
 is to use "with" instead. With rebinds the context `.` within its scope,
 and skips the block if the variable is absent:
 
-```
-{{with .Site.Params.TwitterUser}}<span class="twitter">
-<a href="https://twitter.com/{{.}}" rel="author">
-<img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
- alt="Twitter"></a>
-</span>{{end}}
+```html
+    {{with .Site.Params.TwitterUser}}
+    <span class="twitter">
+    <a href="https://twitter.com/{{.}}" rel="author">
+    <img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
+     alt="Twitter"></a>
+    </span>
+    {{end}}
 ```
 
 Finally, if you want to pull "magic constants" out of your layouts, you can do
 so, such as in this example:
 
+```html
+    <nav class="recent">
+      <h1>Recent Posts</h1>
+      <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+        <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+      {{end}}</ul>
+    </nav>
 ```
-<nav class="recent">
-  <h1>Recent Posts</h1>
-  <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-  {{end}}</ul>
-</nav>
-```
-
-
-[go]: https://golang.org/
-[gohtmltemplate]: https://golang.org/pkg/html/template/

@@ -29,9 +29,11 @@ The default is for Jekyll to publish to `_site` and for Hugo to publish to `publ
 
 1. Change your submodule to point to map `gh-pages` to public instead of `_site` (recommended).
 
-        git submodule deinit _site
-        git rm _site
-        git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
+```shell
+  git submodule deinit _site
+  git rm _site
+  git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
+```
 
 2. Or, change the Hugo configuration to use `_site` instead of `public`.
 
@@ -52,8 +54,9 @@ Jekyll has [plugins](http://jekyllrb.com/docs/plugins/); Hugo has [shortcodes](/
 ### Implementation
 As an example, I was using a custom [`image_tag`](https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb) plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.
 
-Jekyll's plugin:
+#### Jekyll's plugin:
 
+```ruby
     module Jekyll
       class ImageTag < Liquid::Tag
         @url = nil
@@ -107,9 +110,11 @@ Jekyll's plugin:
       end
     end
     Liquid::Template.register_tag('image', Jekyll::ImageTag)
+```
 
 is written as this Hugo shortcode:
 
+```html
     <!-- image -->
     <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
         {{ with .Get "link"}}<a href="{{.}}">{{ end }}
@@ -128,6 +133,7 @@ is written as this Hugo shortcode:
         {{ end }}
     </figure>
     <!-- image -->
+```
 
 ### Usage
 I simply changed:
