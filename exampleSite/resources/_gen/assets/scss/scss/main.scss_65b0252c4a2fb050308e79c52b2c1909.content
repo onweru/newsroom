@@ -221,11 +221,33 @@ table {
   max-width: 100%;
   overflow-x: scroll;
   border-collapse: collapse;
+  margin: 1rem 0;
+  background: transparent;
+  border-style: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
+}
+
+table:not(.ln-table) tr {
+  background-color: var(--accent);
 }
 
 th {
   text-align: left;
   color: var(--light);
+}
+
+thead tr {
+  background: var(--theme) !important;
+}
+
+td, th {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--bg);
+}
+
+aside h3 {
+  position: relative;
+  margin: 0 !important;
 }
 
 .article {
@@ -350,50 +372,6 @@ th {
   display: none;
 }
 
-.highlight {
-  margin: 1.5rem 0 2.5rem;
-}
-
-.highlight .highlight {
-  margin: 0;
-}
-
-.highlight pre:not(.highlight) {
-  padding: 1rem;
-}
-
-.highlight pre {
-  background: var(--accent) !important;
-  color: var(--text) !important;
-  border-radius: 4px;
-  max-width: 100%;
-}
-
-.highlight table {
-  display: grid;
-}
-
-.highlight .lntd {
-  width: 100%;
-  border: none;
-}
-
-.highlight .lntd:first-child, .highlight .lntd:first-child pre {
-  width: 2.5rem !important;
-  padding-left: 0;
-  padding-right: 0;
-  color: var(--light) !important;
-  background-color: var(--theme) !important;
-  border-radius: 0.25rem 0 0 0.25rem;
-}
-
-.highlight .lntd:first-child pre {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
 .btn {
   min-width: 150px;
   font-size: 1rem;
@@ -406,11 +384,6 @@ th {
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-}
-
-aside h3 {
-  position: relative;
-  margin: 0 !important;
 }
 
 .transparent {
@@ -736,26 +709,6 @@ aside h3 {
   text-decoration: underline;
 }
 
-.post_inner table {
-  margin: 1rem 0;
-  background: transparent;
-  border-style: hidden;
-  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
-}
-
-.post_inner table:not(.ln-table) tr {
-  background-color: var(--accent);
-}
-
-.post_inner thead tr {
-  background: var(--theme) !important;
-}
-
-.post_inner td, .post_inner th {
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--bg);
-}
-
 .post_date {
   margin-bottom: -1.25rem;
 }
@@ -1063,6 +1016,50 @@ aside h3 {
 
 .never_title {
   text-align: left;
+}
+
+.highlight {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.highlight .highlight {
+  margin: 0;
+}
+
+.highlight pre:not(.highlight) {
+  padding: 1rem;
+}
+
+.highlight pre {
+  background: var(--accent) !important;
+  color: var(--text) !important;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.highlight table {
+  display: grid;
+}
+
+.highlight .lntd {
+  width: 100%;
+  border: none;
+}
+
+.highlight .lntd:first-child, .highlight .lntd:first-child pre {
+  width: 2.5rem !important;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--light) !important;
+  background-color: var(--theme) !important;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.highlight .lntd:first-child pre {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .err {
