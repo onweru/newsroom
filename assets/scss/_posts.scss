@@ -49,22 +49,6 @@
         text-decoration: underline;
       }
     }
-    table {
-      margin: 1rem 0;
-      background: transparent;
-      border-style: hidden;
-      box-shadow: 0 1rem 4rem rgba(0,0,0,0.12);
-      &:not(.ln-table) tr{
-        background-color: var(--accent);
-      }
-    }
-    thead tr{
-      background: var(--theme) !important;
-    }
-    td, th{
-      padding: 0.5rem 1rem;
-      border: 2px solid var(--bg);
-    }
   }
   &_date {
     margin-bottom: -1.25rem;

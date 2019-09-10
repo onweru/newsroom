@@ -1,3 +1,44 @@
+.highlight {
+  margin: 1.5rem 0 2.5rem;
+  & & {
+    margin: 0;
+  }
+  pre:not(.highlight) {
+    padding: 1rem;
+  }
+  pre{
+    background: var(--accent) !important;
+    color: var(--text) !important;
+    border-radius: 4px;
+    max-width: 100%;
+    // overflow-x: scroll !important;
+  }
+  table {
+    display: grid;
+  }
+  .lntd {
+    width: 100%;
+    // overflow-x: scroll;
+    border: none;
+    &:first-child {
+      &, pre {
+        width: 2.5rem !important;
+        padding-left: 0;
+        padding-right: 0;
+        color: var(--light) !important;
+        background-color: var(--theme) !important;
+        border-radius: 0.25rem 0 0 0.25rem;
+      }
+      pre {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    } 
+  }
+}
+
 .err { 
   color: #a61717;
   background-color: #e3d2d2;
