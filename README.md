@@ -58,4 +58,4 @@ Today most operating systems & browsers support dark mode. Like twitter, which a
 
 ## License
 
-The code is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
+This theme is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
