@@ -4,7 +4,7 @@ licenselink = "https://github.com/onweru/newsroom/blob/master/LICENSE.md"
 description = "A simple open source theme for publishing multi-purpose content"
 homepage = "https://github.com/onweru/newsroom"
 tags = ["blog", "simple", "dark", "minimalist", "fast", "light", "modern"]
-features = ["blog", "simple", "dark", "minimalist", "fast", "light", "modern"]
+features = ["blog", "simple", "dark", "minimalist", "fast", "light", "syntax highlighting"]
 min_version = 0.42
 
 [author]

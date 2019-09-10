@@ -56,6 +56,12 @@ Today most operating systems & browsers support dark mode. Like twitter, which a
 |--- | ---|
 | ![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)|
 
+### Syntax highlighting
+
+| Normal Mode | Dark Mode |
+|--- | ---|
+| ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
+
 ## License
 
 This theme is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
