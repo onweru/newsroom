@@ -43,9 +43,9 @@
 
 :root {
   --light: #fff;
-  --dark: #131313;
+  --dark: #000;
   --gray: #f5f5f5;
-  --bubble: #191919;
+  --bubble: #121312;
   --accent: var(--gray);
   --bg: var(--light);
   --text: var(--dark);
@@ -379,7 +379,7 @@ aside h3 {
   display: inline-block;
   padding: 7.5px 12.5px;
   background-color: #04a763;
-  box-shadow: 0 1rem 4rem rgba(19, 19, 19, 0.5);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   cursor: pointer;
@@ -414,7 +414,7 @@ aside h3 {
   margin: 1.5rem 0;
   border-radius: 1rem;
   background-color: var(--bg);
-  box-shadow: 0 1rem 4rem rgba(19, 19, 19, 0.17);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.17);
 }
 
 .video iframe {
@@ -561,7 +561,7 @@ aside h3 {
   display: block;
   padding: 12.5px 25px;
   margin-bottom: 2px;
-  border-bottom: 1px solid rgba(19, 19, 19, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   transition: color 0.25s ease-in-out;
 }
 
@@ -758,7 +758,7 @@ aside h3 {
   padding: 0;
   align-items: center;
   border-radius: 0.3rem;
-  color: #131313;
+  color: #000;
   text-transform: capitalize;
 }
 
