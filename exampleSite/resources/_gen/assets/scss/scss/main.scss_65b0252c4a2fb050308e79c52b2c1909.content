@@ -45,7 +45,7 @@
   --light: #fff;
   --dark: #000;
   --gray: #f5f5f5;
-  --bubble: #121312;
+  --bubble: #131313;
   --accent: var(--gray);
   --bg: var(--light);
   --text: var(--dark);
@@ -58,6 +58,9 @@
     --bg: var(--dark);
     --text: var(--light);
     --accent: var(--bubble);
+  }
+  * {
+    box-shadow: none !important;
   }
 }
 
@@ -224,7 +227,7 @@ table {
   margin: 1rem 0;
   background: transparent;
   border-style: hidden;
-  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
 }
 
 table:not(.ln-table) tr {
@@ -668,7 +671,7 @@ aside h3 {
 }
 
 .post h2, .post h3, .post h4 {
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   text-align: left;
   padding: 5px 0 0 0;
 }
@@ -707,6 +710,21 @@ aside h3 {
 .post_inner a:hover {
   opacity: 0.8;
   text-decoration: underline;
+}
+
+.post_inner img:not(.icon) {
+  margin-bottom: 2rem;
+  box-shadow: 0 1.5rem 1rem -1rem rgba(0, 0, 0, 0.25);
+}
+
+.post_inner img:not(.icon) ~ h1, .post_inner img:not(.icon) ~ h2, .post_inner img:not(.icon) ~ h3, .post_inner img:not(.icon) ~ h4 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.post .icon {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .post_date {
@@ -803,9 +821,10 @@ aside h3 {
 .post_nav {
   padding: 3rem 1.5rem;
   display: grid;
-  margin: 3.5rem auto 1rem;
+  margin: 2.25rem auto 1rem;
   text-align: center;
   color: #04a763;
+  box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
 }
 

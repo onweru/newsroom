@@ -11,8 +11,11 @@
         {{ end }}
           {{ .Content }}
         </div>
-        <div class ='post_extra'>
+        <div class ='post_extra mb-2'>
           {{ partial "share.html" . }}
+        </div>
+        <div>
+        {{ template "_internal/disqus.html" . }}
         </div>
       </div>
     </div>

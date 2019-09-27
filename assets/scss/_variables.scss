@@ -22,4 +22,7 @@ $linear: linear-gradient(to right bottom, darken($theme, 10%), $theme);
     --text: var(--light);
     --accent: var(--bubble);
   }
+  *{
+    box-shadow: none !important;
+  }
 }

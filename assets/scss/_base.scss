@@ -121,7 +121,7 @@ table {
   margin: 1rem 0;
   background: transparent;
   border-style: hidden;
-  box-shadow: 0 1rem 4rem rgba(0,0,0,0.12);
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.15);
   &:not(.ln-table) tr{
     background-color: var(--accent);
   }

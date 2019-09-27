@@ -12,6 +12,9 @@ pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses=true
 pygmentsOptions = "linenos=table"
 
+# If you want to use disqus, uncomment the line below
+# disqusShortname = "yourdiscussshortname"
+
 # ids used below are not valid. Replace with valid ones
 [params]
   # ga_analytics = "" # google analytics ID e.g UA-116386578-1

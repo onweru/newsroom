@@ -62,6 +62,21 @@ Today most operating systems & browsers support dark mode. Like twitter, which a
 |--- | ---|
 | ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
 
+### I want to use disqus
+
+Some folks may want to use disqus on their site. In fact, there [was an issue](https://github.com/onweru/newsroom/issues/2) for that express purpose.
+
+To enable disqus on your site, simply, add the line below to you `config.toml` file. If you're working off the [exampleSite](https://github.com/onweru/newsroom/tree/master/exampleSite), the line is [already there](https://github.com/onweru/newsroom/blob/ad9b7a9f7ea266b539f846a2f3bdf080e648bb84/exampleSite/config.toml#L15-L16); just uncomment it.
+
+```toml
+disqusShortname = "yourdiscussshortname"
+```
+> remember to edit the `yourdiscussshortname` appropriately.
+
+From your disqus dashboard, set your scripts `color scheme` to __auto__. See screenshot below
+
+![](https://github.com/onweru/newsroom/blob/master/images/disqus-color-scheme.png)
+
 ## License
 
 This theme is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
