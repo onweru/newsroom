@@ -5,7 +5,8 @@ $light: #fff;
 $dark: #000;
 $text: #343434;
 $linear: linear-gradient(to right bottom, darken($theme, 10%), $theme);
-:root {
+html {
+  --color-mode: 'light';
   --light: #fff;
   --dark: #000;
   --gray: #f5f5f5;
@@ -17,11 +18,24 @@ $linear: linear-gradient(to right bottom, darken($theme, 10%), $theme);
   --theme: #04a763;
 }
 @media (prefers-color-scheme: dark) { 
-  :root {
-    --bg: var(--dark);
-    --text: var(--light);
-    --accent: var(--bubble);
+  html {
+    &:not(.light) {
+      --color-mode: 'dark';
+      --bg: var(--dark);
+      --text: var(--light);
+      --accent: var(--bubble);
+      *{
+        box-shadow: none !important;
+      }
+    }
   }
+}
+
+html.dark {
+  --color-mode: 'dark';
+  --bg: var(--dark);
+  --text: var(--light);
+  --accent: var(--bubble);
   *{
     box-shadow: none !important;
   }

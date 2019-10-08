@@ -1,10 +1,15 @@
+// text strings
+$copy-icon-b4: '{{ i18n "share_story" }}';
+$copy-icon-aft: '{{ i18n "link_copied" }}';
+
+// urls
 $font-path: '{{ absURL "fonts" }}';
 $copy-icon-path: '{{ absURL "images/icons/copy.svg" }}';
 $prev-icon-path: '{{ absURL "images/icons/previous.svg" }}';
 $next-icon-path: '{{ absURL "images/icons/next.svg" }}';
-$copy-icon-b4: '{{ i18n "share_story" }}';
-$copy-icon-aft: '{{ i18n "link_copied" }}';
 $never-icon-path: '{{ absURL "images/sitting.svg"  }}';
+$day-icon-path: '{{ absURL "images/sun.svg"  }}';
+$night-icon-path: '{{ absURL "images/crescent.svg"  }}';
 
 @import
 'fonts',
