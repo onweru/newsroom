@@ -41,7 +41,8 @@
   src: local("Cookie-Regular"), url("http://localhost:1313/theme/newsroom/fonts/cookie-v10-latin-regular.woff2") format("woff2"), url("http://localhost:1313/theme/newsroom/fonts/cookie-v10-latin-regular.woff") format("woff");
 }
 
-:root {
+html {
+  --color-mode: 'light';
   --light: #fff;
   --dark: #000;
   --gray: #f5f5f5;
@@ -54,14 +55,26 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html:not(.light) {
+    --color-mode: 'dark';
     --bg: var(--dark);
     --text: var(--light);
     --accent: var(--bubble);
   }
-  * {
+  html:not(.light) * {
     box-shadow: none !important;
   }
+}
+
+html.dark {
+  --color-mode: 'dark';
+  --bg: var(--dark);
+  --text: var(--light);
+  --accent: var(--bubble);
+}
+
+html.dark * {
+  box-shadow: none !important;
 }
 
 @keyframes showMenu {
@@ -287,7 +300,7 @@ aside h3 {
 
 .article_meta.center_y {
   transform-origin: center;
-  transition: all 0.5s;
+  transition: transform 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,8 +371,7 @@ aside h3 {
 
 @media screen and (min-width: 769px) {
   .article:hover .article_meta.center_y {
-    margin-left: -15px;
-    padding-right: 35px;
+    transform: translateX(-1rem);
   }
 }
 
@@ -493,6 +505,56 @@ aside h3 {
 .footer a:hover {
   text-decoration: underline;
   opacity: 1;
+}
+
+.color_mode {
+  width: 3rem;
+  height: 1.5rem;
+  background-color: var(--theme);
+  border-radius: 1rem;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+  margin: 5rem 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.color_mode::before, .color_mode::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  height: 1rem;
+  width: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.color_mode::before {
+  background-image: url("http://localhost:1313/theme/newsroom/images/crescent.svg");
+  left: 0.25rem;
+}
+
+.color_mode::after {
+  background-image: url("http://localhost:1313/theme/newsroom/images/sun.svg");
+  right: 0.25rem;
+  background-position: right;
+}
+
+.color_choice {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--light);
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+  z-index: 3;
+}
+
+.color_live .color_choice {
+  transform: translateX(1.5rem);
 }
 
 .nav {
