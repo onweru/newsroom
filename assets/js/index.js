@@ -1,8 +1,7 @@
-{
-  // file closure 
-
+(function(){ 
+  
   const doc = document.documentElement;
-
+  
   function createEl(element) {
     return document.createElement(element);
   }
@@ -278,55 +277,60 @@
     }
   })();
   
-  function setUserColorMode(mode = false) {
-    const light = 'light';
-    const dark = 'dark';
-    const storageKey = 'colorMode';
-    const key = '--color-mode';
-    const data = 'data-mode';
-    const bank = window.localStorage;
-    const docClass = doc.classList;
-    const isDarkMode = getComputedStyle(doc).getPropertyValue(key).replace(/\"/g, '').trim() === dark;
-    let storedMode = bank.getItem(storageKey);
+  const light = 'lit';
+  const dark = 'dim';
+  const storageKey = 'colorMode';
+  const key = '--color-mode';
+  const data = 'data-mode';
+  const bank = window.localStorage;
+  
+  function currentMode() {
+    let acceptableChars = light + dark;
+    acceptableChars = [...acceptableChars];
+    let mode = getComputedStyle(doc).getPropertyValue(key).replace(/\"/g, '').trim();
     
-    function changeMode() {
-      if(isDarkMode) {
-        bank.setItem(storageKey, light)
-        // elemAttribute(doc, data, light);
-        docClass.add(light);
-        docClass.remove(dark); 
-      } else {
-        bank.setItem(storageKey, dark)
-        // elemAttribute(doc, data, dark);
-        docClass.add(dark);
-        docClass.remove(light);
-      }
-    }
-
-    if(storedMode) {
-      if(mode) {
-        changeMode()
-      } else {
-        doc.className = storedMode;
-      }
+    mode = [...mode].filter(function(letter){
+      return acceptableChars.includes(letter);
+    });
+    
+    return mode.join('');
+  }
+  
+  function changeMode(isDarkMode) {
+    if(isDarkMode) {
+      bank.setItem(storageKey, light)
+      elemAttribute(doc, data, light);
     } else {
-      mode ? changeMode() : false;
+      bank.setItem(storageKey, dark);
+      elemAttribute(doc, data, dark);
     }
   }
-
+  
+  function setUserColorMode(mode = false) {
+    const isDarkMode = currentMode() == dark;
+    const storedMode = bank.getItem(storageKey);
+    if(storedMode) {
+      if(mode) {
+        changeMode(isDarkMode);
+      } else {
+        elemAttribute(doc, data, storedMode);
+      }
+    } else {
+      if(mode === true) {
+        changeMode(isDarkMode) 
+      }
+    }
+  }
+  
   setUserColorMode();
-
+  
   doc.addEventListener('click', function(event) {
     let target = event.target;
-    let secondaryTarget = target.parentNode;
-    let modeClass = 'color_mode';
-    let modeToggleClass = 'color_live';
+    let modeClass = 'color_choice';
     let isModeToggle = containsClass(target, modeClass);
-    let isOnModeToggle = containsClass(secondaryTarget, modeClass);
-    if(isModeToggle || isOnModeToggle) {
-      isModeToggle ? modifyClass(target, modeToggleClass) : modifyClass(secondaryTarget, modeToggleClass);
-      setUserColorMode(true);
+    if(isModeToggle) {
+      setUserColorMode(true);        
     }
   });
   
-}
+})();
