@@ -48,7 +48,7 @@ blockquote {
     top: 0;
     bottom: 0;
     left: 0;
-    background: $theme;
+    background: var(--theme);
   }
   p{
     padding-left: 0.5rem 0 !important;

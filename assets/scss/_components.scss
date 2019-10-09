@@ -17,7 +17,7 @@
     transform-origin: bottom;
   }
   &_meta{
-    padding: 10px 20px 20px;
+    padding: 10px 1.25rem 1.25rem;
     background: var(--bg);
     color: var(--text);
     position: relative;
@@ -85,6 +85,8 @@
     @media screen and (min-width: 769px) {
       &.center_y{
         transform: translateX(-1rem);
+        padding-left: 1.25rem;
+        padding-right: 0;
       }
     }
   }
@@ -105,9 +107,9 @@
   margin: 1rem 0 1.5rem;
   display: inline-block;
   padding: 7.5px 12.5px;
-  background-color: $theme;
-  box-shadow: 0 1rem 4rem rgba($dark,0.5);
-  color: $light;
+  background-color:var(--theme);
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.5);
+  color: var(--light);
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
@@ -117,7 +119,7 @@
 }
 .point{
   margin-right:15px;
-  color:$theme;
+  color: var(--theme);
 }
 @media screen and (min-width: 769px){
   .nav-menu a{
@@ -138,7 +140,7 @@
   margin: 1.5rem 0;
   border-radius: 1rem;
   background-color: var(--bg);
-  box-shadow: 0 1rem 4rem rgba($dark,0.17);
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.17);
   iframe{
     left:0;
     top:0;
@@ -159,8 +161,8 @@
   &::before, &::after {
     content: "";
     position: absolute;
-    background: $theme;
-    color: $light;
+    background:var(--theme);
+    color: var(--light);
     opacity: 0;
     transition: opacity 0.25s ease-in;
   }
@@ -196,7 +198,7 @@
     flex-direction: column;
   }
   a {
-    color: $theme;
+    color:var(--theme);
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
     &:hover {
@@ -208,48 +210,45 @@
 
 .color {
   &_mode {
-    width: 3rem;
+    // width: 3rem;
     height: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3rem;
+    align-items: center;
+    margin: 5rem 1.5rem 0;
+  }
+  &_choice {
+    width: 3rem;
     background-color: var(--theme);
     border-radius: 1rem;
-    display: grid;
-    align-items: center;
+    height: 1.5rem;
     cursor: pointer;
-    margin: 5rem 1.5rem 0;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    position: relative;
     position: relative;
     overflow: hidden;
     box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.15);
-    &::before, &::after {
+    &::after {
       content: "";
-      z-index: 1;
       position: absolute;
       height: 1rem;
       width: 2rem;
       background-size: contain;
       background-repeat: no-repeat;
-      // background-position: center;
-    }
-    &::before {
-      background-image: url($night-icon-path);
-      left: 0.25rem;
     }
     &::after {
-      background-image: url($day-icon-path);
-      right: 0.25rem;
-      background-position: right;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: var(--light);
+      border-radius: 50%;
+      background-image: url($night-icon-path);
+      z-index: 2;
     }
-  }
-  &_choice {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-color: var(--light);
-    // opacity: 0.3;
-    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
-    position: relative;
-    z-index: 3;
-  }
-  &_live &_choice { 
-    transform: translateX(1.5rem);
+    &:checked {
+      &::after {
+        background-image: url($day-icon-path);
+        transform: translateX(1.5rem);
+      }
+    }
   }
 }

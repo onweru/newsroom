@@ -59,10 +59,10 @@
       display:block;
       padding:12.5px 25px;
       margin-bottom:2px;
-      border-bottom:1px solid rgba($dark, 0.04);
+      border-bottom:1px solid rgba(0,0,0,0.04);
       transition:color 0.25s ease-in-out;
       &:hover{
-        color: $theme;
+        color: var(--theme);
       }
     }
   }

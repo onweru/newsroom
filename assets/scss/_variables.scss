@@ -1,12 +1,5 @@
-$padding: 10px;
-$margin: 25px;
-$theme: #04a763;
-$light: #fff;
-$dark: #000;
-$text: #343434;
-$linear: linear-gradient(to right bottom, darken($theme, 10%), $theme);
-html {
-  --color-mode: 'light';
+:root {
+  --color-mode: 'lit';
   --light: #fff;
   --dark: #000;
   --gray: #f5f5f5;
@@ -16,27 +9,23 @@ html {
   --text: var(--dark);
   --font: 'Metropolis', sans-serif;
   --theme: #04a763;
-}
-@media (prefers-color-scheme: dark) { 
-  html {
-    &:not(.light) {
-      --color-mode: 'dark';
-      --bg: var(--dark);
-      --text: var(--light);
-      --accent: var(--bubble);
-      *{
-        box-shadow: none !important;
-      }
-    }
-  }
-}
 
-html.dark {
-  --color-mode: 'dark';
-  --bg: var(--dark);
-  --text: var(--light);
-  --accent: var(--bubble);
-  *{
-    box-shadow: none !important;
+  @mixin darkmode {
+    --color-mode: 'dim';
+    --bg: var(--dark);
+    --text: var(--light);
+    --accent: var(--bubble);
+    *{
+      box-shadow: none !important;
+    } 
+  }
+  
+  &[data-mode="dark"] {
+    @include darkmode;
+  }
+  @media (prefers-color-scheme: dark) { 
+    &:not([data-mode="lit"]) {
+      @include darkmode;
+    }
   }
 }

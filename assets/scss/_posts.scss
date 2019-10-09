@@ -42,7 +42,7 @@
   }
   &_inner {
     a{
-      color: $theme;
+      color: var(--theme);
       transition: all 0.3s;
       &:hover {
         opacity: 0.8;
@@ -95,15 +95,15 @@
     font-weight: 500;
     display: inline-grid;
     grid-template-columns: auto 1fr;
-    background-color: $light;
+    background-color: var(--light);
     padding: 0;
     align-items: center;
     border-radius: 0.3rem;
-    color: $dark;
+    color: var(--dark);
     text-transform: capitalize;
     a {
       &:hover {
-        color: $theme;
+        color: var(--theme);
         text-decoration: underline;
         opacity: 0.9;
       }
@@ -116,8 +116,8 @@
   &_tag {
     font-size: 0.75rem !important;
     font-weight: 500;
-    background: $theme;
-    color: $light;
+    background: var(--theme);
+    color: var(--light);
     padding: 0.25rem 0.67rem !important;
     text-transform: uppercase;
     display: inline-flex;
@@ -127,10 +127,10 @@
     margin:5px 0;;
   }
   &_time {
-    background: $theme;
+    background: var(--theme);
     display: inline-grid;
     padding: 0.2rem 0.75rem;
-    color: $light;
+    color: var(--light);
   }
   &_thumbnail {
     width: 100%;
@@ -141,7 +141,7 @@
     display: grid;
     margin: 2.25rem auto 1rem;
     text-align: center;
-    color: $theme;
+    color: var(--theme);
     box-shadow: 0 1rem 3rem -1rem rgba(0,0,0,0.15);
     text-transform: uppercase;
     &, span {
@@ -190,7 +190,7 @@
     margin-left: 5px;
     margin-right: 5px;
     background-color: var(--accent);
-    color: $light;
+    color: var(--light);
     border-radius: 50%;
     background-size: 50%;
     background-position: center;
