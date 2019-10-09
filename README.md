@@ -48,6 +48,8 @@ Follow the `exampleSite/`; specifically, the [content](https://github.com/onweru
 
 Today most operating systems & browsers support dark mode. Like twitter, which automatically turns into dark mode when the user chooses darkmode, this theme does the same thing.
 
+If the user wants to opt in or out of darkmode, there's a UI control for that too in the menu 😊.
+
 ![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
 
 ### Custom 404 Page
