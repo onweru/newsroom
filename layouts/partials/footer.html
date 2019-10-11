@@ -1,5 +1,5 @@
 <footer class = 'footer wrap pale'>
-  <p>&copy; <span class = 'year'></span> {{ .Site.Title }}</p>
+  <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;{{ .Site.Title }}</p>
   <p>{{ i18n "designed_by" .Site.Data.designer | safeHTML }}</p>
 </footer>
 {{ $scripts := resources.Get "js/index.js" | resources.ExecuteAsTemplate "js/index.js" . }}
