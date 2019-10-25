@@ -52,6 +52,7 @@
   --text: var(--dark);
   --font: 'Metropolis', sans-serif;
   --theme: #04a763;
+  --ease: cubic-bezier(.19,1,.22,1);
 }
 
 :root[data-mode="dark"] {
@@ -522,6 +523,8 @@ aside h3 {
   background-color: var(--theme);
   border-radius: 1rem;
   height: 1.5rem;
+  outline: none;
+  -webkit-appearance: none;
   cursor: pointer;
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   position: relative;
@@ -533,24 +536,19 @@ aside h3 {
 .color_choice::after {
   content: "";
   position: absolute;
-  height: 1rem;
-  width: 2rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.color_choice::after {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--light);
+  top: 0.05rem;
+  left: 0.075rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: radial-gradient(var(--light), var(--gray));
   border-radius: 50%;
-  background-image: url("http://localhost:1313/theme/newsroom/images/crescent.svg");
   z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
 }
 
 .color_choice:checked::after {
-  background-image: url("http://localhost:1313/theme/newsroom/images/sun.svg");
-  transform: translateX(1.5rem);
+  transform: translateX(1.4rem);
 }
 
 .nav {
