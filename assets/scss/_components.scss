@@ -222,6 +222,8 @@
     background-color: var(--theme);
     border-radius: 1rem;
     height: 1.5rem;
+    outline: none;
+    -webkit-appearance: none;
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
     position: relative;
@@ -231,23 +233,19 @@
     &::after {
       content: "";
       position: absolute;
-      height: 1rem;
-      width: 2rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    &::after {
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: var(--light);
+      top: 0.05rem;
+      left: 0.075rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      background: radial-gradient(var(--light), var(--gray));
       border-radius: 50%;
-      background-image: url($night-icon-path);
       z-index: 2;
+      transition: transform 0.5s cubic-bezier(.19,1,.22,1);
+      will-change: transform;
     }
     &:checked {
       &::after {
-        background-image: url($day-icon-path);
-        transform: translateX(1.5rem);
+        transform: translateX(1.4rem);
       }
     }
   }
