@@ -79,6 +79,10 @@ From your disqus dashboard, set your scripts `color scheme` to __auto__. See scr
 
 ![](https://github.com/onweru/newsroom/blob/master/images/disqus-color-scheme.png)
 
+## From the same creator
+
+[Swift Theme](https://github.com/onweru/hugo-swift-theme)
+
 ## License
 
 This theme is available under the [MIT license](https://github.com/onweru/newsroom/blob/master/LICENSE.md).
