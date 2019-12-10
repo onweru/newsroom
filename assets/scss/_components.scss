@@ -29,8 +29,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      @media screen and (min-width: 769px) {
-        padding-left: 0;
+      @media screen and (min-width: 42rem) {
+        left: -2rem;
       }
     }
   }
@@ -46,7 +46,7 @@
       height: 22.5rem;
     }
     img{
-      transition: transform 0.5s;
+      transition: transform 0.5s, opacity 0.5s;
     }
     &::after{
       content: '';
@@ -58,6 +58,7 @@
       z-index: 1;
       background: var(--bg);
       opacity: 0;
+      transition: opacity 0.1s ease-out;
     }
   }
   &_showcase &_thumb {
@@ -71,6 +72,7 @@
       transform: scale(1.1);
     }
     &::after{
+      transition: opacity 0.1s ease-out;
       opacity: 0.5;
     }
   }
@@ -84,9 +86,7 @@
     }
     @media screen and (min-width: 769px) {
       &.center_y{
-        transform: translateX(-1rem);
-        padding-left: 1.25rem;
-        padding-right: 0;
+        transform: translateX(-3rem);
       }
     }
   }
