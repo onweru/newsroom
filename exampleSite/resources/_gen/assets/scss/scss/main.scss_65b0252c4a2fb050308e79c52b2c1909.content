@@ -307,9 +307,9 @@ aside h3 {
   justify-content: center;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 42rem) {
   .article_meta.center_y {
-    padding-left: 0;
+    left: -2rem;
   }
 }
 
@@ -330,7 +330,7 @@ aside h3 {
 }
 
 .article_thumb img {
-  transition: transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 .article_thumb::after {
@@ -343,6 +343,7 @@ aside h3 {
   z-index: 1;
   background: var(--bg);
   opacity: 0;
+  transition: opacity 0.1s ease-out;
 }
 
 .article_showcase .article_thumb {
@@ -358,6 +359,7 @@ aside h3 {
 }
 
 .article:hover .article_thumb::after {
+  transition: opacity 0.1s ease-out;
   opacity: 0.5;
 }
 
@@ -372,9 +374,7 @@ aside h3 {
 
 @media screen and (min-width: 769px) {
   .article:hover .article_meta.center_y {
-    transform: translateX(-1rem);
-    padding-left: 1.25rem;
-    padding-right: 0;
+    transform: translateX(-3rem);
   }
 }
 
