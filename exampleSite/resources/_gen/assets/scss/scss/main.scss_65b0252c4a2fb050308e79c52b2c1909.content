@@ -167,9 +167,8 @@ blockquote p {
 }
 
 code {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 h1, h2, h3, h4, h5 {
