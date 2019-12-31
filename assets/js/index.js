@@ -64,10 +64,10 @@
   }
   
   (function updateDate() {
-    var dateElem = elem('.year')
+    const dateElem = elem('.year')
     if (dateElem) {
-      var date = new Date();
-      var year = date.getFullYear();
+      const date = new Date();
+      const year = date.getFullYear();
       dateElem.innerHTML = year;
     }
   })();
