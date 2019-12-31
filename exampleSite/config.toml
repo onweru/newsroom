@@ -6,14 +6,14 @@ copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
 canonifyurls = true
 paginate = 3
 # Enable syntax highlighting
-# comment or delete the following lines 11 ~ 14
+# comment or delete lines 11 ~ 14
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses=true
 pygmentsOptions = "linenos=table"
 
 # Alternatively, you can use chroma instead of pigments
-# to do so comment or delete the following lines 11 ~ 14 and uncomment lines 17 ~ 27
+# to do so comment or delete lines 11 ~ 14 and uncomment lines 17 ~ 27
 # [markup]
 #   [markup.highlight]
 #     codeFences = true
