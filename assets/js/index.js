@@ -64,11 +64,13 @@
   }
   
   (function updateDate() {
-    var date = new Date();
-    var year = date.getFullYear();
-    elem('.year').innerHTML = year;
+    var dateElem = elem('.year')
+    if (dateElem) {
+      var date = new Date();
+      var year = date.getFullYear();
+      dateElem.innerHTML = year;
+    }
   })();
-  
   
   (function() {
     let bar = 'nav_bar-wrap';
