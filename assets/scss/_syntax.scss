@@ -1,24 +1,21 @@
 .highlight {
   margin: 1.5rem 0 2.5rem;
+  padding: 0 !important;
   & & {
     margin: 0;
   }
-  pre:not(.highlight) {
-    padding: 1rem;
-  }
   pre{
+    padding: 1rem;
     background: var(--accent) !important;
     color: var(--text) !important;
     border-radius: 4px;
     max-width: 100%;
-    // overflow-x: scroll !important;
   }
   table {
     display: grid;
   }
   .lntd {
     width: 100%;
-    // overflow-x: scroll;
     border: none;
     &:first-child {
       &, pre {
@@ -36,6 +33,9 @@
         flex-direction: column;
       }
     } 
+    &:last-child {
+      padding-left: 0;
+    }
   }
 }
 

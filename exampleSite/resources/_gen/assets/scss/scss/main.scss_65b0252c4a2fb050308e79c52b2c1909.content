@@ -1094,17 +1094,15 @@ aside h3 {
 
 .highlight {
   margin: 1.5rem 0 2.5rem;
+  padding: 0 !important;
 }
 
 .highlight .highlight {
   margin: 0;
 }
 
-.highlight pre:not(.highlight) {
-  padding: 1rem;
-}
-
 .highlight pre {
+  padding: 1rem;
   background: var(--accent) !important;
   color: var(--text) !important;
   border-radius: 4px;
@@ -1134,6 +1132,10 @@ aside h3 {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.highlight .lntd:last-child {
+  padding-left: 0;
 }
 
 .err {
