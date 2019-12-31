@@ -12,6 +12,20 @@ pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses=true
 pygmentsOptions = "linenos=table"
 
+# Alternatively, you can use chroma instead of pigments
+# to do so comment or delete the following lines 11 ~ 14 and uncomment lines 17 ~ 27
+# [markup]
+#   [markup.highlight]
+#     codeFences = true
+#     guessSyntax = false
+#     hl_Lines = ""
+#     lineNoStart = 1
+#     lineNos = true
+#     lineNumbersInTable = true
+#     noClasses = false
+#     # style = "monokai"
+#     tabWidth = 2
+
 # If you want to use disqus, uncomment the line below
 # disqusShortname = "yourdiscussshortname"
 

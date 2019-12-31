@@ -13,6 +13,7 @@ All the templates herein use *grid css*, *flexbox* & *vanilla js*. You may,howev
 * Responsive
 * Deeplinks
 * Dark Mode
+* Syntax highlighting 
 
 ### Deeplinks
 
@@ -63,6 +64,8 @@ If the user wants to opt in or out of darkmode, there's a UI control for that to
 | Normal Mode | Dark Mode |
 |--- | ---|
 | ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
+
+Depending on your fancy, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
 
 ### I want to use disqus
 
