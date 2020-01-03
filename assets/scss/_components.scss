@@ -223,6 +223,7 @@
     border-radius: 1rem;
     height: 1.5rem;
     outline: none;
+    border: none;
     -webkit-appearance: none;
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
@@ -233,10 +234,10 @@
     &::after {
       content: "";
       position: absolute;
-      top: 0.05rem;
-      left: 0.075rem;
-      width: 1.4rem;
-      height: 1.4rem;
+      top: 0.1rem;
+      left: 0.1rem;
+      width: 1.3rem;
+      height: 1.3rem;
       background: radial-gradient(var(--light), var(--gray));
       border-radius: 50%;
       z-index: 2;
