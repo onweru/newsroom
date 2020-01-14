@@ -523,6 +523,7 @@ aside h3 {
   border-radius: 1rem;
   height: 1.5rem;
   outline: none;
+  border: none;
   -webkit-appearance: none;
   cursor: pointer;
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
