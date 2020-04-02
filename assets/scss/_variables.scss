@@ -23,6 +23,14 @@
   
   &[data-mode="dim"] {
     @include darkmode;
+    .color {
+      &_choice {
+        &::after {
+          background-image: url(/images/night-moon.jpg);
+          transform: translateX(1.4rem);
+        }
+      }
+    }
   }
   @media (prefers-color-scheme: dark) { 
     &:not([data-mode="lit"]) {

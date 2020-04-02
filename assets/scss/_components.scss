@@ -210,15 +210,16 @@
 
 .color {
   &_mode {
-    // width: 3rem;
+    // width: 3rem
     height: 1.5rem;
     display: grid;
     grid-template-columns: 1fr 3rem;
     align-items: center;
-    margin: 5rem 1.5rem 0;
+    margin: 2rem 1.5rem 0;
   }
   &_choice {
     width: 3rem;
+    // background-color: rgba(255,255,255,0.06);
     background-color: var(--theme);
     border-radius: 1rem;
     height: 1.5rem;
@@ -238,16 +239,13 @@
       left: 0.1rem;
       width: 1.3rem;
       height: 1.3rem;
-      background: radial-gradient(var(--light), var(--gray));
+      background-image: url(/images/sun.svg);
+      background-position: center;
+      background-size: cover;
       border-radius: 50%;
       z-index: 2;
       transition: transform 0.5s cubic-bezier(.19,1,.22,1);
       will-change: transform;
-    }
-    &:checked {
-      &::after {
-        transform: translateX(1.4rem);
-      }
     }
   }
 }
