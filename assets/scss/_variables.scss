@@ -25,6 +25,7 @@
     @include darkmode;
     .color {
       &_choice {
+        mix-blend-mode: color-dodge;
         &::after {
           background-image: url(/images/night-moon.jpg);
           transform: translateX(1.4rem);
