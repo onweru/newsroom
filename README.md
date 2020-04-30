@@ -82,9 +82,34 @@ From your disqus dashboard, set your scripts `color scheme` to __auto__. See scr
 
 ![](https://github.com/onweru/newsroom/blob/master/images/disqus-color-scheme.png)
 
+## Custom Shortcodes
+
+This theme ships with two custom shortcodes (they both use positional parameters):
+
+1. __Video__
+    This shortcode can be used to embed a youtube video with custom styling. It takes a solo positional parameter.
+    
+    ```
+    ...
+    {{< video "youtubeVideoID" >}}
+    ...
+    ```
+
+2. __Picture__
+    You want to use darkmode images when darkmode is enabled on a device and a regular image on lightmode? It takes 3 positional parameter
+
+    Store these images in the `static/images` directory. 
+    
+    ```
+    ...
+    {{< picture "lightModeImage.png" "darkModeImage.png" "Image alt text" >}}
+    ...
+    ```
+
 ## From the same creator
 
-[Swift Theme](https://github.com/onweru/hugo-swift-theme)
+1. [Swift Theme](https://github.com/onweru/hugo-swift-theme)
+2. [Compose Theme](https://github.com/onweru/compose)
 
 ## License
 
