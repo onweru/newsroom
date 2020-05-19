@@ -1,9 +1,16 @@
 {{ define "main" }}
+{{- $filteredPosts := .Site.Params.blogDir }}
+{{- $pages := .Pages }}
+{{- if .IsHome }}
+  {{- $pages = .Site.RegularPages }}
+  {{- if $filteredPosts }}
+    {{- $pages = where $.Site.RegularPages "Section" $filteredPosts }}
+  {{- end }}
+{{- end }}
 <div class = 'wrap pt-2 mt-2'>
   {{- $size := .Paginator.PageSize }}
-  {{ $pages := .Paginate (where .Site.RegularPages "Section" "!=" "").ByPublishDate.Reverse }}
-  {{ $scratch := newScratch }}
-  {{- range $index, $value := $pages.Pages }}
+  {{- $scratch := newScratch }}
+  {{- range $index, $value := (.Paginate $pages).Pages }}
     {{ if isset .Params "image" }}
       {{ $scratch.Set "image" .Params.image }}
     {{ else }}
