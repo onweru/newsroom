@@ -1,10 +1,10 @@
 <div class = 'nav-drop'>
   <div class = 'nav-body'>
-    {{ range .Site.Data.menu }}
+    {{- range .Site.Data.menu }}
       <a href = '{{ absURL .url }}' class = 'nav_item'>{{ .item }}</a>
-    {{ end }}
+    {{- end }}
     <div class = 'nav-close'></div>
-    {{ partial "mode" . }}
+    {{- partial "mode" . }}
   </div>
 </div>
-{{ partial "header" . }}
+{{- partial "header" . }}

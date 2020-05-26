@@ -3,8 +3,8 @@
 {{- $pages := .Pages }}
 {{- if .IsHome }}
   {{- $pages = .Site.RegularPages }}
-  {{- if $filteredPosts }}
-    {{- $pages = where $.Site.RegularPages "Section" $filteredPosts }}
+  {{- with $filteredPosts }}
+    {{- $pages = where $.Site.RegularPages "Section" . }}
   {{- end }}
 {{- end }}
 <div class = 'wrap pt-2 mt-2'>
