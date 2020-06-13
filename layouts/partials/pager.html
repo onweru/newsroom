@@ -4,7 +4,7 @@
 {{- if gt $pages 1 }}
   <div class = 'pager'>
     {{ if $paginator.HasPrev }}
-      <a href = '{{ $root }}{{ $paginator.Prev.URL }}'  class = ' pager_item pager_prev'></a>
+      <a href = '{{ $root }}.{{ $paginator.Prev.URL }}'  class = ' pager_item pager_prev'></a>
     {{ else }}
       <span class = ' pager_item pager_active pager_prev'></span>
     {{- end }}
@@ -12,7 +12,7 @@
     <span>{{ $paginator.PageNumber }} of {{ $pages }}</span>
 
     {{- if $paginator.HasNext -}}
-      <a href = '{{ $root }}{{ $paginator.Next.URL }}' class = ' pager_item pager_next'></a>
+      <a href = '{{ $root }}.{{ $paginator.Next.URL }}' class = ' pager_item pager_next'></a>
     {{ else -}}
       <span class = ' pager_item pager_active pager_next'></span>
     {{ end }}
