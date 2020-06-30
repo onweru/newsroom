@@ -1,6 +1,6 @@
 # Newsroom Theme
 
-This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/). It uses *grid css*, *flexbox* & *vanilla js*.
+This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/). It uses *grid css*, *flexbox* & js (no jQuery, or related libraries).
 
 ![Hugo Newsroom Theme](https://github.com/onweru/newsroom/blob/master/images/screenshot.png)
 
@@ -29,15 +29,15 @@ git submodule add https://github.com/onweru/newsroom.git themes/newsroom
 
 ## Configuration
 
-You can configure the site using as follows:
+You can configure the site as follows:
 
 1. **General Information**
 
-    Use the file `config.toml`.
+    Use `config.toml` file.
 
 2. **menu**, **footer**
 
-    See the **data** files inside the `data/` directory.
+    See the yaml files inside the `data/` directory.
 
 ## Start publishing
 
@@ -61,18 +61,16 @@ Today, operating systems have a system-wide __light ~ dark mode__ switch. Your w
 |--- | ---|
 | ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
 
-Depending on your fancy, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
+If you wish, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
 
 ### I want to use disqus
 
-Some folks may want to use disqus on their site. In fact, there [was an issue](https://github.com/onweru/newsroom/issues/2) for that express purpose.
-
-To enable disqus on your site, simply, add the line below to you `config.toml` file. If you're working off the [exampleSite](https://github.com/onweru/newsroom/tree/master/exampleSite), the line is [already there](https://github.com/onweru/newsroom/blob/ad9b7a9f7ea266b539f846a2f3bdf080e648bb84/exampleSite/config.toml#L15-L16); just uncomment it.
+If you like, you could [use disqus on your site](https://github.com/onweru/newsroom/issues/2). To enable disqus on your site, simply, add the line below to you `config.toml` file. If you're working off the [exampleSite](https://github.com/onweru/newsroom/tree/master/exampleSite), the line is [already there](https://github.com/onweru/newsroom/blob/ad9b7a9f7ea266b539f846a2f3bdf080e648bb84/exampleSite/config.toml#L15-L16); just uncomment it.
 
 ```toml
 disqusShortname = "yourdiscussshortname"
 ```
-> remember to edit the `yourdiscussshortname` appropriately.
+> Remember to edit the `yourdiscussshortname` appropriately.
 
 From your disqus dashboard, set your scripts `color scheme` to __auto__. See screenshot below
 
@@ -80,7 +78,7 @@ From your disqus dashboard, set your scripts `color scheme` to __auto__. See scr
 
 ## Custom Shortcodes
 
-This theme ships with two custom shortcodes (they both use positional parameters):
+This theme ships with __2 custom shortcodes__ (they both use positional parameters):
 
 1. __Video__
     This shortcode can be used to embed a youtube video with custom styling. It takes a solo positional parameter.
