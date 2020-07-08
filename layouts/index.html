@@ -1,12 +1,5 @@
 {{ define "main" }}
-{{- $filteredPosts := .Site.Params.blogDir }}
-{{- $pages := .Pages }}
-{{- if .IsHome }}
-  {{- $pages = .Site.RegularPages }}
-  {{- with $filteredPosts }}
-    {{- $pages = where $.Site.RegularPages "Section" . }}
-  {{- end }}
-{{- end }}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 <div class = 'wrap pt-2 mt-2'>
   {{- $size := .Paginator.PageSize }}
   {{- $scratch := newScratch }}
