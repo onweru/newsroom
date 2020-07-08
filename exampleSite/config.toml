@@ -35,4 +35,5 @@ pygmentsOptions = "linenos=table"
   
   # ga_verify = "" # google verification code e.g 5jb-rxeBfITeJQKOuUss3ud6FPGTxXkCho-ZN5qlrZg
   # twitter = "" # twitter handle e.g @weru
-  # blogDir = "blogFolderName" # uncomment and edit to exclude normal pages ... see issue #57
+  
+  # mainSections = ["blog", "docs"] see https://gohugo.io/functions/where/#mainsections
