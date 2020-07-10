@@ -6,8 +6,8 @@
     return document.createElement(element);
   }
   
-  function elem(selector, parent = document){
-    let elem = parent.querySelector(selector);
+  function elem(selector){
+    let elem = document.querySelector(selector);
     return elem != false ? elem : false;
   }
   
