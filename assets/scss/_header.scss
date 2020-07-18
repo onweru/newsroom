@@ -54,3 +54,19 @@
 .nav-mains a:hover {
   color: #28537d;
 }
+
+@media (max-width: 1170px) {
+  .navbar-left {
+    padding-left: 30px;
+  }
+
+  .navbar-right {
+    padding-right: 31px;
+    padding-bottom: 1px;
+  }
+
+  .nav-mains ul li a {
+    font-size: 0.9375rem;
+  }
+
+}
