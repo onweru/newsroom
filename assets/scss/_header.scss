@@ -1,55 +1,56 @@
 .header-main {
-	width: 100%;
-	border-bottom: 1px solid #cdcdcd;
+  width: 100%;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 .container {
-	max-width: 1140px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	height: 80px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .navbar-left {
-	margin-left: 32px;
-	float: left;
-	width: 25%;
+  padding-left: 15px;
+  padding-top: 9px;
+  float: left;
+  width: 25%;
 }
 
 .navbar-right {
-	margin-right: 32px;
-	width: 75%;
-	float: right;
+  padding-right: 16px;
+  width: 75%;
+  float: right;
 }
 
 
 .nav-mains {
-	padding: 0;
-	border: 0;
+  padding: 0;
+  border: 0;
 }
 
 .nav-mains ul {
-	float: right;
-	white-space: nowrap;
-	list-style: none;
+  float: right;
+  white-space: nowrap;
+  list-style: none;
 }
 
 .nav-mains li {
-	display: inline-block;
-	padding-left: 32px;
+  display: inline-block;
+  padding-left: 32px;
 }
 
 .nav-mains ul li a {
-	font-size: 1rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	color: #262424;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262424;
 }
 
 .nav-mains a:hover {
-	color: #28537d;
+  color: #28537d;
 }
