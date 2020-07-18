@@ -1,8 +1,37 @@
-<header class = 'nav' >
-  <nav class = 'nav-menu'>
-    <a href='{{ absURL "" }}' class = 'nav-brand nav_item'>{{ .Site.Title }}</a>
-    <div class = 'nav_bar-wrap'>
-      <div class = 'nav_bar'></div>
-    </div>
-  </nav>
+<!--
+	<header class = 'nav' >
+	<nav class = 'nav-menu'>
+	<a href='{{ absURL "" }}' class = 'nav-brand nav_item'><img src="{{ .Site.Params.logo }}" width=300px/>{{ .Site.Title }}</a>
+	<div class = 'nav_bar-wrap'>
+	<div class = 'nav_bar'></div>
+	</div>
+	</nav>
+	</header>
+-->
+
+<header id="stick-header" class="header-main">
+	<div class="row r-11  bg-white">
+		<div class="container">
+			<div class="navbar-left">
+				<a href="/">
+					<img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg" alt="QAware" width="168" height="37">
+				</a>
+			</div>
+			<div class="navbar-right">
+				<nav class="nav-mains">
+					<a id="nav-main-mobile" class="nav-icon" href="#">
+						<div class="burger"></div>
+					</a>
+					<ul>
+						{{- range .Site.Data.menu }}
+						<li>
+							<a href = '{{ absURL .url }}' class = 'nav_item'>{{ .item }}</a>
+						</li>
+						{{- end }}
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
 </header>

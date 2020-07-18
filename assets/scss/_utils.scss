@@ -23,14 +23,14 @@
   }
 }
 .wrap{
-  max-width: 1024px;
+  max-width: 1140px;
   &, & {
     padding: 0 25px;
     margin: 0 auto;
   }
 }
 
-@for $i from 1 through 2 {
+@for $i from 1 through 8 {
   $size: $i * 1.5rem;
   $x-size: $size * 0.5; 
   .pt-#{$i} {

@@ -1,4 +1,20 @@
 @font-face {
+  font-family: "Univers LT W02";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Univers Regular'),
+       url("#{$font-path}/47a5b741-405e-4d03-ba4a-e50cc7716ddf.woff") format("woff"),
+}
+
+@font-face {
+  font-family: "Univers LT W02";
+  font-style: normal;
+  font-weight: 700;
+  src: local('Univers Bold'),
+  url("#{$font-path}//3145f7f3-577b-4fc5-b041-fd8a5b0b2d40.woff") format("woff"),
+}
+
+@font-face {
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 400;
