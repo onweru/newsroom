@@ -142,6 +142,15 @@
     .burger::before {
       top: -8px;
     }
+
+    .nav-icon:hover .burger::before {
+      top: -10px;
+    }
+
+    .nav-icon:hover .burger::after{
+      top: 10px;
+    }
+
     .burger::after, .burger::before {
       position: absolute;
       border-radius: 7px;
