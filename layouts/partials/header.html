@@ -14,14 +14,11 @@
 		<div class="container">
 			<div class="navbar-left">
 				<a href="/">
-					<img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg" alt="QAware" width="168" height="37">
+					<img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg" alt="QAware" class="logo">
 				</a>
 			</div>
 			<div class="navbar-right">
 				<nav class="nav-mains">
-					<a id="nav-main-mobile" class="nav-icon" href="#">
-						<div class="burger"></div>
-					</a>
 					<ul>
 						{{- range .Site.Data.menu }}
 						<li>
@@ -30,6 +27,9 @@
 						{{- end }}
 					</ul>
 				</nav>
+				<a id="nav-main-mobile" class="nav-icon" href="#">
+					<div class="burger"></div>
+				</a>
 			</div>
 		</div>
 	</div>

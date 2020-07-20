@@ -21,6 +21,11 @@
   width: 25%;
 }
 
+.logo {
+  width: 168px;
+  height: 37px;
+}
+
 .navbar-right {
   padding-right: 16px;
   width: 75%;
@@ -62,6 +67,13 @@
 
   .navbar-right {
     padding-right: 31px;
+  }
+
+
+}
+
+@media (max-width: 1140px) {
+  .navbar-right {
     padding-bottom: 1px;
   }
 
@@ -69,4 +81,113 @@
     font-size: 0.9375rem;
   }
 
+}
+
+@media (max-width: 1000px) {
+  .navbar-left {
+    padding-bottom: 2px;
+  }
+
+  .logo {
+    width: 123px;
+    height: 27px;
+  }
+
+  .navbar-right {
+    padding-right: 22px;
+    padding-bottom: 2px;
+  }
+
+  .nav-mains ul li a {
+    font-size: 0.875rem;
+  }
+
+  .nav-mains li {
+    padding-left: 14px;
+  }
+
+  .container {
+    height: 60px;
+  }
+
+  @media (max-width: 790px) {
+    .logo {
+      width: 121.6px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .navbar-left {
+      padding-left: 15px;
+    }
+
+    .logo {
+      width: 123px;
+    }
+    .nav-mains {
+      visibility: hidden;
+    }
+
+    .burger {
+      position: relative;
+      margin: 8px auto 0;
+      border-radius: 7px;
+    }
+    .burger, .burger::after, .burger::before {
+      width: 24px;
+      height: 4px;
+      background: #262424;
+      transition: all,.3s;
+    }
+    .burger::before {
+      top: -8px;
+    }
+    .burger::after, .burger::before {
+      position: absolute;
+      border-radius: 7px;
+    }
+    .burger::after {
+      top: 8px;
+    }
+    .burger::after, .burger::before {
+      content: "";
+    }
+
+    .nav-icon {
+      float: right;
+      padding-bottom: 30px;
+      padding-right: 1px;
+    }
+  }
+  @media (max-width: 720px) {
+    .navbar-left {
+      padding-left: 21.5px;
+    }
+    .nav-icon {
+      padding-right: 7.5px;
+    }
+  }
+  @media (max-width: 710px) {
+    .navbar-left {
+      width: 75%;
+      padding-left: 3%;
+    }
+    .navbar-right {
+      width: 25%;
+      padding-right: 4.15%;
+    }
+    .nav-icon {
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 682px) {
+    .navbar-right {
+      width: 25%;
+      padding-right: 3%;
+    }
+    .nav-icon {
+      padding-right: 8px;
+    }
+  }
 }
