@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-<div class = 'wrap pt-2 mt-1'>
+<div class = 'wrap pt-2 mt-3'>
   {{- $size := .Paginator.PageSize }}
   {{- $scratch := newScratch }}
   {{- range $index, $value := (.Paginate $pages).Pages }}

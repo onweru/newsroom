@@ -1,6 +1,9 @@
 .header-main {
   width: 100%;
   border-bottom: 1px solid #cdcdcd;
+  position: fixed;
+  z-index: 2000;
+  background: #ffffff;
 }
 
 .container {
@@ -168,6 +171,7 @@
       padding-right: 1px;
     }
   }
+
   @media (max-width: 720px) {
     .navbar-left {
       padding-left: 21.5px;
