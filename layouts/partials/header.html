@@ -33,6 +33,14 @@
 				</a>
 			</div>
 		</div>
+		<div id="mobile-menu" class="mobile-menu hidden">
+			<ul>
+				{{- range .Site.Data.menu }}
+				<li>
+					<a href = '{{ absURL .url }}' >{{ .item }}</a>
+				</li>
+				{{- end }}
+			</ul>
+		</div>
 	</div>
-
 </header>

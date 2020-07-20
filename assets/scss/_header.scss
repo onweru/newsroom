@@ -63,6 +63,16 @@
   color: #28537d;
 }
 
+.mobile-menu {
+  padding-bottom: 15px;
+  visibility: visible;
+}
+
+.mobile-menu .hidden {
+  display: none;
+  visibility:hidden;
+}
+
 @media (max-width: 1170px) {
   .navbar-left {
     padding-left: 30px;
@@ -158,9 +168,11 @@
       position: absolute;
       border-radius: 7px;
     }
+
     .burger::after {
       top: 8px;
     }
+
     .burger::after, .burger::before {
       content: "";
     }
@@ -169,6 +181,15 @@
       float: right;
       padding-bottom: 30px;
       padding-right: 1px;
+    }
+
+    .mobile-menu li {
+      font-size: .875rem;
+      padding: 10.5px 20.5px;
+      display: block;
+      border: 0;
+      font-weight: 700;
+      text-transform: uppercase;
     }
   }
 
