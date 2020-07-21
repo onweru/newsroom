@@ -164,6 +164,10 @@
       margin: 8px auto 0;
       border-radius: 7px;
     }
+
+    .burger a, a:active, a:focus{
+      outline: none;
+    }
     .burger, .burger::after, .burger::before {
       width: 24px;
       height: 4px;
