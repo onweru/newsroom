@@ -20,11 +20,18 @@
 			<div class="navbar-right">
 				<nav class="nav-mains">
 					<ul>
-						{{- range .Site.Data.menu }}
+						{{ range .Site.Data.menu }}
 						<li>
 							<a href = '{{ absURL .url }}' class = 'nav_item'>{{ .item }}</a>
+							{{ with .subitems }}
+							<ul>
+								{{ range .}}
+								<li><a href = "{{ absURL .url }}">{{ .item }}</a></li>
+                                {{ end }}
+							</ul>
+							{{ end }}
 						</li>
-						{{- end }}
+						{{ end }}
 					</ul>
 
 				</nav>
