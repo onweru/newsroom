@@ -65,12 +65,30 @@
 
 .mobile-menu {
   padding-bottom: 15px;
-  visibility: visible;
+  overflow-y: hidden;
+  box-sizing: content-box;
+
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: linear;
+
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: linear;
+
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: linear;
+
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
 }
 
-.mobile-menu .hidden {
-  display: none;
-  visibility:hidden;
+.collapsed {
+  height: 0;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1170px) {

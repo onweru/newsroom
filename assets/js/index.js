@@ -63,6 +63,15 @@
         }
     }
 
+    function getStyleSheet(uniqueTitle) {
+        for (let i=0; i<document.styleSheets.length; i++) {
+            const sheet = document.styleSheets[i];
+            if (sheet.title === uniqueTitle) {
+                return sheet;
+            }
+        }
+    }
+
     (function updateDate() {
         const dateElem = elem('.year')
         if (dateElem) {
@@ -73,9 +82,11 @@
     })();
 
     (function () {
+        let mainStyleSheetTitle = 'templateStyle';
         let navIcon = 'nav-main-mobile';
-        let mobileMenu = document.getElementById('mobile-menu')
-        let hiddenClass = 'hidden'
+        const mobileMenuIdentifier = 'mobile-menu'
+        let mobileMenu = document.getElementById(mobileMenuIdentifier)
+        let hiddenClass = 'collapsed'
 
         function toggleMobileMenu() {
             modifyClass(mobileMenu, hiddenClass)
@@ -84,6 +95,16 @@
         document.getElementById(navIcon).addEventListener('click', function () {
             toggleMobileMenu();
         })
+
+        const styleSheet = getStyleSheet(mainStyleSheetTitle);
+        if (!styleSheet) {
+            console.error("Could not find style sheet. Mobile menu might not work.");
+            return;
+        }
+        const entriesHeight = document.getElementById(mobileMenuIdentifier).scrollHeight;
+        const menuHeightRule = "." + mobileMenuIdentifier + " { height: " + entriesHeight + "px; }";
+        styleSheet.insertRule(menuHeightRule,0);
+
     })();
 
     (function () {
