@@ -10,44 +10,46 @@
 -->
 
 <header id="stick-header" class="header-main">
-	<div class="row r-11  bg-white">
-		<div class="container">
-			<div class="navbar-left">
-				<a href="/">
-					<img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg" alt="QAware" class="logo">
-				</a>
-			</div>
-			<div class="navbar-right">
-				<nav class="nav-mains">
-					<ul>
-						{{ range .Site.Data.menu }}
-						<li>
-							<a href = '{{ absURL .url }}' class = 'nav_item'>{{ .item }}</a>
-							{{ with .subitems }}
-							<ul>
-								{{ range .}}
-								<li><a href = "{{ absURL .url }}">{{ .item }}</a></li>
+    <div class="row r-11  bg-white">
+        <div class="container">
+            <div class="navbar-left">
+                <a href="/">
+                    <img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg"
+                         alt="QAware" class="logo">
+                </a>
+            </div>
+            <div class="navbar-right">
+                <nav class="nav-mains">
+                    <ul>
+                        {{ range .Site.Data.menu }}
+                        <li>
+                            <a href='{{ absURL .url }}' class='nav_item'>{{ .item }}</a>
+                            {{ with .subitems }}
+                            <ul>
+                                {{ range .}}
+                                <li><a href="{{ absURL .url }}">{{ .item }}</a></li>
                                 {{ end }}
-							</ul>
-							{{ end }}
-						</li>
-						{{ end }}
-					</ul>
-
-				</nav>
-				<a id="nav-main-mobile" class="nav-icon" href="#">
-					<div class="burger"></div>
-				</a>
-			</div>
-		</div>
-		<div id="mobile-menu" class="mobile-menu collapsed">
-			<ul>
-				{{- range .Site.Data.menu }}
-				<li>
-					<a href = '{{ absURL .url }}' >{{ .item }}</a>
-				</li>
-				{{- end }}
-			</ul>
-		</div>
-	</div>
+                            </ul>
+                            {{ end }}
+                        </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+                <a id="nav-main-mobile" class="nav-icon" href="#">
+                    <div class="burger"></div>
+                </a>
+            </div>
+        </div>
+            <div id="mobile-menu" class="mobile-menu collapsed">
+                <nav>
+                <ul>
+                    {{- range .Site.Data.menu }}
+                    <li>
+                        <a href='{{ absURL .url }}'>{{ .item }}</a>
+                    </li>
+                    {{- end }}
+                </ul>
+                </nav>
+            </div>
+    </div>
 </header>

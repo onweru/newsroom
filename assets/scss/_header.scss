@@ -61,6 +61,7 @@
   line-height: 80px;
   text-transform: uppercase;
   color: #262424;
+  transition: opacity .5s ease-in-out;
 }
 
 .nav-mains ul ul {
@@ -90,6 +91,14 @@
   visibility: visible;
   opacity: 1;
   display:block;
+}
+
+nav:hover a {
+  opacity: .5;
+}
+
+nav li a:hover {
+  opacity: 1;
 }
 
 .nav-mains ul li ul li {
@@ -150,21 +159,17 @@
 @media (max-width: 1140px) {
   .nav-mains ul li a {
     font-size: 0.9375rem;
-    line-height: 60px;
-    padding-left: 7px;
-    padding-right: 7px;
   }
 
-  .nav-mains ul {
-    height: 60px;
-  }
-
-  .nav-mains li {
-    height: 60px;
-  }
 }
 
 @media (max-width: 1000px) {
+  .nav-mains ul li a {
+    padding-left: 7px;
+    padding-right: 7px;
+    line-height: 60px;
+  }
+
   .navbar-left {
     padding-bottom: 2px;
   }
@@ -178,7 +183,13 @@
     font-size: 0.875rem;
   }
 
+  .nav-mains ul {
+    height: 60px;
+  }
+
+
   .nav-mains li {
+    height: 60px;
     padding-left: 0;
   }
 
