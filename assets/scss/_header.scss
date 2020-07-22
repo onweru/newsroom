@@ -29,7 +29,7 @@
   height: 37px;
 }
 
-.navbar-right {
+.main-header-nav-items {
   width: 75%;
   float: right;
 }
@@ -183,7 +183,7 @@ nav ul li ul li li a:hover {
     padding-left: 30px;
   }
 
-  .navbar-right {
+  .main-header-nav-items {
     padding-right: 15px;
   }
 }
@@ -336,7 +336,7 @@ nav ul li ul li li a:hover {
       width: 75%;
       padding-left: 3%;
     }
-    .navbar-right {
+    .main-header-nav-items {
       width: 25%;
       padding-right: 4.15%;
     }
@@ -346,7 +346,7 @@ nav ul li ul li li a:hover {
   }
 
   @media (max-width: 682px) {
-    .navbar-right {
+    .main-header-nav-items {
       width: 25%;
       padding-right: 3%;
     }
