@@ -90,7 +90,7 @@
 .nav-mains ul li:hover > ul, ul li ul:hover {
   visibility: visible;
   opacity: 1;
-  display:block;
+  display: block;
 }
 
 nav:hover a {
@@ -242,15 +242,34 @@ nav li a:hover {
       border-radius: 7px;
     }
 
-    .burger a, a:active, a:focus{
+    .nav-icon.open .burger {
+      background: 0 0;
+    }
+
+    .burger a, a:active, a:focus {
       outline: none;
     }
     .burger, .burger::after, .burger::before {
       width: 24px;
       height: 4px;
       background: #262424;
-      transition: all,.3s;
+      transition: all, .3s;
     }
+
+    .nav-icon.open .burger::before {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+
+    .nav-icon.open .burger::after {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0px;
+    }
+
     .burger::before {
       top: -8px;
     }
@@ -259,8 +278,16 @@ nav li a:hover {
       top: -10px;
     }
 
-    .nav-icon:hover .burger::after{
+    .nav-icon:hover .burger::after {
       top: 10px;
+    }
+
+    .nav-icon.open:hover .burger::before {
+      top: 0;
+    }
+
+    .nav-icon.open:hover .burger::after {
+      top:0;
     }
 
     .burger::after, .burger::before {

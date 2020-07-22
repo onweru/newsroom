@@ -83,16 +83,19 @@
 
     (function () {
         let mainStyleSheetTitle = 'templateStyle';
-        let navIcon = 'nav-main-mobile';
-        const mobileMenuIdentifier = 'mobile-menu'
+        let navIconIdentifier = 'nav-main-mobile';
+        const mobileMenuIdentifier = 'mobile-menu';
+        const navIcon = document.getElementById(navIconIdentifier);
         let mobileMenu = document.getElementById(mobileMenuIdentifier)
         let hiddenClass = 'collapsed'
+        let openClass = 'open'
 
         function toggleMobileMenu() {
             modifyClass(mobileMenu, hiddenClass)
+            modifyClass(navIcon, openClass)
         }
 
-        document.getElementById(navIcon).addEventListener('click', function () {
+        navIcon.addEventListener('click', function () {
             toggleMobileMenu();
         })
 
