@@ -1,4 +1,4 @@
-.header-main {
+.header {
   width: 100%;
   position: fixed;
   z-index: 2000;
@@ -6,7 +6,7 @@
   border-bottom: 1px solid #cdcdcd;
 }
 
-.container {
+.main-header {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
@@ -225,7 +225,7 @@ nav ul li ul li li a:hover {
     padding-left: 0;
   }
 
-  .container {
+  .main-header {
     height: 60px;
   }
 
