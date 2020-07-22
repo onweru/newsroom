@@ -308,6 +308,14 @@
     }
   }
   
+  (function lazyLoadImages() {
+     const images = elems('img);
+     images.forEach(function(image){
+       // supported natively by most modern browsers. 
+       image.loading = "lazy";
+     });
+  })();
+  
   function setUserColorMode(mode = false) {
     const isDarkMode = currentMode() == dark;
     const storedMode = bank.getItem(storageKey);
