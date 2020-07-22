@@ -148,11 +148,16 @@ nav li a:hover {
 
 .mobile-menu li {
   font-size: .875rem;
-  padding: 10.5px 15px;
+  padding: 0;
   display: block;
   border: 0;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.mobile-menu a {
+  padding: 10.5px 15px;
+  display: block;
 }
 
 .collapsed {
@@ -212,6 +217,9 @@ nav li a:hover {
   }
 
   @media (max-width: 780px) {
+    .nav-mains ul {
+      height: 0;
+    }
     .navbar-left {
       padding-left: 15px;
     }
@@ -265,7 +273,7 @@ nav li a:hover {
 
     .nav-icon {
       float: right;
-      padding-bottom: 68px;
+      padding-bottom: 8px;
       padding-right: 8px;
     }
 
