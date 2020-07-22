@@ -29,7 +29,7 @@ header {
   height: 37px;
 }
 
-.main-header-nav-items {
+#main-header-nav-items-container {
   width: 75%;
   float: right;
 }
@@ -183,7 +183,7 @@ nav ul li ul li li a:hover {
     padding-left: 30px;
   }
 
-  .main-header-nav-items {
+  #main-header-nav-items-container {
     padding-right: 15px;
   }
 }
@@ -336,7 +336,7 @@ nav ul li ul li li a:hover {
       width: 75%;
       padding-left: 3%;
     }
-    .main-header-nav-items {
+    #main-header-nav-items-container {
       width: 25%;
       padding-right: 4.15%;
     }
@@ -346,7 +346,7 @@ nav ul li ul li li a:hover {
   }
 
   @media (max-width: 682px) {
-    .main-header-nav-items {
+    #main-header-nav-items-container {
       width: 25%;
       padding-right: 3%;
     }
