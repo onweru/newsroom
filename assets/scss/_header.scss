@@ -35,24 +35,24 @@
 }
 
 
-.main-nav {
+#main-nav {
   padding: 0;
   border: 0;
 }
 
-.main-nav ul {
+#main-nav ul {
   float: right;
   white-space: nowrap;
   list-style: none;
   height: 80px;
 }
 
-.main-nav li {
+#main-nav li {
   display: inline-block;
   height: 80px;
 }
 
-.main-nav ul li a {
+#main-nav ul li a {
   padding-left: 16px;
   padding-right: 16px;
   display: block;
@@ -64,7 +64,7 @@
   transition: opacity .5s ease-in-out;
 }
 
-.main-nav ul ul {
+#main-nav ul ul {
   box-sizing: content-box;
   position: absolute;
   background: rgba(245, 245, 245, .9);
@@ -79,7 +79,7 @@
   border-bottom: 1px solid #cdcdcd;
 }
 
-.main-nav ul li ul {
+#main-nav ul li ul {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -87,7 +87,7 @@
   height: unset;
 }
 
-.main-nav ul li:hover > ul, ul li ul:hover {
+#main-nav ul li:hover > ul, ul li ul:hover {
   visibility: visible;
   opacity: 1;
   display: block;
@@ -109,7 +109,7 @@ nav ul li ul li li a:hover {
   opacity: 1;
 }
 
-.main-nav ul li ul li {
+#main-nav ul li ul li {
   clear: both;
   width: 100%;
   display: block;
@@ -117,12 +117,12 @@ nav ul li ul li li a:hover {
   padding-left: 0;
 }
 
-.main-nav ul li ul li a {
+#main-nav ul li ul li a {
   line-height: 28.8px;
   text-transform: unset;
 }
 
-.main-nav a:hover {
+#main-nav a:hover {
   color: #28537d;
 }
 
@@ -189,14 +189,14 @@ nav ul li ul li li a:hover {
 }
 
 @media (max-width: 1140px) {
-  .main-nav ul li a {
+  #main-nav ul li a {
     font-size: 0.9375rem;
   }
 
 }
 
 @media (max-width: 1000px) {
-  .main-nav ul li a {
+  #main-nav ul li a {
     padding-left: 7px;
     padding-right: 7px;
     line-height: 60px;
@@ -211,16 +211,16 @@ nav ul li ul li li a:hover {
     height: 27px;
   }
 
-  .main-nav ul li a {
+  #main-nav ul li a {
     font-size: 0.875rem;
   }
 
-  .main-nav ul {
+  #main-nav ul {
     height: 60px;
   }
 
 
-  .main-nav li {
+  #main-nav li {
     height: 60px;
     padding-left: 0;
   }
@@ -230,7 +230,7 @@ nav ul li ul li li a:hover {
   }
 
   @media (max-width: 780px) {
-    .main-nav ul {
+    #main-nav ul {
       height: 0;
     }
     .main-header-logo {
@@ -240,7 +240,7 @@ nav ul li ul li li a:hover {
     .main-header-logo-img {
       width: 123px;
     }
-    .main-nav {
+    #main-nav {
       visibility: hidden;
     }
 
@@ -295,7 +295,7 @@ nav ul li ul li li a:hover {
     }
 
     #mobile-nav-icon-link.open:hover #mobile-nav-icon::after {
-      top:0;
+      top: 0;
     }
 
     #mobile-nav-icon::after, #mobile-nav-icon::before {

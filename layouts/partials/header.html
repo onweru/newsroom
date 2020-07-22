@@ -5,11 +5,11 @@
                  alt="QAware" class="main-header-logo-img">
         </a>
         <div class="main-header-nav-items">
-            <nav class="main-nav">
+            <nav id="main-nav">
                 <ul>
                     {{ range .Site.Data.menu }}
                     <li>
-                        <a href='{{ absURL .url }}' class='nav_item'>{{ .item }}</a>
+                        <a href='{{ absURL .url }}'>{{ .item }}</a>
                         {{ with .subitems }}
                         <ul>
                             {{ range .}}
@@ -27,14 +27,17 @@
         </div>
     </div>
     <div class="mobile-nav-dropdown">
-            <nav id="mobile-nav" class="mobile-nav collapsed">
-                <ul>
-                    {{- range .Site.Data.menu }}
-                    <li>
-                        <a href='{{ absURL .url }}'>{{ .item }}</a>
-                    </li>
-                    {{- end }}
-                </ul>
-            </nav>
-        </div>
+        <!-- The properties of mobile-nav must be defined as a class
+        since we need to make the height property overridable by the
+        collapsed class -->
+        <nav id="mobile-nav" class="mobile-nav collapsed">
+            <ul>
+                {{- range .Site.Data.menu }}
+                <li>
+                    <a href='{{ absURL .url }}'>{{ .item }}</a>
+                </li>
+                {{- end }}
+            </ul>
+        </nav>
+    </div>
 </header>
