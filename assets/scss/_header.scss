@@ -118,6 +118,10 @@ nav li a:hover {
   color: #28537d;
 }
 
+.mobile-menu a:hover {
+  color: #28537d;
+}
+
 .mobile-menu {
   padding-bottom: 15px;
   overflow-y: hidden;
@@ -156,8 +160,9 @@ nav li a:hover {
 }
 
 .mobile-menu a {
-  padding: 10.5px 15px;
+  padding: 10.5px 3%;
   display: block;
+  transition: opacity .5s ease-in-out;
 }
 
 .collapsed {
