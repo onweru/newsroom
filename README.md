@@ -11,6 +11,7 @@ This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom pag
 * Responsive
 * Deeplinks
 * Dark Mode
+* Supports native lazy loading of images
 * Syntax highlighting 
 
 ### Deeplinks
