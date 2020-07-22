@@ -6,14 +6,14 @@
         </a>
         <div id="main-header-nav-items-container">
             <nav id="main-nav">
-                <ul>
+                <ul class="main-nav-menu">
                     {{ range .Site.Data.menu }}
-                    <li>
-                        <a href='{{ absURL .url }}'>{{ .item }}</a>
+                    <li class="main-nav-menu">
+                        <a href='{{ absURL .url }}' class="main-nav-menu">{{ .item }}</a>
                         {{ with .subitems }}
-                        <ul>
+                        <ul class="main-nav-sub-menu">
                             {{ range .}}
-                            <li><a href="{{ absURL .url }}">{{ .item }}</a></li>
+                            <li class="main-nav-sub-menu"><a href="{{ absURL .url }}" class="main-nav-sub-menu">{{ .item }}</a></li>
                             {{ end }}
                         </ul>
                         {{ end }}
@@ -26,7 +26,7 @@
             </a>
         </div>
     </div>
-    <div class="mobile-nav-dropdown">
+    <div id="mobile-nav-dropdown">
         <!-- The properties of mobile-nav must be defined as a class
         since we need to make the height property overridable by the
         collapsed class -->

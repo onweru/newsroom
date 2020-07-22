@@ -153,7 +153,7 @@ nav ul li ul li li a:hover {
   transition-delay: 0s;
 }
 
-.mobile-nav-dropdown {
+#mobile-nav-dropdown {
   height: 0;
   overflow-y: hidden;
 }
@@ -317,7 +317,7 @@ nav ul li ul li li a:hover {
       padding-right: 8px;
     }
 
-    .mobile-nav-dropdown {
+    #mobile-nav-dropdown {
       height: unset;
     }
 
