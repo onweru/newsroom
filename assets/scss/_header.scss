@@ -126,11 +126,11 @@ nav ul li ul li li a:hover {
   color: #28537d;
 }
 
-.mobile-menu a:hover {
+.mobile-nav a:hover {
   color: #28537d;
 }
 
-.mobile-menu {
+.mobile-nav {
   padding-bottom: 15px;
   overflow-y: hidden;
   box-sizing: content-box;
@@ -158,7 +158,7 @@ nav ul li ul li li a:hover {
   overflow-y: hidden;
 }
 
-.mobile-menu li {
+.mobile-nav li {
   font-size: .875rem;
   padding: 0;
   display: block;
@@ -167,7 +167,7 @@ nav ul li ul li li a:hover {
   text-transform: uppercase;
 }
 
-.mobile-menu a {
+.mobile-nav a {
   padding: 10.5px 3%;
   display: block;
   transition: opacity .5s ease-in-out;

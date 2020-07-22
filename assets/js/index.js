@@ -84,7 +84,8 @@
     (function () {
         let mainStyleSheetTitle = 'templateStyle';
         let navIconIdentifier = 'nav-main-mobile';
-        const mobileMenuIdentifier = 'mobile-menu';
+        const mobileMenuIdentifier = 'mobile-nav';
+        const mobileMenuClass = 'mobile-nav';
         const navIcon = document.getElementById(navIconIdentifier);
         let mobileMenu = document.getElementById(mobileMenuIdentifier)
         let hiddenClass = 'collapsed'
@@ -105,7 +106,7 @@
             return;
         }
         const entriesHeight = document.getElementById(mobileMenuIdentifier).scrollHeight;
-        const menuHeightRule = "." + mobileMenuIdentifier + " { height: " + entriesHeight + "px; }";
+        const menuHeightRule = "." + mobileMenuClass + " { height: " + entriesHeight + "px; }";
         styleSheet.insertRule(menuHeightRule,0);
 
     })();
