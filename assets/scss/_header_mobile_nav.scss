@@ -1,0 +1,149 @@
+.mobile-nav a:hover {
+  color: #28537d;
+}
+
+.mobile-nav {
+  padding-bottom: 15px;
+  overflow-y: hidden;
+  box-sizing: content-box;
+
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: linear;
+
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: linear;
+
+  -ms-transition-property: all;
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: linear;
+
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+
+#mobile-nav-dropdown {
+  height: 0;
+  overflow-y: hidden;
+}
+
+.mobile-nav li {
+  font-size: .875rem;
+  padding: 0;
+  display: block;
+  border: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mobile-nav a {
+  padding: 10.5px 3%;
+  display: block;
+  transition: opacity .5s ease-in-out;
+}
+
+.collapsed {
+  height: 0;
+  padding-bottom: 0;
+}
+
+
+@media (max-width: 780px) {
+  #mobile-nav-icon {
+    position: relative;
+    margin: 8px auto 0;
+    border-radius: 7px;
+  }
+
+  #mobile-nav-icon-link.open #mobile-nav-icon {
+    background: 0 0;
+  }
+
+  #mobile-nav-icon a, a:active, a:focus {
+    outline: none;
+  }
+  #mobile-nav-icon, #mobile-nav-icon::after, #mobile-nav-icon::before {
+    width: 24px;
+    height: 4px;
+    background: #262424;
+    transition: all, .3s;
+  }
+
+  #mobile-nav-icon-link.open #mobile-nav-icon::before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+
+  #mobile-nav-icon-link.open #mobile-nav-icon::after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0px;
+  }
+
+  #mobile-nav-icon::before {
+    top: -8px;
+  }
+
+  #mobile-nav-icon-link:hover #mobile-nav-icon::before {
+    top: -10px;
+  }
+
+  #mobile-nav-icon-link:hover #mobile-nav-icon::after {
+    top: 10px;
+  }
+
+  #mobile-nav-icon-link.open:hover #mobile-nav-icon::before {
+    top: 0;
+  }
+
+  #mobile-nav-icon-link.open:hover #mobile-nav-icon::after {
+    top: 0;
+  }
+
+  #mobile-nav-icon::after, #mobile-nav-icon::before {
+    position: absolute;
+    border-radius: 7px;
+  }
+
+  #mobile-nav-icon::after {
+    top: 8px;
+  }
+
+  #mobile-nav-icon::after, #mobile-nav-icon::before {
+    content: "";
+  }
+
+  #mobile-nav-icon-link {
+    float: right;
+    padding-bottom: 8px;
+    padding-right: 8px;
+  }
+
+  #mobile-nav-dropdown {
+    height: unset;
+  }
+}
+
+@media (max-width: 720px) {
+  #mobile-nav-icon-link {
+    padding-right: 7.5px;
+  }
+}
+
+@media (max-width: 710px) {
+  #mobile-nav-icon-link {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 682px) {
+  #mobile-nav-icon-link {
+    padding-right: 8px;
+  }
+}

@@ -1,0 +1,114 @@
+#main-nav {
+  padding: 0;
+  border: 0;
+}
+
+#main-nav ul {
+  float: right;
+  white-space: nowrap;
+  list-style: none;
+  height: 80px;
+}
+
+#main-nav li {
+  display: inline-block;
+  height: 80px;
+}
+
+#main-nav ul li a {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 80px;
+  text-transform: uppercase;
+  color: #262424;
+  transition: opacity .5s ease-in-out;
+}
+
+#main-nav ul ul {
+  box-sizing: content-box;
+  position: absolute;
+  background: rgba(245, 245, 245, .9);
+  height: auto;
+  min-width: 148px;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+#main-nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  height: unset;
+}
+
+#main-nav ul li:hover > ul, ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+#main-nav ul li ul li {
+  clear: both;
+  width: 100%;
+  display: block;
+  height: unset;
+  padding-left: 0;
+}
+
+#main-nav ul li ul li a {
+  line-height: 28.8px;
+  text-transform: unset;
+}
+
+#main-nav a:hover {
+  color: #28537d;
+}
+
+@media (max-width: 1140px) {
+  #main-nav ul li a {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  #main-nav ul li a {
+    padding-left: 7px;
+    padding-right: 7px;
+    line-height: 60px;
+  }
+  #main-nav ul li a {
+    font-size: 0.875rem;
+  }
+
+  #main-nav ul {
+    height: 60px;
+  }
+
+
+  #main-nav li {
+    height: 60px;
+    padding-left: 0;
+  }
+
+}
+
+@media (max-width: 780px) {
+  #main-nav ul {
+    height: 0;
+  }
+
+  #main-nav {
+    visibility: hidden;
+  }
+}
+
+
