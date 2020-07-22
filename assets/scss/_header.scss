@@ -101,6 +101,14 @@ nav li a:hover {
   opacity: 1;
 }
 
+nav:hover ul li ul li a {
+  opacity: unset;
+}
+
+nav ul li ul li li a:hover {
+  opacity: 1;
+}
+
 .nav-mains ul li ul li {
   clear: both;
   width: 100%;
