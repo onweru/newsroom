@@ -141,6 +141,20 @@ nav li a:hover {
   transition-delay: 0s;
 }
 
+.mobile-container {
+  height: 0;
+  overflow-y: hidden;
+}
+
+.mobile-menu li {
+  font-size: .875rem;
+  padding: 10.5px 15px;
+  display: block;
+  border: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .collapsed {
   height: 0;
   padding-bottom: 0;
@@ -255,14 +269,10 @@ nav li a:hover {
       padding-right: 8px;
     }
 
-    .mobile-menu li {
-      font-size: .875rem;
-      padding: 10.5px 15px;
-      display: block;
-      border: 0;
-      font-weight: 700;
-      text-transform: uppercase;
+    .mobile-container {
+      height: unset;
     }
+
   }
 
   @media (max-width: 720px) {
