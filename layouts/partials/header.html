@@ -1,36 +1,34 @@
 <header class="header">
-        <div class="main-header">
-            <div class="navbar-left">
-                <a href="/">
-                    <img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg"
-                         alt="QAware" class="logo">
-                </a>
-            </div>
-            <div class="navbar-right">
-                <nav class="nav-mains">
-                    <ul>
-                        {{ range .Site.Data.menu }}
-                        <li>
-                            <a href='{{ absURL .url }}' class='nav_item'>{{ .item }}</a>
-                            {{ with .subitems }}
-                            <ul>
-                                {{ range .}}
-                                <li><a href="{{ absURL .url }}">{{ .item }}</a></li>
-                                {{ end }}
-                            </ul>
+    <div class="main-header">
+        <a href="/" class="main-header-logo">
+            <img src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware.svg"
+                 alt="QAware" class="main-header-logo-img">
+        </a>
+        <div class="navbar-right">
+            <nav class="nav-mains">
+                <ul>
+                    {{ range .Site.Data.menu }}
+                    <li>
+                        <a href='{{ absURL .url }}' class='nav_item'>{{ .item }}</a>
+                        {{ with .subitems }}
+                        <ul>
+                            {{ range .}}
+                            <li><a href="{{ absURL .url }}">{{ .item }}</a></li>
                             {{ end }}
-                        </li>
+                        </ul>
                         {{ end }}
-                    </ul>
-                </nav>
-                <a id="nav-main-mobile" class="nav-icon" href="#">
-                    <div class="burger"></div>
-                </a>
-            </div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
+            <a id="nav-main-mobile" class="nav-icon" href="#">
+                <div class="burger"></div>
+            </a>
         </div>
-        <div class="mobile-container">
-            <div id="mobile-menu" class="mobile-menu collapsed">
-                <nav>
+    </div>
+    <div class="mobile-container">
+        <div id="mobile-menu" class="mobile-menu collapsed">
+            <nav>
                 <ul>
                     {{- range .Site.Data.menu }}
                     <li>
@@ -38,7 +36,7 @@
                     </li>
                     {{- end }}
                 </ul>
-                </nav>
-            </div>
+            </nav>
         </div>
+    </div>
 </header>
