@@ -83,7 +83,7 @@
 
     (function () {
         let mainStyleSheetTitle = 'templateStyle';
-        let navIconIdentifier = 'nav-main-mobile';
+        let navIconIdentifier = 'mobile-nav-icon-link';
         const mobileMenuIdentifier = 'mobile-nav';
         const mobileMenuClass = 'mobile-nav';
         const navIcon = document.getElementById(navIconIdentifier);
