@@ -37,7 +37,6 @@ header {
   float: right;
 }
 
-
 nav:hover a {
   opacity: .5;
 }
@@ -48,10 +47,6 @@ nav li a:hover {
 
 nav:hover ul li ul li a {
   opacity: unset;
-}
-
-nav ul li ul li li a:hover {
-  opacity: 1;
 }
 
 @media (max-width: 1170px) {
