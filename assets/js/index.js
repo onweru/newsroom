@@ -111,43 +111,6 @@
 
     })();
 
-    (function () {
-        let bar = 'nav_bar-wrap';
-        let navBar = elem(`.${bar}`);
-        let nav = elem('.nav-body');
-        let open = 'nav-open';
-        let exit = 'nav-exit';
-        let drop = 'nav-drop';
-        let pop = 'nav-pop';
-        let navDrop = elem(`.${drop}`);
-        let hidden = 'hidden';
-
-        function toggleMenu() {
-            modifyClass(navDrop, pop);
-            modifyClass(navBar, hidden);
-            let menuOpen = containsClass(nav, open);
-            let menuPulled = containsClass(nav, exit);
-
-            let status = menuOpen || menuPulled ? true : false;
-
-            status ? modifyClass(nav, exit) : modifyClass(nav, open);
-            status ? modifyClass(nav, open) : modifyClass(nav, exit);
-        }
-
-        // $('.nav-bar, .nav-close').on('click', () => toggleMenu());
-        navBar.addEventListener('click', function () {
-            toggleMenu();
-        });
-        elem('.nav-close').addEventListener('click', function () {
-            toggleMenu();
-        });
-
-        elem('.nav-drop').addEventListener('click', function (e) {
-            e.target === this ? toggleMenu() : false;
-        });
-
-    })();
-
     (function share() {
         let share = elem('.share');
         let open = 'share-open';
