@@ -45,9 +45,15 @@ nav li a:hover {
   opacity: 1;
 }
 
+nav li:hover a {
+  opacity: 1;
+}
+
 nav:hover ul li ul li a {
   opacity: unset;
 }
+
+// The following media selectors are modeled after the actual QAware website (https://www.qaware.de).
 
 @media (max-width: 1170px) {
   #main-header-logo {
