@@ -19,6 +19,13 @@
         <h3 class = 'article_title'>{{ $value.Title }}</h3>
         <div class = 'article_excerpt {{ if eq $index 0 }} visible {{ end }}'>
         <p>{{ $value.Summary | truncate 100 }}</p>
+          <br/>
+          {{ if gt .ReadingTime 1 }}
+          {{ .Scratch.Set "readingTime" "mins" }}
+          {{ else }}
+          {{ .Scratch.Set "readingTime" "min" }}
+          {{ end }}
+          <p class = 'pale'>({{$value.WordCount}}&nbsp;words | ~{{.ReadingTime}}&nbsp;{{ .Scratch.Get "readingTime" }} &nbsp;read)</p>
         </div>
       </div>
     </a>
