@@ -40,9 +40,11 @@ footer .logo-qaware img {
 footer .nav-social li:first-child {
   margin-left: 0;
 }
+
 footer .nav-social li {
   margin-left: 2.6px;
 }
+
 .footer-links {
   width: 215px;
   margin-top: 25px;
@@ -54,7 +56,7 @@ footer .nav-social li {
   font-size: .875rem;
   color: #fff;
   border: 0;
-  font-family: "Univers LT W02",Helvetica,Arial,sans-serif;
+  font-family: "Univers LT W02", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -77,41 +79,51 @@ footer .nav-social li {
 }
 
 footer .nav-social a {
-    font-size: 29.6px;
+  font-size: 29.6px;
 }
+
 footer a {
   color: #fff;
 }
+
 .icon {
   font-family: Icons;
   line-height: 1;
   font-weight: 400;
   text-transform: none;
 }
+
 .icon-twitter-outline::before {
   content: "\f12d";
 }
+
 .icon-linkedin-outline::before {
   content: "\f12b";
 }
+
 .icon-git-outline::before {
   content: "\f128";
 }
+
 .icon-slideshare-outline::before {
   content: "\f12c";
 }
+
 .icon-youtube-outline::before {
   content: "\f12f";
 }
+
 .e-social li {
   float: left;
 }
+
 .footer-nav > ul > li a, .footer-nav > ul > li span {
-    display: block;
-    padding-bottom: 15px;
-    font-family: "Univers LT W02",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+  display: block;
+  padding-bottom: 15px;
+  font-family: "Univers LT W02", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
+
 .footer-nav > ul > li a, .footer-nav > ul > li span, .nav-main ul li a {
   text-transform: uppercase;
 }
@@ -119,14 +131,16 @@ footer a {
 .footer-nav > ul > li ul li, .footer-nav > ul > li ul li a, .voted-company-of span {
   font-weight: 400;
   color: #fff;
-  font-family: "Univers LT W02",Helvetica,Arial,sans-serif;
+  font-family: "Univers LT W02", Helvetica, Arial, sans-serif;
   line-height: 18px;
   margin-bottom: 3px;
 }
+
 .footer-nav > ul > li ul li, .footer-nav > ul > li ul li a {
   text-transform: none;
   padding: 0;
 }
+
 .footer-nav > ul > li {
   padding-right: 1.3157894737%;
   color: #fff;
@@ -136,4 +150,73 @@ footer a {
 
 .footer-nav > ul {
   display: flex;
+}
+
+@media (max-width: 1170px) {
+  .footer-container {
+    padding-left: 14px;
+    padding-right: 15px;
+  }
+  .footer-links, .nav-social {
+    margin-left: 0.5px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .footer-links, .nav-social {
+    margin-left: 0.5px;
+  }
+  .footer-nav a {
+    font-size: .8125rem;
+    line-height: 24px;
+  }
+
+  .margin {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+}
+
+@media (max-width: 880px) {
+  .nav-area {
+    display: none;
+  }
+  .footer-container {
+    padding-left: 11.5px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 720px) {
+  footer {
+    padding-bottom: 137px;
+  }
+  .footer-container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .margin {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .footer-links a {
+    line-height: 20px;
+    color: #fff;
+    border: 0;
+  }
+  .footer-table {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .footer-links, .nav-social {
+    margin-left: 0;
+  }
+  .e-social {
+    padding-top: 1px;
+  }
 }
