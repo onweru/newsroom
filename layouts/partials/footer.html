@@ -1,7 +1,91 @@
-<footer class = 'footer wrap pale'>
-  <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;{{ .Site.Title }}</p>
-  <p>{{ i18n "designed_by" .Site.Data.designer | safeHTML }}</p>
+<!--<footer class = 'footer wrap pale'>-->
+<!--  <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;{{ .Site.Title }}</p>-->
+<!--  <p>{{ i18n "designed_by" .Site.Data.designer | safeHTML }}</p>-->
+<!--</footer>-->
+<footer>
+    <div class="footer-container">
+        <div class="short-link-area">
+            <div class="margin">
+                <div class="logo-qaware">
+                    <a href="/"><img
+                            src="https://www.qaware.de/typo3conf/ext/s2_qaware_templates/Resources/Public/Images/logo-qaware-white.svg"
+                            alt="QAware" width="195" height="43"></a>
+                </div>
+                <div class="clr"></div>
+
+                <div class="footer-links">
+                    {{ range .Site.Data.footer.links }}
+                    <a href="{{ absURL .url }}" class="foot-single-link">{{ .item }}</a>
+                    {{ end }}
+                    <div class="footer-table">
+                        <a href="{{ absURL .Site.Data.footer.legal_notice.url }}"
+                           class="foot-single-link footer-table-cell">{{ .Site.Data.footer.legal_notice.name }}</a>&nbsp;|&nbsp;
+                        <a href="{{ absURL .Site.Data.footer.privacy.url }}" class="foot-single-link footer-table-cell">{{ .Site.Data.footer.privacy.name }}</a>
+                    </div>
+                </div>
+                <nav class="nav-social">
+                    <ul class="e-social" id="c1375">
+                        {{ if isset .Site.Params "kununu_name" }}
+                        <li>
+                            <a href="http://www.kununu.com/{{ .Site.Params.kununu_name }}" title="Kununu"
+                               target="_blank" class="icon icon-kununu-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "twitter_handle" }}
+                        <li>
+                            <a href="https://www.twitter.com/{{ .Site.Params.twitter_handle }}" title="Twitter"
+                               target="_blank" class="icon icon-twitter-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "linkedin_company" }}
+                        <li>
+                            <a href="https://www.linkedin.com/company/{{ .Site.Params.linkedin_company}}"
+                               title="LinkedIn" target="_blank" class="icon icon-linkedin-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "github_name" }}
+                        <li>
+                            <a href="https://github.com/{{ .Site.Params.github_name }}" title="GitHub" target="_blank"
+                               class="icon icon-git-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "slideshare_name" }}
+                        <li>
+                            <a href="https://www.slideshare.net/{{ .Site.Params.slideshare_name }}" title="SlideShare"
+                               target="_blank" class="icon icon-slideshare-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                        {{ if isset .Site.Params "youtube_channel" }}
+                        <li>
+                            <a href="https://www.youtube.com/channel/{{ .Site.Params.youtube_channel }}" title="Youtube"
+                               target="_blank" class="icon icon-youtube-outline"><span></span></a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </nav>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <nav class="footer-nav nav-area">
+            <ul class="margin">
+                {{ range .Site.Data.footer.bottom_navigation}}
+                <li>
+                    <a href="{{ absURL .url }}">{{ .item }}</a>
+                    {{ with .subitems }}
+                    <ul>
+                        {{ range . }}
+                        <li>
+                            <a href="{{ absURL .url }}">{{ .item }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
 </footer>
 {{ $scriptPath := "js/index.js" }}
 {{ $scripts := resources.Get $scriptPath | resources.ExecuteAsTemplate $scriptPath . | resources.Minify | resources.Fingerprint "sha512" }}
-<script src = '{{ $scripts.Permalink }}'></script>
+<script src='{{ $scripts.Permalink }}'></script>

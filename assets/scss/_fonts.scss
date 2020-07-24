@@ -7,6 +7,15 @@
 }
 
 @font-face {
+  font-family: "Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Icons'),
+  url("#{$font-path}/icons.woff") format("woff"),
+}
+
+
+@font-face {
   font-family: "Univers LT W02";
   font-style: normal;
   font-weight: 700;
