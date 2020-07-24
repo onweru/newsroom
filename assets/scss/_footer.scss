@@ -6,6 +6,10 @@ footer {
   margin-top: 1px;
 }
 
+footer a:hover {
+  opacity: .7;
+}
+
 .footer-container {
   max-width: 1140px;
   display: flex;

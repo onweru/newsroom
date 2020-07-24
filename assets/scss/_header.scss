@@ -37,19 +37,19 @@ header {
   float: right;
 }
 
-nav:hover a {
+header nav:hover a {
   opacity: .5;
 }
 
-nav li a:hover {
+header nav li a:hover {
   opacity: 1;
 }
 
-nav li:hover a {
+header nav li:hover a {
   opacity: 1;
 }
 
-nav:hover ul li ul li a {
+header nav:hover ul li ul li a {
   opacity: unset;
 }
 
