@@ -7,7 +7,8 @@
     {{ if isset .Params "image" }}
       {{ $scratch.Set "image" .Params.image }}
     {{ else }}
-      {{ $scratch.Set "image" "thumbnail.svg" }}
+  {{ $id := (mod (int (delimit (slice "0x" (substr $value.File.UniqueID 0 5)) "" )) 8 )}}
+      {{ $scratch.Set "image" (printf "placeholders/qaw-stage-%d.png" $id) }}
     {{ end }}
     {{ $image := $scratch.Get "image" }}
     {{ $bg := (absURL (printf "images/%s" $image)) }}
