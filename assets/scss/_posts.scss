@@ -1,16 +1,13 @@
 .post{
   margin:0 auto;
   width:100%;
-  p, h1, h2, h3, h4, h5, h6, blockquote, ol, ul, hr, .highlight {
+  p, h1, h2, h3, h4, h5, h6, blockquote, ol, ul, hr, img, .highlight {
     max-width: 840px !important;
     margin-left: auto;
     margin-right: auto;
   }
   img:not(.icon) {
-    @media screen and (min-width: 1025px) {
-      width: 100vw;
-      max-width: 1024px;
-    }
+      display: block;
   }
   h2,h3,h4{
     margin: 0.5rem auto;
@@ -37,7 +34,7 @@
   }
   &_body {
     img {
-      width: 100%;
+      max-width: 100%;
     }
   }
   &_inner {
@@ -132,7 +129,6 @@
     color: var(--light);
   }
   &_thumbnail {
-    width: 100%;
     margin: 0;
   }
   &_nav {
