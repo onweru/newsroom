@@ -1,4 +1,4 @@
-<div class = 'archive wrap mt'>
+<div class = 'archive wrap mt-4'>
   <h1>{{ .Title }}</h1>
   {{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
   {{- range $paginator.Pages }}
