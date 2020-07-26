@@ -7,6 +7,7 @@
     <time class = 'pale'>{{ dateFormat "02. January 2006" . }}</time>
     {{- end -}}
     <h3 class = 'article_title'>{{ .Title }}</h3>
+    <p class="pale">{{ with .Params.Author }}by {{ . }} | {{ end }}{{ .WordCount }} words | ~ {{.ReadingTime }} min read</p>
     {{- with .Summary -}}
     <p>{{ . | truncate 150 }}</p>
     {{- end -}}
