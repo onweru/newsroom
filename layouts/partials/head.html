@@ -1,5 +1,5 @@
 <head>
-  <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+  <title>{{if ne .Page.Title .Site.Title }}{{ with .Title }}{{ . }} - {{ end }}{{ end }}{{ .Site.Title }}</title>
   <meta charset='utf-8'>
   {{- with .Site.Params.ga_verify }}
   <meta name="google-site-verification" content="{{ . }}" />
