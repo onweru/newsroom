@@ -106,7 +106,11 @@
     }
   }
   &_extra {
+    max-width: 840px;
     display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: flex-end;
   }
   &_tag {
@@ -132,7 +136,7 @@
     margin: 0;
   }
   &_nav {
-    max-width: 1140px;
+    max-width: 840px;
     padding: 3rem 1.5rem;
     display: grid;
     margin: 2.25rem auto 1rem;
@@ -158,7 +162,7 @@
   &_next {
     display: inline-grid;
     margin: 0 auto;
-    width: 10rem;
+    width: 12rem;
     grid-template-columns: 1fr 1.33rem;
     &::after {
       content: "";
