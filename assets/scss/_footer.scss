@@ -90,6 +90,17 @@ footer a {
   color: #fff;
 }
 
+
+footer ul{
+  list-style: none;
+  -webkit-padding-start: 0;
+  -moz-padding-start: 0;
+  padding-left: 0;
+}
+footer li {
+  padding-bottom: 0;
+}
+
 // fix for broken anchors due to fixed header
 .footnotes li::before {
   display: block;
