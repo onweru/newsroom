@@ -117,9 +117,13 @@ main{
   flex: 1;
 }
 ul{
-  list-style: none;
-  -webkit-padding-start:0;
-  -moz-padding-start:0;
+  list-style:outside;
+  -webkit-padding-start: 20px;
+  -moz-padding-start: 20px;
+  padding-left: 20px;
+}
+li {
+  padding-bottom: 5px;
 }
 b, strong, em {
   font-weight: 500;

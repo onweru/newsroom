@@ -1,13 +1,17 @@
 .post{
   margin:0 auto;
   width:100%;
-  p, h1, h2, h3, h4, h5, h6, blockquote, ol, ul, hr, img, pre, .highlight {
+  p, h1, h2, h3, h4, h5, h6, blockquote, ol, ul, hr,pre, .highlight {
     max-width: 840px !important;
     margin-left: auto;
     margin-right: auto;
   }
   img:not(.icon) {
-      display: block;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   h2,h3,h4{
     margin: 0.5rem auto;
@@ -38,6 +42,9 @@
     }
   }
   &_inner {
+    max-width: 840px !important;
+    margin-left: auto;
+    margin-right: auto;
     a{
       color: var(--theme);
       transition: all 0.3s;
