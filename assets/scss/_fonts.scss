@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Icons'), url("#{$font-path}/icons.woff") format("woff"),
+}
+
+
+@font-face {
   font-family: "Univers LT W02";
   font-style: normal;
   font-weight: 400;
@@ -7,20 +15,39 @@
 }
 
 @font-face {
-  font-family: "Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: local('Icons'),
-  url("#{$font-path}/icons.woff") format("woff"),
-}
-
-
-@font-face {
   font-family: "Univers LT W02";
   font-style: normal;
   font-weight: 700;
   src: local('Univers Bold'),
-  url("#{$font-path}//3145f7f3-577b-4fc5-b041-fd8a5b0b2d40.woff") format("woff"),
+  url("#{$font-path}/3145f7f3-577b-4fc5-b041-fd8a5b0b2d40.woff") format("woff"),
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: local('Hack'), url('#{$font-path}/hack-regular-subset.woff2?sha=3114f1256') format('woff2'), url('#{$font-path}/hack-regular-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: local('Hack Bold'), url('#{$font-path}/hack-bold-subset.woff2?sha=3114f1256') format('woff2'), url('#{$font-path}/hack-bold-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: local('Hack Italic'), url('#{$font-path}/hack-italic-subset.woff2?sha=3114f1256') format('woff2'), url('#{$font-path}/hack-italic-webfont.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: local('Hack Bold Italic'), url('#{$font-path}/hack-bolditalic-subset.woff2?sha=3114f1256') format('woff2'), url('#{$font-path}/hack-bolditalic-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: italic;
 }
 
 @font-face {
