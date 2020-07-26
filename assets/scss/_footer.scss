@@ -90,6 +90,23 @@ footer a {
   color: #fff;
 }
 
+// fix for broken anchors due to fixed header
+.footnotes li::before {
+  display: block;
+  content: " ";
+  visibility: hidden;
+  margin-top: -80px;
+  height: 80px;
+  pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+  .footnotes li::before {
+    margin-top: -60px;
+    height: 60px;
+  }
+}
+
 .icon {
   font-family: Icons;
   line-height: 1;
