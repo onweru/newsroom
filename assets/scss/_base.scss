@@ -75,20 +75,14 @@ h1,h2,h3,h4,h5{
   margin: 1rem 0;
   color: inherit;
 }
-// fix for broken anchors due to fixed header
-h1::before,h2::before,h3::before,h4::before,h5::before {
-  display: block;
-  content: " ";
-  visibility: hidden;
-  margin-top: -80px;
-  height: 80px;
-  pointer-events: none;
+
+.footnotes li,h1,h2,h3,h4,h5,sup{
+  scroll-margin-top: 80px;
 }
 
 @media (max-width: 1000px) {
-  h1::before,h2::before,h3::before,h4::before,h5::before {
-    margin-top: -60px;
-    height: 60px;
+  .footnotes li,h1,h2,h3,h4,h5,sup{
+    scroll-margin-top: 60px;
   }
 }
 
