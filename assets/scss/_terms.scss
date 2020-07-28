@@ -1,0 +1,27 @@
+.tag-container {
+  column-count: 3;
+}
+@media (max-width: 1000px) {
+  .tag-container {
+    column-count: 2;
+  }
+}
+@media (max-width: 780px){
+  .tag-container{
+    column-count: 1;
+  }
+}
+
+.tag-letter-box {
+  margin-bottom: 45px;
+  break-inside: avoid;
+}
+
+.tag-letter {
+  margin-top:0;
+  margin-bottom: 10px;
+}
+
+ul.tag-list {
+list-style: none;
+}

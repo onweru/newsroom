@@ -1,0 +1,31 @@
+<div class='archive wrap mt-4'>
+    <h1>{{ .Title }}</h1>
+    <div class="tag-container">
+            {{ $pages := .Page.Data.Terms.Alphabetical }}
+        <div class="tag-letter-box">
+            <h2 class="tag-letter">0-9</h2>
+            {{ range (slice "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ) }}
+            {{ $letter := . }}
+            <ul class="tag-list">
+                {{ range $pages }}
+                {{ if hasPrefix (upper .Page.Title) $letter }}
+                <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }} articles)</a> </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+        {{ range (slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" ) }}
+            <div class="tag-letter-box">
+                <h2 class="tag-letter">{{ $letter := . }}{{ $letter }}</h2>
+                <ul class="tag-list">
+                    {{ range $pages }}
+                        {{ if hasPrefix (upper .Page.Title) $letter }}
+                        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }} articles)</a> </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+    </div>
+</div>
