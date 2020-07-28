@@ -25,7 +25,7 @@
 .wrap{
   max-width: 1140px;
   &, & {
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 0 auto;
   }
 }
@@ -88,5 +88,26 @@
   margin-top: 6rem;
   &_title {
     text-align: left;
+  }
+}
+@media (max-width: 1170px){
+  .wrap {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 1000px){
+  .wrap {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 780px){
+  .wrap {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 780px){
+  .wrap {
+    padding: 0 3%;
   }
 }
