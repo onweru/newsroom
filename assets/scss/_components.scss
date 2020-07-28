@@ -84,6 +84,11 @@
     &:not(.center_y) {
       margin-top: -100px;
     }
+    @media screen and (max-width: 1000px){
+      &:not(.center_y) {
+        margin-top: -130px;
+      }
+    }
     @media screen and (min-width: 769px) {
       &.center_y{
         transform: translateX(-3rem);
