@@ -2,8 +2,7 @@
   box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
   overflow: hidden;
   border-radius: 0.5rem;
-  height: 390px;
-  &_title{ 
+  &_title{
     margin: 0;
   }
   &_excerpt{
@@ -100,6 +99,10 @@
   &_hidden {
     display: none;
   }
+}
+
+.article_showcase .article {
+  height: 370px;
 }
 
 .btn{
