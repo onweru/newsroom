@@ -4,7 +4,7 @@
       {{- $date := (dateFormat "02. January 2006" .Date) -}}
       <p class = 'post_date pale'>{{ $date }}</p>
       <h1 class = 'post_title'>{{ .Title }}</h1>
-      <p class = 'pale'>{{ with .Params.Author }}by {{ . }} | {{end}} {{ .WordCount }} words | ~ {{.ReadingTime}} read</p>
+      <p class = 'pale'>{{ with .Params.Author }}by {{ . }} | {{end}} {{ .WordCount }} words | ~ {{.ReadingTime}} min read</p>
       <div class = 'post_body'>
         <div class = 'post_inner'>
         {{ with .Params.image }}
