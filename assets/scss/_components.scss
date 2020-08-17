@@ -1,5 +1,5 @@
 .article{
-  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
+  box-shadow: 0 0 1px rgba(0,0,0,0.33);
   overflow: hidden;
   border-radius: 0.5rem;
   &_title{
@@ -96,7 +96,6 @@
     }
   }
   &:hover{
-    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17);
     a{
       color: initial !important;
     }
