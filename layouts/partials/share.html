@@ -1,5 +1,5 @@
 <div class = 'copy'></div>
 
-<a href="http://twitter.com/share?text=Check out this post on the QAware Engineering Blog about {{ .Title }}&url={{ .Permalink }}&hashtags={{ range .Site.Taxonomies.tags }}{{ replace .Page.Title " " "" }},{{ end }}QAware">Twitter</a>
+<a href="http://twitter.com/share?text=Check out this post on the QAware Engineering Blog about {{ .Title }}&url={{ .Permalink }}&hashtags={{ range .Site.Taxonomies.tags }}{{ replace .Page.Title " " "" }},{{ end }}QAware"><img width="30px" src="{{ absURL "images/twitter.svg" }}"/></a>
 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">Linkedin</a>
 <a href="mailto:?subject={{ .Title }}&amp;body=Hi,%0D%0A%0D%0ACheck out this post on the QAware Engineering Blog: {{ .Permalink }}%0D%0A%0D%0ABest Regards">Mail</a>
