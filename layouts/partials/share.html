@@ -1,5 +1,5 @@
 <div class='share copy'></div>
-<a href="http://twitter.com/share?text=Check out this post on the QAware Engineering Blog about {{ .Title }}&url={{ .Permalink }}&hashtags={{ replace (delimit .Params.tags ",") " " "" }}">
+<a href="http://twitter.com/share?text=Check out this post on the QAware Engineering Blog about {{ .Title }}&url={{ .Permalink }}{{ with .Params.tags }}&hashtags={{ replace (delimit . ",") " " "" }}{{ end }}">
     <div class='share twitter'></div>
 </a>
 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">
