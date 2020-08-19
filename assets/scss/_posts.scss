@@ -7,6 +7,12 @@
     margin-right: auto;
   }
 
+  h2 {
+    position: relative;
+    padding-right: 32px;
+    margin: 0.5rem auto;
+  }
+
   img:not(.icon) {
     display: block;
     max-width: 100%;
@@ -15,7 +21,7 @@
     margin-right: auto;
   }
 
-  h2, h3, h4 {
+  h3, h4 {
     margin: 0.5rem auto;
     text-align: left;
     padding: 5px 0 0 0;
@@ -76,6 +82,11 @@
   }
 
   .icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
     margin-top: 0;
     margin-bottom: 0;
   }
