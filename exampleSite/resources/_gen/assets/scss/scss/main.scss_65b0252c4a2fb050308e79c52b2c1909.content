@@ -3,42 +3,42 @@
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 400;
-  src: local("Metropolis Regular"), local("Metropolis-Regular"), url("http://localhost:56851/fonts/Metropolis-Regular.woff2") format("woff2"), url("http://localhost:56851/fonts/Metropolis-Regular.woff") format("woff");
+  src: local("Metropolis Regular"), local("Metropolis-Regular"), url("http://localhost:1313/fonts/Metropolis-Regular.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 300;
-  src: local("Metropolis Light"), local("Metropolis-Light"), url("http://localhost:56851/fonts/Metropolis-Light.woff2") format("woff2"), url("http://localhost:56851/fonts/Metropolis-Light.woff") format("woff");
+  src: local("Metropolis Light"), local("Metropolis-Light"), url("http://localhost:1313/fonts/Metropolis-Light.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Light.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-style: italic;
   font-weight: 300;
-  src: local("Metropolis Light Italic"), local("Metropolis-LightItalic"), url("http://localhost:56851/fonts/Metropolis-LightItalic.woff2") format("woff2"), url("http://localhost:56851/fonts/Metropolis-LightItalic.woff") format("woff");
+  src: local("Metropolis Light Italic"), local("Metropolis-LightItalic"), url("http://localhost:1313/fonts/Metropolis-LightItalic.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-LightItalic.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-style: normal;
   font-weight: 500;
-  src: local("Metropolis Medium"), local("Metropolis-Medium"), url("http://localhost:56851/fonts/Metropolis-Medium.woff2") format("woff2"), url("http://localhost:56851/fonts/Metropolis-Medium.woff") format("woff");
+  src: local("Metropolis Medium"), local("Metropolis-Medium"), url("http://localhost:1313/fonts/Metropolis-Medium.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Medium.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-style: italic;
   font-weight: 500;
-  src: local("Metropolis Medium Italic"), local("Metropolis-MediumItalic"), url("http://localhost:56851/fonts/Metropolis-MediumItalic.woff2") format("woff2"), url("http://localhost:56851/fonts/Metropolis-MediumItalic.woff") format("woff");
+  src: local("Metropolis Medium Italic"), local("Metropolis-MediumItalic"), url("http://localhost:1313/fonts/Metropolis-MediumItalic.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-MediumItalic.woff") format("woff");
 }
 
 @font-face {
   font-family: 'Cookie';
   font-style: normal;
   font-weight: 400;
-  src: local("Cookie-Regular"), url("http://localhost:56851/fonts/cookie-v10-latin-regular.woff2") format("woff2"), url("http://localhost:56851/fonts/cookie-v10-latin-regular.woff") format("woff");
+  src: local("Cookie-Regular"), url("http://localhost:1313/fonts/cookie-v10-latin-regular.woff2") format("woff2"), url("http://localhost:1313/fonts/cookie-v10-latin-regular.woff") format("woff");
 }
 
 :root {
@@ -458,7 +458,7 @@ aside h3 {
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url(http://localhost:56851/images/icons/copy.svg);
+  background-image: url(http://localhost:1313/images/icons/copy.svg);
   background-size: 100%;
   cursor: pointer;
 }
@@ -919,7 +919,7 @@ aside h3 {
 
 .post_next::after {
   content: "";
-  background-image: url("http://localhost:56851/images/icons/next.svg");
+  background-image: url("http://localhost:1313/images/icons/next.svg");
   background-repeat: repeat no-repeat;
   background-size: 0.8rem;
   background-position: center right;
@@ -956,11 +956,11 @@ aside h3 {
 }
 
 .pager_prev {
-  background-image: url(http://localhost:56851/images/icons/previous.svg);
+  background-image: url(http://localhost:1313/images/icons/previous.svg);
 }
 
 .pager_next {
-  background-image: url(http://localhost:56851/images/icons/next.svg);
+  background-image: url(http://localhost:1313/images/icons/next.svg);
 }
 
 .pager span {
@@ -1091,7 +1091,7 @@ aside h3 {
 
 .never {
   min-height: 60vh;
-  background: url("http://localhost:56851/images/sitting.svg");
+  background: url("http://localhost:1313/images/sitting.svg");
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: contain;

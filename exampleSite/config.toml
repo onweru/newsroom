@@ -4,7 +4,7 @@ theme = "newsroom"
 author = "Weru"
 copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
 canonifyurls = true
-paginate = 3
+paginate = 6
 # Enable syntax highlighting
 # comment or delete lines 11 ~ 14
 pygmentsCodefences = true
