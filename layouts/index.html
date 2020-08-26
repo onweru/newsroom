@@ -1,9 +1,10 @@
 {{ define "main" }}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 <div class = 'wrap pt-2 mt-2'>
-  {{- $size := .Paginator.PageSize }}
+  {{- $paginator := .Paginate $pages -}}
+  {{- $size := $paginator.PageSize }}
   {{- $scratch := newScratch }}
-  {{- range $index, $value := (.Paginate $pages).Pages }}
+  {{- range $index, $value := $paginator.Pages }}
     {{ if isset .Params "image" }}
       {{ $scratch.Set "image" .Params.image }}
     {{ else }}
