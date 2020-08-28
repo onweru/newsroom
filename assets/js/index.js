@@ -299,6 +299,12 @@
   }
   
   function changeMode(isDarkMode) {
+    const disableDark = elems('#disable-dark');
+    if(disableDark != false){
+      bank.setItem(storageKey, light)
+      elemAttribute(doc, data, light);
+      return
+    }
     if(isDarkMode) {
       bank.setItem(storageKey, light)
       elemAttribute(doc, data, light);
@@ -310,10 +316,12 @@
   
   (function lazyLoadImages() {
      const images = elems('img');
-     images.forEach(function(image){
-       // supported natively by most modern browsers. 
-       image.loading = "lazy";
-     });
+     if(images != false) {
+      images.forEach(function(image){
+        // supported natively by most modern browsers. 
+        image.loading = "lazy";
+      });
+     }
   })();
   
   function setUserColorMode(mode = false) {
