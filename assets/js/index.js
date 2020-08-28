@@ -299,6 +299,12 @@
   }
   
   function changeMode(isDarkMode) {
+    const disableDark = elems('#disable-dark');
+    if(disableDark != false){
+      bank.setItem(storageKey, light)
+      elemAttribute(doc, data, light);
+      return
+    }
     if(isDarkMode) {
       bank.setItem(storageKey, light)
       elemAttribute(doc, data, light);
