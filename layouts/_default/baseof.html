@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 {{- $params := .Site.Params }}
-<html lang='{{ .Lang }}'{{ if $params.disableDarkMode }}class="nodarkmode"{{ end }}>
-  {{ partial "head.html" . }}
+<html lang='{{ .Lang }}' {{ if $params.disableDarkMode }}class="nodarkmode"{{ end }}>
+  {{ partial "head" . }}
   <body>
-    {{ partial "nav.html" . }}
+    {{ partial "nav" . }}
     <main>
       {{ block "main" . }}{{ end }}
     </main>
-    {{ partial "footer.html" . }}
+    {{ partial "footer" . }}
   </body>
 </html>
