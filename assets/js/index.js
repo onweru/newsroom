@@ -299,12 +299,6 @@
   }
   
   function changeMode(isDarkMode) {
-    const disableDark = elems('#disable-dark');
-    if(disableDark != false){
-      bank.setItem(storageKey, light)
-      elemAttribute(doc, data, light);
-      return
-    }
     if(isDarkMode) {
       bank.setItem(storageKey, light)
       elemAttribute(doc, data, light);
@@ -314,16 +308,19 @@
     }
   }
   
-  (function lazyLoadImages() {
-     const images = elems('img');
-     if(images != false) {
-      images.forEach(function(image){
-        // supported natively by most modern browsers. 
-        image.loading = "lazy";
-      });
-     }
+  (function lazy() {
+    function lazyLoadMedia(element) {
+      let mediaItems = elems(element);
+      if(mediaItems) {
+        Array.from(mediaItems).forEach(function(item) {
+          item.loading = "lazy";
+        });
+      }
+    }
+    lazyLoadMedia('iframe');
+    lazyLoadMedia('img');
   })();
-  
+
   function setUserColorMode(mode = false) {
     const isDarkMode = currentMode() == dark;
     const storedMode = bank.getItem(storageKey);
