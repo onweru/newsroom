@@ -37,3 +37,5 @@ pygmentsOptions = "linenos=table"
   # twitter = "" # twitter handle e.g @weru
   
   # mainSections = ["blog", "docs"] see https://gohugo.io/functions/where/#mainsections
+  # uncomment the line below will disable darkmode by default.
+  # disableDarkMode = true  # note that the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
