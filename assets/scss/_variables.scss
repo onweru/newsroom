@@ -1,11 +1,12 @@
 :root {
   --color-mode: 'lit';
   --light: #fff;
-  --dark: #000;
+  --dark: rgb(18,20,24);
   --gray: #f5f5f5;
-  --bubble: #131313;
+  --bubble: rgb(16,16,18);
   --accent: var(--gray);
   --bg: var(--light);
+  --bg-dark: #000;
   --text: var(--dark);
   --font: 'Metropolis', sans-serif;
   --theme: #04a763;
@@ -13,9 +14,10 @@
 
   @mixin darkmode {
     --color-mode: 'dim';
-    --bg: var(--dark);
+    --bg: var(--bg-dark);
     --text: var(--light);
     --accent: var(--bubble);
+    --theme: rgb(24,175,119);
     *{
       box-shadow: none !important;
     } 
@@ -27,14 +29,13 @@
       &_choice {
         mix-blend-mode: color-dodge;
         &::after {
-          background-image: url(/images/night-moon.jpg);
-          transform: translateX(1.4rem);
+          transform: translateX(1.75rem) scale(1.67);
         }
       }
     }
   }
   @media (prefers-color-scheme: dark) { 
-    &:not([data-mode="lit"]) {
+    &:not(.nodarkmode):not([data-mode="lit"]) {
       @include darkmode;
     }
   }

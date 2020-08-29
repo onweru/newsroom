@@ -18,11 +18,11 @@
   }
   &_meta{
     padding: 10px 1.25rem 1.25rem;
-    background: var(--bg);
     color: var(--text);
     position: relative;
     z-index: 2;
     transition: margin-top 0.5s;
+    background: var(--bg);
     &.center_y{
       transform-origin: center;
       transition: transform 0.5s;
@@ -218,33 +218,39 @@
     margin: 2rem 1.5rem 0;
   }
   &_choice {
-    width: 3rem;
-    // background-color: rgba(255,255,255,0.16);
-    background-color: var(--theme);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0.17);
-    border-radius: 1rem;
-    height: 1.5rem;
     outline: none;
     border: none;
     -webkit-appearance: none;
-    cursor: pointer;
-    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    height: 1rem;
     position: relative;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.15);
-    &::after {
+    &::before, &::after {
       content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
       position: absolute;
-      top: 0.1rem;
-      left: 0.1rem;
-      width: 1.3rem;
-      height: 1.3rem;
-      background-image: url(/images/sun.svg);
-      background-position: center;
-      background-size: cover;
-      border-radius: 50%;
+      height: 1rem;
+      background: var(--theme);
+    }
+    &, &::before {
+      width: 2.75rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
+      box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.15);
+    }
+    &::before {
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.17);
       z-index: 2;
+      right: 0;
+      filter: brightness(0.75);
+    }
+    &::after {
+      width: 1rem;
+      border-radius: 50%;
+      z-index: 3;
+      transform: scale(1.67);
+      transform-origin: 50% 50%;
       transition: transform 0.5s cubic-bezier(.19,1,.22,1);
       will-change: transform;
     }

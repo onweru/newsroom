@@ -63,7 +63,7 @@
     margin-bottom: 0;
   }
   &_date {
-    margin-bottom: -1.25rem;
+    color: var(--theme);
   }
   &_copy {
     opacity: 0;
@@ -124,7 +124,7 @@
     border-radius: 5px;
   }
   &_title{
-    margin:5px 0;;
+    margin: -1rem 0 1rem;
   }
   &_time {
     background: var(--theme);
@@ -142,7 +142,7 @@
     margin: 2.25rem auto 1rem;
     text-align: center;
     color: var(--theme);
-    box-shadow: 0 1rem 3rem -1rem rgba(0,0,0,0.15);
+    // box-shadow: 0 1rem 3rem -1rem rgba(0,0,0,0.15);
     text-transform: uppercase;
     &, span {
       position: relative;
@@ -157,6 +157,7 @@
       bottom: 0;
       right: 0;
       z-index: 1;
+      border-radius: 1rem;
     }
   }
   &_next {

@@ -44,11 +44,12 @@
 :root {
   --color-mode: 'lit';
   --light: #fff;
-  --dark: #000;
+  --dark: rgb(18,20,24);
   --gray: #f5f5f5;
-  --bubble: #131313;
+  --bubble: rgb(16,16,18);
   --accent: var(--gray);
   --bg: var(--light);
+  --bg-dark: #000;
   --text: var(--dark);
   --font: 'Metropolis', sans-serif;
   --theme: #04a763;
@@ -57,9 +58,10 @@
 
 :root[data-mode="dim"] {
   --color-mode: 'dim';
-  --bg: var(--dark);
+  --bg: var(--bg-dark);
   --text: var(--light);
   --accent: var(--bubble);
+  --theme: rgb(24,175,119);
 }
 
 :root[data-mode="dim"] * {
@@ -71,18 +73,18 @@
 }
 
 :root[data-mode="dim"] .color_choice::after {
-  background-image: url(/images/night-moon.jpg);
-  transform: translateX(1.4rem);
+  transform: translateX(1.75rem) scale(1.67);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-mode="lit"]) {
+  :root:not(.nodarkmode):not([data-mode="lit"]) {
     --color-mode: 'dim';
-    --bg: var(--dark);
+    --bg: var(--bg-dark);
     --text: var(--light);
     --accent: var(--bubble);
+    --theme: rgb(24,175,119);
   }
-  :root:not([data-mode="lit"]) * {
+  :root:not(.nodarkmode):not([data-mode="lit"]) * {
     box-shadow: none !important;
   }
 }
@@ -302,11 +304,11 @@ aside h3 {
 
 .article_meta {
   padding: 10px 1.25rem 1.25rem;
-  background: var(--bg);
   color: var(--text);
   position: relative;
   z-index: 2;
   transition: margin-top 0.5s;
+  background: var(--bg);
 }
 
 .article_meta.center_y {
@@ -529,34 +531,44 @@ aside h3 {
 }
 
 .color_choice {
-  width: 3rem;
-  background-color: var(--theme);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.17);
-  border-radius: 1rem;
-  height: 1.5rem;
   outline: none;
   border: none;
   -webkit-appearance: none;
+  height: 1rem;
+  position: relative;
+}
+
+.color_choice::before, .color_choice::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  height: 1rem;
+  background: var(--theme);
+}
+
+.color_choice, .color_choice::before {
+  width: 2.75rem;
+  border-radius: 1rem;
   cursor: pointer;
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  position: relative;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.color_choice::after {
-  content: "";
-  position: absolute;
-  top: 0.1rem;
-  left: 0.1rem;
-  width: 1.3rem;
-  height: 1.3rem;
-  background-image: url(/images/sun.svg);
-  background-position: center;
-  background-size: cover;
-  border-radius: 50%;
+.color_choice::before {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.17);
   z-index: 2;
+  right: 0;
+  filter: brightness(0.75);
+}
+
+.color_choice::after {
+  width: 1rem;
+  border-radius: 50%;
+  z-index: 3;
+  transform: scale(1.67);
+  transform-origin: 50% 50%;
   transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: transform;
 }
@@ -794,7 +806,7 @@ aside h3 {
 }
 
 .post_date {
-  margin-bottom: -1.25rem;
+  color: var(--theme);
 }
 
 .post_copy {
@@ -869,7 +881,7 @@ aside h3 {
 }
 
 .post_title {
-  margin: 5px 0;
+  margin: -1rem 0 1rem;
 }
 
 .post_time {
@@ -890,7 +902,6 @@ aside h3 {
   margin: 2.25rem auto 1rem;
   text-align: center;
   color: var(--theme);
-  box-shadow: 0 1rem 3rem -1rem rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
 }
 
@@ -908,6 +919,7 @@ aside h3 {
   bottom: 0;
   right: 0;
   z-index: 1;
+  border-radius: 1rem;
 }
 
 .post_next {
