@@ -75,6 +75,19 @@
   }
 }
 
+.upcase {
+  text-transform: uppercase;
+}
+
+.attribution {
+  opacity: 0.33;
+  font-size: 0.8rem;
+  transition: opacity 0.25 var(--ease);
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .mt {
   margin-top: 5rem;
 }

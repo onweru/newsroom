@@ -508,6 +508,7 @@ aside h3 {
 @media screen and (max-width: 567px) {
   .footer {
     flex-direction: column;
+    padding-bottom: 1.5rem !important;
   }
 }
 
@@ -999,6 +1000,10 @@ aside h3 {
   padding: 1.5rem 0;
 }
 
+.archive_title {
+  margin: 0;
+}
+
 .pale {
   opacity: 0.7;
 }
@@ -1095,6 +1100,20 @@ aside h3 {
   .grid-4 {
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   }
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.attribution {
+  opacity: 0.33;
+  font-size: 0.8rem;
+  transition: opacity 0.25 var(--ease);
+}
+
+.attribution:hover {
+  opacity: 1;
 }
 
 .mt {
