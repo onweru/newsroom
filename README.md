@@ -54,7 +54,7 @@ Today, operating systems have a system-wide __light ~ dark mode__ switch. Your w
 
 Under `params` add `disableDarkMode = true` to your `config.toml` file. If your site is based on the exampleSite, the value is already included; you only need to uncomment it.
 
-> ⚠️ If you disable darkmode, UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
+> ⚠️ If you disable darkmode, the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
 
 ### Custom 404 Page
 
