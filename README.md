@@ -50,6 +50,12 @@ Today, operating systems have a system-wide __light ~ dark mode__ switch. Your w
 
 ![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
 
+#### How do I disable dark mode?
+
+Under `params` add `disableDarkMode = true` to your `config.toml` file. If your site is based on the exampleSite, the value is already included; you only need to uncomment it.
+
+> :note: If you disable darkmode, UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
+
 ### Custom 404 Page
 
 | Normal Mode | Dark Mode |
@@ -93,8 +99,7 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
 2. __Picture__
     You want to use darkmode images when darkmode is enabled on a device and a regular image on lightmode? It takes 3 positional parameter
 
-    Store these images in the `static/images` directory. 
-    
+    Store these images in the `static/images` directory.
     ```
     ...
     {{< picture "lightModeImage.png" "darkModeImage.png" "Image alt text" >}}
