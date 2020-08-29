@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang='{{ .Lang }}'>
+{{- $params := .Site.Params }}
+<html lang='{{ .Lang }}'{{ if $params.disableDarkMode }}class="nodarkmode"{{ end }}>
   {{ partial "head.html" . }}
   <body>
     {{ partial "nav.html" . }}

@@ -4,11 +4,7 @@
       <a href = '{{ absURL .url }}' class = 'nav_item'>{{ .item }}</a>
     {{- end }}
     <div class = 'nav-close'></div>
-    {{- if eq .Site.Params.disableDark "true" }}
-      <div id="disable-dark" style="display: none;"></div>
-    {{ else }}
-      {{- partial "mode" . }}
-    {{ end }}
+    {{- partial "mode" . }}
   </div>
 </div>
 {{- partial "header" . }}

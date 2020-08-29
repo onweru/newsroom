@@ -4,7 +4,7 @@
   {{- range $paginator.Pages }}
   <a class = 'archive_item' href = '{{ .Permalink }}'>
     {{- with .Date -}}
-    <time class = 'pale'>{{ dateFormat "02. January 2006" . }}</time>
+    <time class = 'post_date'>{{ dateFormat "02. January 2006" . }}</time>
     {{- end -}}
     <h3 class = 'article_title'>{{ .Title }}</h3>
     {{- with .Summary -}}
