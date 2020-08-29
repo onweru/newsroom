@@ -11,8 +11,8 @@ This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom pag
 * Responsive
 * Deeplinks
 * Dark Mode
-* Supports native lazy loading of images
-* Syntax highlighting 
+* Supports native lazy loading of images & iframes
+* Syntax highlighting
 
 ### Deeplinks
 
@@ -58,15 +58,11 @@ Under `params` add `disableDarkMode = true` to your `config.toml` file. If your 
 
 ### Custom 404 Page
 
-| Normal Mode | Dark Mode |
-|--- | ---|
-| ![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)|
+![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png)
 
 ### Syntax highlighting
 
-| Normal Mode | Dark Mode |
-|--- | ---|
-| ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
+![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) 
 
 If you wish, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
 
