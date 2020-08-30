@@ -57,6 +57,7 @@
 }
 
 :root[data-mode="dim"] {
+  --light: #eee;
   --color-mode: 'dim';
   --bg: var(--bg-dark);
   --text: var(--light);
@@ -68,12 +69,17 @@
   box-shadow: none !important;
 }
 
+:root[data-mode="dim"] main p {
+  opacity: 0.9;
+}
+
 :root[data-mode="dim"] .color_choice::after {
   transform: translateX(1.75rem) scale(1.67);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.nodarkmode):not([data-mode="lit"]) {
+    --light: #eee;
     --color-mode: 'dim';
     --bg: var(--bg-dark);
     --text: var(--light);
@@ -82,6 +88,9 @@
   }
   :root:not(.nodarkmode):not([data-mode="lit"]) * {
     box-shadow: none !important;
+  }
+  :root:not(.nodarkmode):not([data-mode="lit"]) main p {
+    opacity: 0.9;
   }
 }
 

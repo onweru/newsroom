@@ -13,6 +13,7 @@
   --ease: cubic-bezier(.19,1,.22,1);
 
   @mixin darkmode {
+    --light: #eee;
     --color-mode: 'dim';
     --bg: var(--bg-dark);
     --text: var(--light);
@@ -20,7 +21,10 @@
     --theme: rgb(24,175,119);
     *{
       box-shadow: none !important;
-    } 
+    }
+    main p {
+      opacity: 0.9;
+    }
   }
   
   &[data-mode="dim"] {
