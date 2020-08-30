@@ -1130,6 +1130,10 @@ aside h3 {
   text-align: left;
 }
 
+pre {
+  display: grid;
+}
+
 .highlight {
   margin: 1.5rem 0 2.5rem;
   padding: 0 !important;
