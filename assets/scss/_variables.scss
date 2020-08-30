@@ -27,7 +27,6 @@
     @include darkmode;
     .color {
       &_choice {
-        mix-blend-mode: color-dodge;
         &::after {
           transform: translateX(1.75rem) scale(1.67);
         }

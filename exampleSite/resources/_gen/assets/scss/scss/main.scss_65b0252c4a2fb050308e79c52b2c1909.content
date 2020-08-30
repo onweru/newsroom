@@ -68,10 +68,6 @@
   box-shadow: none !important;
 }
 
-:root[data-mode="dim"] .color_choice {
-  mix-blend-mode: color-dodge;
-}
-
 :root[data-mode="dim"] .color_choice::after {
   transform: translateX(1.75rem) scale(1.67);
 }
