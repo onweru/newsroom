@@ -16,29 +16,29 @@ In this tutorial, commands that you enter will start with the "$" prompt. The ou
 Here's an example:
 
 ```bash
-    ## this is a comment
-    $ echo this is a command
-    this is a command
-    
-    ## edit the file
-    $ vi foo.md
-    +++
-    date = "2014-09-28"
-    title = "creating a new theme"
-    +++
-    
-    bah and humbug
-    :wq
-    
-    ## show it
-    $ cat foo.md
-    +++
-    date = "2014-09-28"
-    title = "creating a new theme"
-    +++
-    
-    bah and humbug
-    $
+## this is a comment
+$ echo this is a command
+this is a command
+
+## edit the file
+$ vi foo.md
++++
+date = "2014-09-28"
+title = "creating a new theme"
++++
+
+bah and humbug
+:wq
+
+## show it
+$ cat foo.md
++++
+date = "2014-09-28"
+title = "creating a new theme"
++++
+
+bah and humbug
+$
 ```
 
 ## Some Definitions
@@ -114,18 +114,18 @@ Let's use Hugo to create a new web site. I'm a Mac user, so I'll create mine in 
 The "new site" command will create a skeleton of a site. It will give you the basic directory structure and a useable configuration file.
 
 ```shell
-    $ hugo new site ~/Sites/zafta
-    $ cd ~/Sites/zafta
-    $ ls -l
-    total 8
-    drwxr-xr-x  7 quoha  staff  238 Sep 29 16:49 .
-    drwxr-xr-x  3 quoha  staff  102 Sep 29 16:49 ..
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
-    -rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
-    $
+$ hugo new site ~/Sites/zafta
+$ cd ~/Sites/zafta
+$ ls -l
+total 8
+drwxr-xr-x  7 quoha  staff  238 Sep 29 16:49 .
+drwxr-xr-x  3 quoha  staff  102 Sep 29 16:49 ..
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+$
 ```
 
 Take a look in the content/ directory to confirm that it is empty.
@@ -137,18 +137,18 @@ The other directories (archetypes/, layouts/, and static/) are used when customi
 Running the `hugo` command with no options will read all the available content and generate the HTML files. It will also copy all static files (that's everything that's not content). Since we have an empty site, it won't do much, but it will do it very quickly.
 
 ```shell
-    $ hugo --verbose
-    INFO: 2014/09/29 Using config file: config.toml
-    INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
-    WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
-    WARN: 2014/09/29 Unable to locate layout: [404.html]
-    0 draft content
-    0 future content
-    0 pages created
-    0 tags created
-    0 categories created
-    in 2 ms
-    $
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+WARN: 2014/09/29 Unable to locate layout: [404.html]
+0 draft content
+0 future content
+0 pages created
+0 tags created
+0 categories created
+in 2 ms
+$
 ```
 
 The "`--verbose`" flag gives extra information that will be helpful when we build the template. Every line of the output that starts with "INFO:" or "WARN:" is present because we used that flag. The lines that start with "WARN:" are warning messages. We'll go over them later.
@@ -156,25 +156,25 @@ The "`--verbose`" flag gives extra information that will be helpful when we buil
 We can verify that the command worked by looking at the directory again.
 
 ```shell
-    $ ls -l
-    total 8
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
-    -rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
-    drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
-    $
+$ ls -l
+total 8
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+$
 ```
 
 See that new public/ directory? Hugo placed all generated content there. When you're ready to publish your web site, that's the place to start. For now, though, let's just confirm that we have what we'd expect from a site with no content.
 
 ```shell
-    $ ls -l public
-    total 16
-    -rw-r--r--  1 quoha  staff  416 Sep 29 17:02 index.xml
-    -rw-r--r--  1 quoha  staff  262 Sep 29 17:02 sitemap.xml
-    $
+$ ls -l public
+total 16
+-rw-r--r--  1 quoha  staff  416 Sep 29 17:02 index.xml
+-rw-r--r--  1 quoha  staff  262 Sep 29 17:02 sitemap.xml
+$
 ```
 
 Hugo created two XML files, which is standard, but there are no HTML files.
@@ -184,20 +184,20 @@ Hugo created two XML files, which is standard, but there are no HTML files.
 Verify that you can run the built-in web server. It will dramatically shorten your development cycle if you do. Start it by running the "server" command. If it is successful, you will see output similar to the following:
 
 ```shell
-    $ hugo server --verbose
-    INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
-    INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
-    WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
-    WARN: 2014/09/29 Unable to locate layout: [404.html]
-    0 draft content
-    0 future content
-    0 pages created
-    0 tags created
-    0 categories created
-    in 2 ms
-    Serving pages from /Users/quoha/Sites/zafta/public
-    Web Server is available at http://localhost:1313
-    Press Ctrl+C to stop
+$ hugo server --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
+WARN: 2014/09/29 Unable to locate layout: [404.html]
+0 draft content
+0 future content
+0 pages created
+0 tags created
+0 categories created
+in 2 ms
+Serving pages from /Users/quoha/Sites/zafta/public
+Web Server is available at http://localhost:1313
+Press Ctrl+C to stop
 ```
 
 Connect to the listed URL (it's on the line that starts with "Web Server"). If everything is working correctly, you should get a page that shows the following:
@@ -235,26 +235,26 @@ Use the hugo "new" command to create the skeleton of a theme. This creates the d
 ```shell
     $ hugo new theme zafta
     
-    $ ls -l
-    total 8
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
-    -rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
-    drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
-    drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes
-    
-    $ find themes -type f | xargs ls -l
-    -rw-r--r--  1 quoha  staff  1081 Sep 29 17:31 themes/zafta/LICENSE.md
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/archetypes/default.md
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/index.html
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
-    -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
-    -rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
-    $
+$ ls -l
+total 8
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 archetypes
+-rw-r--r--  1 quoha  staff   82 Sep 29 16:49 config.toml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 content
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:02 public
+drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
+drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes
+
+$ find themes -type f | xargs ls -l
+-rw-r--r--  1 quoha  staff  1081 Sep 29 17:31 themes/zafta/LICENSE.md
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/archetypes/default.md
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/index.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
+$
 ```
 
 The skeleton includes templates (the files ending in .html), license file, a description of your theme (the theme.toml file), and an empty archetype.
@@ -304,18 +304,18 @@ Edit the file to add the theme, add a title for the site, and specify that all o
 Now that we have an empty theme, let's generate the site again.
 
 ```shell
-    $ hugo --verbose
-    INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
-    INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
-    INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
-    WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-    0 draft content
-    0 future content
-    0 pages created
-    0 tags created
-    0 categories created
-    in 2 ms
-    $
+$ hugo --verbose
+INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
+INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
+WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
+0 draft content
+0 future content
+0 pages created
+0 tags created
+0 categories created
+in 2 ms
+$
 ```
 
 Did you notice that the output is different? The warning message for the home page has disappeared and we have an additional information line saying that Hugo is syncing from the theme's directory.
@@ -323,14 +323,14 @@ Did you notice that the output is different? The warning message for the home pa
 Let's check the public/ directory to see what Hugo's created.
 
 ```shell
-    $ ls -l public
-    total 16
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 css
-    -rw-r--r--  1 quoha  staff    0 Sep 29 17:56 index.html
-    -rw-r--r--  1 quoha  staff  407 Sep 29 17:56 index.xml
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 js
-    -rw-r--r--  1 quoha  staff  243 Sep 29 17:56 sitemap.xml
-    $
+$ ls -l public
+total 16
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 css
+-rw-r--r--  1 quoha  staff    0 Sep 29 17:56 index.html
+-rw-r--r--  1 quoha  staff  407 Sep 29 17:56 index.xml
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:56 js
+-rw-r--r--  1 quoha  staff  243 Sep 29 17:56 sitemap.xml
+$
 ```
 
 Notice four things:
@@ -351,10 +351,10 @@ If it can't find any of these, it completely skips creating the home page. We no
 When Hugo created our theme, it created an empty home page template. Now, when we build the site, Hugo finds the template and uses it to generate the HTML for the home page. Since the template file is empty, the HTML file is empty, too. If the template had any rules in it, then Hugo would have used them to generate the home page.
 
 ```shell
-    $ find . -name index.html | xargs ls -l
-    -rw-r--r--  1 quoha  staff  0 Sep 29 20:21 ./public/index.html
-    -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 ./themes/zafta/layouts/index.html
-    $
+$ find . -name index.html | xargs ls -l
+-rw-r--r--  1 quoha  staff  0 Sep 29 20:21 ./public/index.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 ./themes/zafta/layouts/index.html
+$
 ```
 
 #### The Magic of Static
@@ -364,16 +364,16 @@ Hugo does two things when generating the site. It uses templates to transform co
 Hugo assumes that your site will use both CSS and JavaScript, so it creates directories in your theme to hold them. Remember opinions? Well, Hugo's opinion is that you'll store your CSS in a directory named css/ and your JavaScript in a directory named js/. If you don't like that, you can change the directory names in your theme directory or even delete them completely. Hugo's nice enough to offer its opinion, then behave nicely if you disagree.
 
 ```shell
-    $ find themes/zafta -type d | xargs ls -ld
-    drwxr-xr-x  7 quoha  staff  238 Sep 29 17:38 themes/zafta
-    drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes/zafta/archetypes
-    drwxr-xr-x  5 quoha  staff  170 Sep 29 17:31 themes/zafta/layouts
-    drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/_default
-    drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/partials
-    drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/static
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/css
-    drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
-    $
+$ find themes/zafta -type d | xargs ls -ld
+drwxr-xr-x  7 quoha  staff  238 Sep 29 17:38 themes/zafta
+drwxr-xr-x  3 quoha  staff  102 Sep 29 17:31 themes/zafta/archetypes
+drwxr-xr-x  5 quoha  staff  170 Sep 29 17:31 themes/zafta/layouts
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/_default
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/partials
+drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/static
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/css
+drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
+$
 ```
 
 ## The Theme Development Cycle
@@ -410,13 +410,13 @@ Hugo's built in web server supports live reload. As pages are saved on the serve
 Use the following commands as the basis for your workflow.
 
 ```s
-    ## purge old files. hugo will recreate the public directory.
-    ##
-    $ rm -rf public
-    ##
-    ## run hugo in watch mode
-    ##
-    $ hugo server --watch --verbose
+## purge old files. hugo will recreate the public directory.
+##
+$ rm -rf public
+##
+## run hugo in watch mode
+##
+$ hugo server --watch --verbose
 ```
 
 Here's sample output showing Hugo detecting a change to the template for the home page. Once generated, the web browser automatically reloaded the page. I've said this before, it's amazing.
