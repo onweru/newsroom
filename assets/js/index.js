@@ -2,7 +2,7 @@
   const doc = document.documentElement;
   const parentURL = '{{ absURL "/" }}';
 
-  function createEl(element) {
+  function createEl(element='div') {
     return document.createElement(element);
   }
 
@@ -72,6 +72,11 @@
     if(!specifity) {
       return isIt || isInIt;
     }
+  }
+
+  function wrapEl(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
   }
 
   (function updateDate() {
@@ -148,6 +153,26 @@
       return value ? value : false;
     }
   }
+
+  (function wrapOrphanedPreElements() {
+    const pres = elems('pre');
+    if(pres) {
+      Array.from(pres).forEach(function(pre){
+        const parent = pre.parentNode;
+        const isOrpaned = !containsClass(parent, 'highlight');
+        if(isOrpaned) {
+          const preWrapper = createEl();
+          pushClass(preWrapper, 'highlight');
+          pushClass(preWrapper, 'sans'); // has no lines
+          wrapEl(pre, preWrapper);
+        }
+      })
+    }
+    /*
+    @Todo
+    1. Add UI controls to all pre blocks
+    */
+  })();
 
   (function(){
     let links = document.querySelectorAll('a');
