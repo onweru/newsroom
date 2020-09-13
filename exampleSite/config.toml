@@ -5,26 +5,21 @@ author = "Weru"
 copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
 canonifyurls = true
 paginate = 6
-# Enable syntax highlighting
-# comment or delete lines 11 ~ 14
-pygmentsCodefences = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsUseClasses=true
-pygmentsOptions = "linenos=table"
 
-# Alternatively, you can use chroma instead of pigments
-# to do so comment or delete lines 11 ~ 14 and uncomment lines 17 ~ 27
-# [markup]
-#   [markup.highlight]
-#     codeFences = true
-#     guessSyntax = false
-#     hl_Lines = ""
-#     lineNoStart = 1
-#     lineNos = true
-#     lineNumbersInTable = true
-#     noClasses = false
-#     # style = "monokai"
-#     tabWidth = 2
+[markup]
+  [markup.goldmark.renderer]
+    hardWraps = false
+    unsafe = false # change to true to enable inclusion of rawHTML and math functions
+    xhtml = false
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    tabWidth = 2
 
 # If you want to use disqus, uncomment the line below
 # disqusShortname = "yourdiscussshortname"
@@ -32,10 +27,8 @@ pygmentsOptions = "linenos=table"
 # ids used below are not valid. Replace with valid ones
 [params]
   # ga_analytics = "" # google analytics ID e.g UA-116386578-1
-  
   # ga_verify = "" # google verification code e.g 5jb-rxeBfITeJQKOuUss3ud6FPGTxXkCho-ZN5qlrZg
   # twitter = "" # twitter handle e.g @weru
-  
   # mainSections = ["blog", "docs"] see https://gohugo.io/functions/where/#mainsections
   # uncomment the line below will disable darkmode by default.
   # disableDarkMode = true  # note that the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
