@@ -8,8 +8,6 @@ $copy-icon-path: '{{ absURL "images/icons/copy.svg" }}';
 $prev-icon-path: '{{ absURL "images/icons/previous.svg" }}';
 $next-icon-path: '{{ absURL "images/icons/next.svg" }}';
 $never-icon-path: '{{ absURL "images/sitting.svg"  }}';
-$day-icon-path: '{{ absURL "images/sun.svg"  }}';
-$night-icon-path: '{{ absURL "images/crescent.svg"  }}';
 
 @import
 'fonts',
