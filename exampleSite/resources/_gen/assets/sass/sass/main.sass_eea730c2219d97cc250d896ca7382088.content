@@ -1,48 +1,6 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Metropolis';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Metropolis Regular"), local("Metropolis-Regular"), url("http://localhost:1313/fonts/Metropolis-Regular.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  font-style: normal;
-  font-weight: 300;
-  src: local("Metropolis Light"), local("Metropolis-Light"), url("http://localhost:1313/fonts/Metropolis-Light.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  font-style: italic;
-  font-weight: 300;
-  src: local("Metropolis Light Italic"), local("Metropolis-LightItalic"), url("http://localhost:1313/fonts/Metropolis-LightItalic.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-LightItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  font-style: normal;
-  font-weight: 500;
-  src: local("Metropolis Medium"), local("Metropolis-Medium"), url("http://localhost:1313/fonts/Metropolis-Medium.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Metropolis';
-  font-style: italic;
-  font-weight: 500;
-  src: local("Metropolis Medium Italic"), local("Metropolis-MediumItalic"), url("http://localhost:1313/fonts/Metropolis-MediumItalic.woff2") format("woff2"), url("http://localhost:1313/fonts/Metropolis-MediumItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Cookie';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Cookie-Regular"), url("http://localhost:1313/fonts/cookie-v10-latin-regular.woff2") format("woff2"), url("http://localhost:1313/fonts/cookie-v10-latin-regular.woff") format("woff");
-}
-
-:root {
-  --color-mode: 'lit';
+html {
+  --color-mode: "lit";
   --light: #fff;
   --dark: rgb(18,20,24);
   --gray: #f5f5f5;
@@ -52,46 +10,102 @@
   --bg-dark: #000;
   --text: var(--dark);
   --font: 'Metropolis', sans-serif;
-  --theme: #04a763;
+  --theme: rgb(52,199,89);
   --ease: cubic-bezier(.19,1,.22,1);
 }
 
-:root[data-mode="dim"] {
+html[data-mode="dim"] {
   --light: #eee;
   --color-mode: 'dim';
   --bg: var(--bg-dark);
   --text: var(--light);
   --accent: var(--bubble);
-  --theme: rgb(24,175,119);
+  --theme: rgb(48,209,88);
 }
 
-:root[data-mode="dim"] * {
+html[data-mode="dim"] * {
   box-shadow: none !important;
 }
 
-:root[data-mode="dim"] main p {
+html[data-mode="dim"] main p {
   opacity: 0.9;
 }
 
-:root[data-mode="dim"] .color_choice::after {
+html[data-mode="dim"] .color_choice::after {
   transform: translateX(1.75rem) scale(1.67);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not(.nodarkmode):not([data-mode="lit"]) {
+  html:not(.nodarkmode):not([data-mode="lit"]) {
     --light: #eee;
     --color-mode: 'dim';
     --bg: var(--bg-dark);
     --text: var(--light);
     --accent: var(--bubble);
-    --theme: rgb(24,175,119);
+    --theme: rgb(48,209,88);
   }
-  :root:not(.nodarkmode):not([data-mode="lit"]) * {
+  html:not(.nodarkmode):not([data-mode="lit"]) * {
     box-shadow: none !important;
   }
-  :root:not(.nodarkmode):not([data-mode="lit"]) main p {
+  html:not(.nodarkmode):not([data-mode="lit"]) main p {
     opacity: 0.9;
   }
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Metropolis Regular"), local("Metropolis-Regular"), url("../fonts/Metropolis-Regular.woff2") format("woff2"), url("../fonts/Metropolis-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Metropolis Italic"), local("Metropolis-Italic"), url("../fonts/Metropolis-RegularItalic.woff2") format("woff2"), url("../fonts/Metropolis-RegularItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("Metropolis Light"), local("Metropolis-Light"), url("../fonts/Metropolis-Light.woff2") format("woff2"), url("../fonts/Metropolis-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: local("Metropolis Light Italic"), local("Metropolis-LightItalic"), url("../fonts/Metropolis-LightItalic.woff2") format("woff2"), url("../fonts/Metropolis-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Metropolis Medium"), local("Metropolis-Medium"), url("../fonts/Metropolis-Medium.woff2") format("woff2"), url("../fonts/Metropolis-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Metropolis Medium Italic"), local("Metropolis-MediumItalic"), url("../fonts/Metropolis-MediumItalic.woff2") format("woff2"), url("../fonts/Metropolis-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Cookie';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Cookie-Regular"), url("../fonts/cookie-v10-latin-regular.woff") format("woff2"), url("../fonts/cookie-v10-latin-regular.woff") format("woff");
 }
 
 @keyframes showMenu {
@@ -223,7 +237,7 @@ img {
   max-width: 100%;
   vertical-align: middle;
   height: auto;
-  margin: 15px auto;
+  margin: 1rem auto;
   padding: 0;
 }
 
@@ -245,8 +259,8 @@ b, strong, em {
 hr {
   border: none;
   padding: 0.5px;
-  background: var(--theme);
-  opacity: 0.25;
+  background: var(--text);
+  opacity: 0.09;
   margin: 2rem 0 0.75rem;
 }
 
@@ -413,7 +427,6 @@ aside h3 {
   margin: 1rem 0 1.5rem;
   display: inline-block;
   padding: 7.5px 12.5px;
-  background-color: var(--theme);
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
   color: var(--light);
   text-align: center;
@@ -463,15 +476,19 @@ aside h3 {
 
 .copy {
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-image: url(http://localhost:1313/images/icons/copy.svg);
-  background-size: 100%;
   cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.copy::before, .copy::after {
-  content: "";
+.copy {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.copy::before {
   position: absolute;
   background: var(--theme);
   color: var(--light);
@@ -480,21 +497,21 @@ aside h3 {
 }
 
 .copy::before {
-  content: "Share Story";
+  content: attr(data-before);
   font-size: 0.8rem;
   width: 5.4rem;
   padding: 0.25rem;
   border-radius: 0.25rem;
   text-align: center;
-  top: -2rem;
+  top: -2.25rem;
   right: 0;
 }
 
 .copy_done::before {
-  content: "Link Copied";
+  content: attr(data-after);
 }
 
-.copy:hover::before, .copy:hover::after {
+.copy:hover::before {
   opacity: 1;
 }
 
@@ -518,7 +535,6 @@ aside h3 {
 }
 
 .footer a {
-  color: var(--theme);
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
 }
@@ -649,7 +665,6 @@ aside h3 {
   padding: 12.5px 25px;
   margin-bottom: 2px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  transition: color 0.25s ease-in-out;
 }
 
 .nav-body a:hover {
@@ -657,7 +672,7 @@ aside h3 {
 }
 
 .nav-brand {
-  font-family: 'Cookie';
+  font-family: "Cookie";
   font-size: 2em !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -741,7 +756,7 @@ aside h3 {
   width: 100%;
 }
 
-.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post blockquote, .post ol, .post ul, .post hr {
+.post p, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post blockquote, .post ol, .post ul {
   max-width: 840px !important;
   margin-left: auto;
   margin-right: auto;
@@ -751,6 +766,8 @@ aside h3 {
   .post img:not(.icon) {
     width: 100vw;
     max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -784,6 +801,7 @@ aside h3 {
 
 .post_body img {
   width: 100%;
+  max-width: 100%;
 }
 
 .post_inner a {
@@ -937,7 +955,7 @@ aside h3 {
 
 .post_next::after {
   content: "";
-  background-image: url("http://localhost:1313/images/icons/next.svg");
+  background-image: url("../images/icons/double-arrow.svg");
   background-repeat: repeat no-repeat;
   background-size: 0.8rem;
   background-position: center right;
@@ -964,21 +982,10 @@ aside h3 {
   background-color: var(--accent);
   color: var(--light);
   border-radius: 50%;
-  background-size: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .pager_item:hover {
   opacity: 0.5;
-}
-
-.pager_prev {
-  background-image: url(http://localhost:1313/images/icons/previous.svg);
-}
-
-.pager_next {
-  background-image: url(http://localhost:1313/images/icons/next.svg);
 }
 
 .pager span {
@@ -1027,12 +1034,19 @@ aside h3 {
 }
 
 .link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: 2.5rem;
   margin: 0 0.25rem;
   padding: 0 0.25rem;
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--theme);
 }
 
 .link_owner:hover .link {
@@ -1127,7 +1141,7 @@ aside h3 {
 
 .never {
   min-height: 60vh;
-  background: url("http://localhost:1313/images/sitting.svg");
+  background: url("../images/sitting.svg");
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1137,6 +1151,21 @@ aside h3 {
 
 .never_title {
   text-align: left;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--theme);
+  transform-origin: 50% 50%;
+}
+
+.icon_scale {
+  transform: scale(0.5);
+}
+
+.icon_invert {
+  transform: scale(0.5) rotate(180deg);
 }
 
 pre {
@@ -1290,4 +1319,4 @@ pre {
   color: #666;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=styles.css.map */

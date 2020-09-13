@@ -1,0 +1,49 @@
+// $copy-icon-b4: i18n "share_story"
+// $copy-icon-aft: i18n "link_copied"
+
+// urls
+$font-path: "../fonts/"
+$prev-icon-path: "../images/icons/previous.svg"
+$next-icon-path: "../images/icons/double-arrow.svg"
+$never-icon-path: "../images/sitting.svg"
+
+// orange  [rgb(255,149,0), rgb( 255,159,10)]
+// purple [rgb(175,82,222), rgb(191,90,242)]
+// indigo [rgb(88,86,214),rgb(94,92,230)]
+html
+  --color-mode: "lit"
+  --light: #fff
+  --dark: rgb(18,20,24)
+  --gray: #f5f5f5
+  --bubble: rgb(16,16,18)
+  --accent: var(--gray)
+  --bg: var(--light)
+  --bg-dark: #000
+  --text: var(--dark)
+  --font: 'Metropolis', sans-serif
+  --theme: rgb(52,199,89) // #04a763
+  --ease: cubic-bezier(.19,1,.22,1)
+
+  @mixin darkmode
+    --light: #eee
+    --color-mode: 'dim'
+    --bg: var(--bg-dark)
+    --text: var(--light)
+    --accent: var(--bubble)
+    --theme: rgb(48,209,88)//rgb(24,175,119)
+    *
+      box-shadow: none !important
+
+    main p
+      opacity: 0.9
+
+  &[data-mode="dim"]
+    @include darkmode
+    .color
+      &_choice
+        &::after
+          transform: translateX(1.75rem) scale(1.67)
+
+  @media (prefers-color-scheme: dark)
+    &:not(.nodarkmode):not([data-mode="lit"])
+      @include darkmode

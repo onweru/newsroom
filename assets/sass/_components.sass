@@ -1,0 +1,236 @@
+.article
+  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12)
+  overflow: hidden
+  border-radius: 0.5rem
+  &_title
+    margin: 0
+  &_excerpt
+    &:not(.visible)
+      height: 0
+      opacity: 0
+    transition: height 0.5s, opacity 0.5s
+  &_excerpt,
+  &_meta
+    transform-origin: bottom
+  &_meta
+    padding: 10px 1.25rem 1.25rem
+    color: var(--text)
+    position: relative
+    z-index: 2
+    transition: margin-top 0.5s
+    background: var(--bg)
+    &.center_y
+      transform-origin: center
+      transition: transform 0.5s
+      display: flex
+      flex-direction: column
+      justify-content: center
+      @media screen and (min-width: 42rem)
+        left: -2rem
+
+  &_thumb
+    display: grid
+    position: relative
+    z-index: 0
+    overflow: hidden
+    height: 15rem
+    background-size: cover
+    background-position: 50% 50%
+    @media screen and (min-width: 35rem)
+      height: 22.5rem
+
+    img
+      transition: transform 0.5s, opacity 0.5s
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      bottom: 0
+      z-index: 1
+      background: var(--bg)
+      opacity: 0
+      transition: opacity 0.1s ease-out
+
+  &_showcase &_thumb
+    height: 15rem
+
+  &_showcase &_meta
+    padding-top: 1.5rem
+
+  &:hover &_thumb
+    img
+      transform: scale(1.1)
+
+    &::after
+      transition: opacity 0.1s ease-out
+      opacity: 0.5
+
+  &:hover &_excerpt:not(.visible)
+    height: 75px
+    opacity: 1
+
+  &:hover &_meta
+    &:not(.center_y)
+      margin-top: -75px
+
+    @media screen and (min-width: 769px)
+      &.center_y
+        transform: translateX(-3rem)
+
+  &:hover
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17)
+    a
+      color: initial !important
+
+  &_hidden
+    display: none
+
+.btn
+  min-width: 150px
+  font-size: 1rem
+  margin: 1rem 0 1.5rem
+  display: inline-block
+  padding: 7.5px 12.5px
+  background-color:var(--theme)
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.5)
+  color: var(--light)
+  text-align: center
+  cursor: pointer
+  border-radius: 0.25rem
+
+.transparent
+  padding: 25px
+
+.point
+  margin-right: 15px
+  color: var(--theme)
+
+@media screen and (min-width: 769px)
+  .nav-menu a
+    display: inline-block
+    height: initial
+    text-align: left
+
+  .mobile
+    display: none
+
+.video
+  overflow: hidden
+  padding-bottom: 56.25%
+  position: relative
+  height: 0
+  margin: 1.5rem 0
+  border-radius: 1rem
+  background-color: var(--bg)
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.17)
+  iframe
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    position: absolute
+    transform: scale(1.03)
+
+.copy
+  position: relative
+  cursor: pointer
+  z-index: 4
+  display: flex
+  align-items: center
+  justify-content: center
+  &
+    width: 1.75rem
+    height: 1.75rem
+  &::before
+    position: absolute
+    background: var(--theme)
+    color: var(--light)
+    opacity: 0
+    transition: opacity 0.25s ease-in
+
+  &::before
+    content: attr(data-before)
+    font-size: 0.8rem
+    width: 5.4rem
+    padding: 0.25rem
+    border-radius: 0.25rem
+    text-align: center
+    top: -2.25rem
+    right: 0
+
+  &_done::before
+    content: attr(data-after)
+
+  &:hover::before
+    opacity: 1
+
+.footer
+  padding: 0
+  color: var(--text)
+  margin: 0
+  width: 100%
+  font-size: 1.05rem
+  min-height: 75px
+  display: flex
+  justify-content: space-between
+  padding: 1.5rem
+  @media screen and (max-width: 567px)
+    flex-direction: column
+    padding-bottom: 1.5rem !important
+
+  a
+    color:var(--theme)
+    opacity: 0.8
+    transition: opacity 0.3s ease-in-out
+    &:hover
+      text-decoration: underline
+      opacity: 1
+
+.color
+  &_mode
+    // width: 3rem
+    height: 1.5rem
+    display: grid
+    grid-template-columns: 1fr 3rem
+    align-items: center
+    margin: 2rem 1.5rem 0
+
+  &_choice
+    outline: none
+    border: none
+    -webkit-appearance: none
+    height: 1rem
+    position: relative
+    &::before, &::after
+      content: ""
+      top: 0
+      bottom: 0
+      left: 0
+      position: absolute
+      height: 1rem
+      background: var(--theme)
+
+    &, &::before
+      width: 2.75rem
+      border-radius: 1rem
+      cursor: pointer
+      transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)
+      box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.15)
+
+    &::before
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.17)
+      z-index: 2
+      right: 0
+      filter: brightness(0.75)
+
+    &::after
+      width: 1rem
+      border-radius: 50%
+      z-index: 3
+      transform: scale(1.67)
+      transform-origin: 50% 50%
+      transition: transform 0.5s cubic-bezier(.19,1,.22,1)
+      will-change: transform

@@ -1,0 +1,140 @@
+*
+  box-sizing: border-box
+  -webkit-appearance: none
+  margin: 0
+  padding: 0
+
+body, html
+  scroll-behavior: smooth
+  font-kerning: normal
+  -webkit-text-size-adjust: 100%
+
+body
+  font-family: var(--font)
+  background-color: var(--bg)
+  color: var(--text)
+  font-size: 16px
+  line-height: 1.5
+  max-width: 1440px
+  margin: 0 auto
+  position: relative
+  font-kerning: normal
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+a
+  text-decoration: none
+  color: inherit
+
+blockquote
+  opacity: 0.8
+  padding: 1rem
+  position: relative
+  quotes: '\201C''\201D''\2018''\2019'
+  margin: 0.75rem 0
+  display: flex
+  flex-flow: row wrap
+  background-repeat: no-repeat
+  background-size: 5rem
+  background-position: 50% 50%
+  position: relative
+  &::before
+    content: ""
+    padding: 1px
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    background: var(--theme)
+
+  p
+    padding-left: 0.5rem 0 !important
+    font-size: 1.1rem !important
+    width: 100%
+    font-weight: 300
+    font-style: italic
+
+code
+  max-width: 100%
+  overflow-x: auto
+
+h1,h2,h3,h4,h5
+  font-family: inherit
+  text-transform: capitalize
+  font-weight: 400
+  padding: 0.33rem 0
+  margin: 1rem 0
+  color: inherit
+
+h1
+  font-size: 200%
+  font-weight: 400
+
+h2
+  font-size: 175%
+
+h3
+  font-size: 150%
+
+h4
+  font-size: 125%
+
+h5
+  font-size: 120%
+
+img
+  max-width: 100%
+  vertical-align: middle
+  height: auto
+  margin: 1rem auto
+  padding: 0
+
+main
+  padding-bottom: 45px
+  flex: 1
+
+ul
+  list-style: none
+  -webkit-padding-start: 0
+  -moz-padding-start: 0
+
+b, strong, em
+  font-weight: 500
+
+hr
+  border: none
+  padding: 0.5px
+  background: var(--text)
+  opacity: 0.09
+  margin: 2rem 0 0.75rem
+
+table
+  width: 100%
+  max-width: 100%
+  overflow-x: scroll
+  border-collapse: collapse
+  margin: 1rem 0
+  background: transparent
+  border-style: hidden
+  box-shadow: 0 1rem 4rem rgba(0,0,0,0.15)
+  &:not(.ln-table) tr
+    background-color: var(--accent)
+
+th
+  text-align: left
+  color: var(--light)
+
+thead tr
+  background: var(--theme) !important
+
+td, th
+  padding: 0.5rem 1rem
+  border: 2px solid var(--bg)
+
+aside h3
+  position: relative
+  margin:0 !important

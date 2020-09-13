@@ -1,0 +1,127 @@
+.nav
+  position: absolute
+  top: 0
+  width: 100%
+  transition: height 0.4s cubic-bezier(0.52, 0.16, 0.24, 1)
+  z-index: 999
+  &_bar
+    width: 100%
+    position: relative
+    &-wrap
+      width: 1.8rem
+      height: 1.8rem
+      display: grid
+      align-items: center
+      cursor: pointer
+      z-index: 99
+      min-height: 1.5rem
+
+    &, &::after, &::before
+      padding: 1px
+      border-radius: 2px
+      background-color: var(--text)
+
+    &::after, &::before
+      content: ""
+      position: absolute
+      width: 1.2rem
+
+    &::before
+      top: -0.5rem
+
+    &::after
+      top: 0.5rem
+      right: 0
+
+  &-body
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17)
+    position: fixed
+    right: 10px
+    z-index: 1
+    top: 100%
+    opacity: 0
+    overflow: hidden
+    transition: top 0.33s linear
+    background: transparent
+    background-color: var(--accent)
+    width: 16rem
+    padding: 100px 0
+    min-height: 100vh
+    z-index: 1
+    &:hover
+      box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.27)
+
+    a
+      display: block
+      padding: 12.5px 25px
+      margin-bottom: 2px
+      border-bottom: 1px solid rgba(0,0,0,0.04)
+      transition:color 0.25s ease-in-out
+      &:hover
+        color: var(--theme)
+
+  &-brand
+    font-family: "Cookie"
+    font-size: 2em !important
+    padding-top: 0 !important
+    padding-bottom: 0 !important
+
+  &-close
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    cursor: pointer
+    padding: 25px
+    &:after, &:before
+      content: ''
+      width: 18px
+      border-radius: 50%
+      padding: 1.5px
+      background: var(--text)
+      opacity: 0.7
+      position: relative
+
+    &:before
+      transform: rotate(20deg) translateX(1.5px)
+
+    &:after
+      transform: rotate(-20deg) translateX(-1.5px)
+
+  &-drop
+    cursor: pointer
+    top: 0
+    bottom: 0
+    z-index: 1000
+
+  &-exit
+    animation: hideMenu 0.5s cubic-bezier(0.52, 0.16, 0.24, 1) forwards
+
+  &-menu
+    position: relative
+    padding: 10px 25px 10px 0
+    height: 100%
+    max-width: 1024px
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: space-between
+    a
+      color: inherit
+      width: 100%
+      display: block
+      padding: 10px 25px
+      font-size: 105%
+
+  &-pop
+    position: fixed
+    width: 100vw
+
+  &-open
+    animation: showMenu 0.5s cubic-bezier(0.52, 0.16, 0.24, 1) forwards
+
+  &_item
+    text-transform: capitalize
