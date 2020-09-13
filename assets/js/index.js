@@ -1,21 +1,21 @@
 (function(){ 
-  
   const doc = document.documentElement;
-  
+  const parentURL = '{{ absURL "/" }}';
+
   function createEl(element) {
     return document.createElement(element);
   }
-  
+
   function elem(selector){
     let elem = document.querySelector(selector);
     return elem != false ? elem : false;
   }
-  
+
   function elems(selector, parent = document) {
     let elems = parent.querySelectorAll(selector);
     return elems.length ? elems : false;
   }
-  
+
   function pushClass(el, targetClass) {
     // equivalent to addClass
     if (el && typeof el == 'object' && targetClass) {
@@ -23,7 +23,7 @@
       elClass.contains(targetClass) ? false : elClass.add(targetClass);
     }
   }
-  
+
   function deleteClass(el, targetClass) {
     // equivalent to removeClass
     if (el && typeof el == 'object' && targetClass) {
@@ -31,20 +31,20 @@
       elClass.contains(targetClass) ? elClass.remove(targetClass) : false;
     }
   }
-  
+
   function modifyClass(el, targetClass) {
     if (el && typeof el == 'object' && targetClass) {
       elClass = el.classList;
       elClass.contains(targetClass) ? elClass.remove(targetClass) : elClass.add(targetClass);
     }
   }
-  
+
   function containsClass(el, targetClass) {
     if (el && typeof el == 'object' && targetClass) {
       return el.classList.contains(targetClass) ? true : false;
     }
   }
-  
+
   function isChild(node, parentClass) {
     let isNode = node && typeof node == 'object';
     if (isNode){
@@ -54,7 +54,7 @@
         parentClass.forEach(function(parent){
           if (node.closest(parent) != null) {
             child = true;
-          } 
+          }
         });
         return child ? true : false;
       } else if (typeof parentClass == 'string') {
@@ -62,7 +62,18 @@
       }
     }
   }
-  
+
+  function isTarget(target,selector,specifity=false) {
+    const isIt = containsClass(target, selector);
+    const isInIt = target.closest(`.${selector}`);
+    if(specifity && isIt) {
+      return isIt;
+    }
+    if(!specifity) {
+      return isIt || isInIt;
+    }
+  }
+
   (function updateDate() {
     const dateElem = elem('.year')
     if (dateElem) {
@@ -71,7 +82,7 @@
       dateElem.innerHTML = year;
     }
   })();
-  
+
   (function() {
     let bar = 'nav_bar-wrap';
     let navBar = elem(`.${bar}`);
@@ -82,44 +93,41 @@
     let pop = 'nav-pop';
     let navDrop = elem(`.${drop}`);
     let hidden = 'hidden';
-    
+
     function toggleMenu(){
       modifyClass(navDrop, pop);
       modifyClass(navBar, hidden);
       let menuOpen = containsClass(nav, open);
       let menuPulled = containsClass(nav, exit);
-      
+
       let status = menuOpen || menuPulled ? true : false;
-      
+
       status ? modifyClass(nav, exit) : modifyClass(nav, open);
       status ? modifyClass(nav, open) : modifyClass(nav, exit);
     }
-    
-    // $('.nav-bar, .nav-close').on('click', () => toggleMenu());
-    navBar.addEventListener('click', function() {
-      toggleMenu();
+
+    doc.addEventListener('click', function(event) {
+      let target = event.target;
+      // alert(target);
+      console.log(target);
+      const isNavDrop = isTarget(target, 'nav-drop', true);
+      const isNavClose = isTarget(target,'nav-close', true);
+      const isNavBar = isTarget(target, 'nav_bar-wrap');
+      isNavDrop || isNavClose || isNavBar ? toggleMenu() : false;
     });
-    elem('.nav-close').addEventListener('click', function() {
-      toggleMenu();
-    });
-    
-    elem('.nav-drop').addEventListener('click', function(e) {
-      e.target === this ? toggleMenu() : false;
-    });
-    
   })();
-  
+
   (function share(){
     let share = elem('.share');
     let open = 'share-open';
     let close = 'share-close';
     let button = elem('.share-trigger');
-    
+
     function showShare() {
       pushClass(share, open);
       deleteClass(share, close);
     }
-    
+
     function hideShare() {
       pushClass(share, open);
       deleteClass(share, close);
@@ -131,7 +139,7 @@
       });
     }
   })();
-  
+
   function elemAttribute(elem, attr, value = null) {
     if (value) {
       elem.setAttribute(attr, value);
@@ -140,7 +148,7 @@
       return value ? value : false;
     }
   }
-  
+
   (function(){
     let links = document.querySelectorAll('a');
     if(links) {
@@ -155,40 +163,46 @@
           noopener = 'noopener';
           attr1 = elemAttribute(link, target);
           attr2 = elemAttribute(link, noopener);
-          
           attr1 ? false : elemAttribute(link, target, blank);
           attr2 ? false : elemAttribute(link, rel, noopener);
         }
       });
     }
   })();
-  
+
+  function loadSvg(file, parent, path = 'icons/') {
+    const link = `${parentURL}${path}${file}.svg`;
+    fetch(link)
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+      parent.innerHTML = data;
+    });
+  }
+
   let headingNodes = [], results, link, icon, current, id,
   tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
-  
-  
+
   current = document.URL;
-  
+
   tags.forEach(function(tag){
     results = document.getElementsByTagName(tag);
     Array.prototype.push.apply(headingNodes, results);
   });
-  
+
   headingNodes.forEach(function(node){
     link = createEl('a');
-    icon = createEl('img');
-    icon.className = 'icon';
-    icon.src = '{{ "images/icons/link.svg" | absURL }}';
     link.className = 'link';
-    link.appendChild(icon);
     id = node.getAttribute('id');
+    loadSvg('link', link, 'images/icons/')
     if(id) {
       link.href = `${current}#${id}`;
       node.appendChild(link);
       pushClass(node, 'link_owner');
     }
   });
-  
+
   const copyToClipboard = str => {
     // Create a <textarea> element
     const el = createEl('textarea');
@@ -214,7 +228,7 @@
       document.getSelection().addRange(selected);   // Restore the original selection
     }
   }
-  
+
   (function copyHeadingLink() {
     let deeplink = 'link';
     let deeplinks = document.querySelectorAll(`.${deeplink}`);
@@ -230,7 +244,7 @@
       });
     }
   })();
-  
+
   (function copyLinkToShare() {
     let  copy, copied, excerpt, isCopyIcon, isInExcerpt, link, page, postCopy, postLink, target;
     copy = 'copy';
@@ -238,13 +252,14 @@
     excerpt = 'excerpt';
     postCopy = 'post_copy';
     postLink = 'post_card';
-    page = document.documentElement;
-    
-    page.addEventListener('click', function(event) {
+
+    doc.addEventListener('click', function(event) {
       target = event.target;
-      isCopyIcon = containsClass(target, copy);
+      const isInCopyIcon = target.closest(`.${copy}`)
+      isCopyIcon = isTarget(target,copy);
       isInExcerpt = containsClass(target, postCopy);
       if (isCopyIcon) {
+        event.preventDefault();
         if (isInExcerpt) {
           link = target.closest(`.${excerpt}`).previousElementSibling;
           link = containsClass(link, postLink)? elemAttribute(link, 'href') : false;
@@ -253,12 +268,12 @@
         }
         if(link) {
           copyToClipboard(link);
-          pushClass(target, copied);
-        } 
+          isInCopyIcon ? pushClass(isInCopyIcon, copied): pushClass(target, copied);
+        }
       }
     });
   })();
-  
+
   (function hideAside(){
     let aside, title, posts;
     aside = elem('.aside');
@@ -268,7 +283,7 @@
       posts.length < 1 ? title.remove() : false;
     }
   })();
-  
+
   (function goBack() {
     let backBtn = elem('.btn_back');
     let history = window.history;
@@ -278,26 +293,26 @@
       });
     }
   })();
-  
+
   const light = 'lit';
   const dark = 'dim';
   const storageKey = 'colorMode';
   const key = '--color-mode';
   const data = 'data-mode';
   const bank = window.localStorage;
-  
+
   function currentMode() {
     let acceptableChars = light + dark;
     acceptableChars = [...acceptableChars];
     let mode = getComputedStyle(doc).getPropertyValue(key).replace(/\"/g, '').trim();
-    
+
     mode = [...mode].filter(function(letter){
       return acceptableChars.includes(letter);
     });
-    
+
     return mode.join('');
   }
-  
+
   function changeMode(isDarkMode) {
     if(isDarkMode) {
       bank.setItem(storageKey, light)
@@ -307,7 +322,7 @@
       elemAttribute(doc, data, dark);
     }
   }
-  
+
   (function lazy() {
     function lazyLoadMedia(element) {
       let mediaItems = elems(element);
@@ -332,20 +347,19 @@
       }
     } else {
       if(mode === true) {
-        changeMode(isDarkMode) 
+        changeMode(isDarkMode)
       }
     }
   }
-  
+
   setUserColorMode();
-  
+
   doc.addEventListener('click', function(event) {
     let target = event.target;
     let modeClass = 'color_choice';
     let isModeToggle = containsClass(target, modeClass);
     if(isModeToggle) {
-      setUserColorMode(true);        
+      setUserColorMode(true);
     }
   });
-  
 })();
