@@ -1,9 +1,21 @@
 pre
   display: grid
-
+  white-space: wrap
+// code
+//   white-space: none
 .highlight
   margin: 1.5rem 0 2.5rem
   padding: 0 !important
+  position: relative
+  &:not(.sans)::before
+    content: ""
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 2px
+    left: 3rem
+    background: var(--bg)
+    z-index: 10
   & &
     margin: 0
 
@@ -49,9 +61,12 @@ pre
   background-color: #ffffcc
 
 .ln
-  margin-right: 0.4rem
-  padding: 0 0.4em 0 0.4rem
-  color: #666
+  padding: 0 2em 0 0
+  color: var(--theme)
+  position: sticky
+  left: 0
+  background: var(--accent)
+  z-index: 9
 
 .k, .kc, .kd, .kn, .kp, .kr, .kt, .nt
   color: #6ab825
