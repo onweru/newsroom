@@ -10,7 +10,8 @@
   {{- partial "opengraph" . }}
   {{- partial "favicon" . }}
   <link rel='canonical' href='{{ .Permalink }}'>
-  {{- $options := (dict "targetPath" "css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
-  {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+  {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
+  {{ $mainSassFile :=  "sass/main.sass" }}
+  {{- $styles := resources.Get $mainSassFile | resources.ExecuteAsTemplate $mainSassFile . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
   <link rel = 'stylesheet' href = '{{ $styles.Permalink }}' integrity = '{{ $styles.Data.Integrity }}'>
 </head>
