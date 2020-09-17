@@ -6,12 +6,6 @@
   other = "Link Copied"
 [author_profile]
   other = "{{ . }}'s profile"
-[archive]
-  other= "Archive"
-[tags]
-  other= "Tags"
-[categories]
-  other= "Categories"
 [view_archive]
   other= "View Archive"
 [the_latest]
