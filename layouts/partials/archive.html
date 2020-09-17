@@ -1,5 +1,5 @@
 <div class = 'archive wrap mt'>
-  <h1 class="archive_title">Archive</h1>
+  <h1 class="archive_title">{{i18n "archive"}}</h1>
   {{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
   {{- range $paginator.Pages }}
   <a class = 'archive_item' href = '{{ .Permalink }}'>

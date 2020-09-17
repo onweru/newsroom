@@ -6,3 +6,13 @@
   other = "已复制"
 [author_profile]
   other = "{{ . }} 的个人档案"
+[archive]
+  other= "归档"
+[tags]
+  other= "标签"
+[categories]
+  other= "分类"
+[view_archive]
+  other= "阅读更多"
+[the_latest]
+  other= "最新文章"
