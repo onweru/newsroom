@@ -1,4 +1,4 @@
-(function(){ 
+(function(){
   const doc = document.documentElement;
   const parentURL = '{{ absURL "/" }}';
 
@@ -113,8 +113,6 @@
 
     doc.addEventListener('click', function(event) {
       let target = event.target;
-      // alert(target);
-      console.log(target);
       const isNavDrop = isTarget(target, 'nav-drop', true);
       const isNavClose = isTarget(target,'nav-close', true);
       const isNavBar = isTarget(target, 'nav_bar-wrap');
@@ -199,7 +197,8 @@
     const link = `${parentURL}${path}${file}.svg`;
     fetch(link)
     .then((response) => {
-      return response.text();
+      const data = response.status == 200 ? response.text() : "";
+      return data;
     })
     .then((data) => {
       parent.innerHTML = data;
