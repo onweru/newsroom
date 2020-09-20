@@ -6,3 +6,7 @@
   other = "已复制"
 [author_profile]
   other = "{{ . }} 的个人档案"
+[view_archive]
+  other= "阅读更多"
+[the_latest]
+  other= "最新文章"

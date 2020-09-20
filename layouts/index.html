@@ -16,7 +16,7 @@
     <a href = '{{ $value.Permalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
       <div class = 'article_thumb' style='background-image: url({{ $bg }})'></div>
       <div class = 'article_meta {{ if eq $index 0 }} center_y {{ end }}'>
-        <time class = 'post_date'>{{ dateFormat "January 02, 2006" $value.Date }}</time>
+        <time class = 'post_date'>{{ dateFormat (.Site.Params.dateFormatToUse | default "January 02, 2006") $value.Date }}</time>
         <h3 class = 'article_title'>{{ $value.Title }}</h3>
         <div class = 'article_excerpt {{ if eq $index 0 }} visible {{ end }}'>
         <p>{{ $value.Summary | truncate 100 }}</p>
@@ -28,7 +28,7 @@
   {{- if and (eq $index (add $size -1)) (gt $size 1) }}</div>{{ end }}
   {{- end }}
 </div>
-<a href = '{{ absURL (printf "post/%s" "") }}' class = 'post_nav'><span class = 'post_next'>View Archive
+<a href = '{{ absURL (printf "post/%s" "") }}' class = 'post_nav'><span class = 'post_next'>{{ i18n "view_archive" }}
   <svg class="icon icon_scale">
     <use xlink:href="#double-arrow"></use>
   </svg>

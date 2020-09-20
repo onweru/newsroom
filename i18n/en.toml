@@ -6,3 +6,7 @@
   other = "Link Copied"
 [author_profile]
   other = "{{ . }}'s profile"
+[view_archive]
+  other= "View Archive"
+[the_latest]
+  other= "The Latest"
