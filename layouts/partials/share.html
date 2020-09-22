@@ -1,1 +1,10 @@
-<div class = 'copy'></div>
+<div class='share copy'></div>
+<a href="http://twitter.com/share?text=Check out this post on the QAware Engineering Blog about {{ .Title }}&url={{ .Permalink }}{{ with .Params.tags }}&hashtags={{ replace (delimit . ",") " " "" }}{{ end }}">
+    <div class='share twitter'></div>
+</a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">
+    <div class='share linkedin'></div>
+</a>
+<a href="mailto:?subject={{ .Title }}&amp;body=Hi,%0D%0A%0D%0ACheck out this post on the QAware Engineering Blog: {{ .Permalink }}%0D%0A%0D%0ABest Regards">
+    <div class='share email'></div>
+</a>

@@ -9,11 +9,11 @@
                 <ul class="main-nav-menu">
                     {{ range .Site.Data.menu }}
                     <li class="main-nav-menu">
-                        <a href='{{ absURL .url }}' class="main-nav-menu">{{ .item }}</a>
+                        <a href='{{ absURL .url }}' class="main-nav-menu {{ if ne .external true }}nav-item{{ end }}">{{ .item }}</a>
                         {{ with .subitems }}
                         <ul class="main-nav-sub-menu">
                             {{ range .}}
-                            <li class="main-nav-sub-menu"><a href="{{ absURL .url }}" class="main-nav-sub-menu">{{ .item }}</a></li>
+			    <li class="main-nav-sub-menu"><a href="{{ absURL .url }}" class="main-nav-sub-menu {{ if ne .external true }}nav-item{{ end }}">{{ .item }}</a></li>
                             {{ end }}
                         </ul>
                         {{ end }}

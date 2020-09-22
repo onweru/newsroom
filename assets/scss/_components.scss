@@ -1,5 +1,5 @@
 .article{
-  box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
+  box-shadow: 0 0 1px rgba(0,0,0,0.33);
   overflow: hidden;
   border-radius: 0.5rem;
   &_title{
@@ -96,7 +96,6 @@
     }
   }
   &:hover{
-    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17);
     a{
       color: initial !important;
     }
@@ -149,7 +148,7 @@
   margin: 1.5rem 0;
   border-radius: 1rem;
   background-color: var(--bg);
-  box-shadow: 0 1rem 4rem rgba(0,0,0,0.17);
+  box-shadow: 0 0 1px rgba(0,0,0,0.33);
   iframe{
     left:0;
     top:0;
@@ -160,11 +159,11 @@
   }
 }
 
-.copy {
+.share {
+  margin-left: 8px;
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url(#{$copy-icon-path});
   background-size: 100%;
   cursor: pointer;
   &::before, &::after {
@@ -176,9 +175,8 @@
     transition: opacity 0.25s ease-in;
   }
   &::before {
-    content: "#{$copy-icon-b4}";
     font-size: 0.8rem;
-    width: 5.4rem;
+    width: 6.6rem;
     padding: 0.25rem;
     border-radius: 0.25rem;
     text-align: center;
@@ -186,13 +184,57 @@
     right: 0;
   }
   &_done::before {
-    content: "#{$copy-icon-aft}";
   }
   &:hover::before,
   &:hover::after {
     opacity: 1;
   }
 }
+
+.twitter {
+  background-image: url(#{$twitter-icon-path});
+  &::before {
+    content: "#{$twitter-icon-b4}";
+    width: 7.5rem;
+  }
+  &_done::before {
+    content: "#{$twitter-icon-b4}";
+  }
+}
+
+.linkedin {
+  background-image: url(#{$linkedin-icon-path});
+  &::before {
+    content: "#{$linkedin-icon-b4}";
+    width: 7.5rem;
+  }
+  &_done::before {
+    content: "#{$linkedin-icon-b4}";
+  }
+}
+
+.email {
+  background-image: url(#{$email-icon-path});
+  &::before {
+    content: "#{$email-icon-b4}";
+    width: 6.6rem;
+  }
+  &_done::before {
+    content: "#{$email-icon-b4}";
+  }
+}
+
+.copy {
+  background-image: url(#{$copy-icon-path});
+  &::before {
+    content: "#{$copy-icon-b4}";
+    width: 5.4rem;
+  }
+  &_done::before {
+    content: "#{$copy-icon-aft}";
+  }
+}
+
 .footer{
   color: var(--text);
   margin:0;

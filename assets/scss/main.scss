@@ -1,10 +1,17 @@
 // text strings
 $copy-icon-b4: '{{ i18n "share_story" }}';
 $copy-icon-aft: '{{ i18n "link_copied" }}';
+$twitter-icon-b4: '{{ i18n "share_story_twitter" }}';
+$linkedin-icon-b4: '{{ i18n "share_story_linkedin" }}';
+$email-icon-b4: '{{ i18n "share_story_email" }}';
+
 
 // urls
 $font-path: '{{ absURL "fonts" }}';
 $copy-icon-path: '{{ absURL "images/icons/copy.svg" }}';
+$twitter-icon-path: '{{ absURL "images/icons/twitter.svg" }}';
+$linkedin-icon-path: '{{ absURL "images/icons/linkedin.svg" }}';
+$email-icon-path: '{{ absURL "images/icons/email.svg" }}';
 $prev-icon-path: '{{ absURL "images/icons/previous.svg" }}';
 $next-icon-path: '{{ absURL "images/icons/next.svg" }}';
 $never-icon-path: '{{ absURL "images/sitting.svg"  }}';
