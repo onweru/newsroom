@@ -85,7 +85,7 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
 
 1. __Video__
     This shortcode can be used to embed a youtube video with custom styling. It takes a solo positional parameter.
-    
+
     ```
     ...
     {{< video "youtubeVideoID" >}}
@@ -104,8 +104,9 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
 
 ## From the same creator
 
-1. [Swift Theme](https://github.com/onweru/hugo-swift-theme)
+1. [Clarity Theme](https://github.com/chipzoller/hugo-clarity)
 2. [Compose Theme](https://github.com/onweru/compose)
+3. [Swift Theme](https://github.com/onweru/hugo-swift-theme)
 
 ## License
 
