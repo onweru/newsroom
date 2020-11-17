@@ -1,16 +1,14 @@
-# Newsroom Theme
+# QAware Blog Theme
 
-This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom page](https://www.apple.com/newsroom/). It uses *grid css*, *flexbox* & js (no jQuery, or related libraries).
+This is the Hugo blog theme for the [QAware Blog](https://blog.qaware.de).
 
-![Hugo Newsroom Theme](https://github.com/onweru/newsroom/blob/master/images/screenshot.png)
+It is based on the [Hugo Newsroom](https://github.com/onweru/newsroom) theme and adjusted to look like [QAware Website](https://www.qaware.de).
+
 
 ## Features
 
-* Blog
-* Modern
 * Responsive
 * Deeplinks
-* Dark Mode
 * Syntax highlighting 
 
 ### Deeplinks
@@ -22,7 +20,7 @@ For all content published using markdown, deeplinks will be added to the pages s
 Add this theme as a Git submodule inside your Hugo site folder:
 
 ```bash
-git submodule add https://github.com/onweru/newsroom.git themes/newsroom
+git submodule add https://github.com/qaware/qaware-blog-theme.git themes/qaware-blog-theme
 ```
 
 > Theme hugo sass and hugo-extended version.
@@ -41,25 +39,14 @@ You can configure the site as follows:
 
 ## Start publishing
 
-Follow the `exampleSite/`; specifically, the [content](https://github.com/onweru/newsroom/tree/master/exampleSite/content/post) directory
+A good example is the actual [QAware Blog Source](https://github.com/qaware/qaware-blog-source).
+
 
 ### Dark Mode
 
-Today, operating systems have a system-wide __light ~ dark mode__ switch. Your website will adapt to the user's preferred lighting mode. Still, if the user wants to opt in or out of darkmode, there's a UI control for that too in the menu 😊.
-
-![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
-
-### Custom 404 Page
-
-| Normal Mode | Dark Mode |
-|--- | ---|
-| ![404 page](https://github.com/onweru/newsroom/blob/master/images/404.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/404-dark.png)|
+The original theme featured a dark mode which we removed.
 
 ### Syntax highlighting
-
-| Normal Mode | Dark Mode |
-|--- | ---|
-| ![404 page](https://github.com/onweru/newsroom/blob/master/images/syntax.png) | ![404 page on dark Mode](https://github.com/onweru/newsroom/blob/master/images/syntax-dark.png)|
 
 If you wish, you can opt to [use Chroma](./exampleSite/config.toml#L17-L27).
 
@@ -78,7 +65,7 @@ From your disqus dashboard, set your scripts `color scheme` to __auto__. See scr
 
 ## Custom Shortcodes
 
-This theme ships with __2 custom shortcodes__ (they both use positional parameters):
+This theme ships with a custom shortcode:
 
 1. __Video__
     This shortcode can be used to embed a youtube video with custom styling. It takes a solo positional parameter.
@@ -88,22 +75,6 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
     {{< video "youtubeVideoID" >}}
     ...
     ```
-
-2. __Picture__
-    You want to use darkmode images when darkmode is enabled on a device and a regular image on lightmode? It takes 3 positional parameter
-
-    Store these images in the `static/images` directory. 
-    
-    ```
-    ...
-    {{< picture "lightModeImage.png" "darkModeImage.png" "Image alt text" >}}
-    ...
-    ```
-
-## From the same creator
-
-1. [Swift Theme](https://github.com/onweru/hugo-swift-theme)
-2. [Compose Theme](https://github.com/onweru/compose)
 
 ## License
 
