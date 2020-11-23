@@ -16,10 +16,18 @@
   {{- partial "favicon" . }}
   <link rel='canonical' href='{{ .Permalink }}'>
   {{- $options := (dict "targetPath" "css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
-  {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
-  <link rel = 'stylesheet' href = '{{ $styles.Permalink }}' integrity = '{{ $styles.Data.Integrity }}' title="templateStyle">
-  
+  {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS
+  $options | resources.Fingerprint "sha512" }}
+  <link rel='stylesheet' href='{{ $styles.Permalink }}' integrity='{{ $styles.Data.Integrity }}' title="templateStyle">
+
+  {{ with .OutputFormats.Get "rss" -}}
+  {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s"/>
+  ` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
   {{- with .Site.Params.cookiebot }}
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="{{ . }}" data-blockingmode="auto" type="text/javascript"></script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="{{ . }}" data-blockingmode="auto"
+          type="text/javascript"></script>
   {{ end -}}
 </head>
