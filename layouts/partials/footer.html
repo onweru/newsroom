@@ -1,7 +1,7 @@
-<footer class = 'footer wrap pale'>
-  <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;{{ .Site.Title }}</p>
-  <p class="attribution upcase">{{ i18n "designed_by" .Site.Data.designer | safeHTML }}</p>
+<footer class="footer wrap pale">
+  <p>&copy;&nbsp;<span class="year"></span>&nbsp;{{ .Site.Title }}</p>
+  <p class="attribution upcase">{{ safeHTML (T "designed_by" .Site.Data.designer) }}</p>
 </footer>
 {{ $scriptPath := "js/index.js" }}
 {{ $scripts := resources.Get $scriptPath | resources.ExecuteAsTemplate $scriptPath . | resources.Minify | resources.Fingerprint "sha512" }}
-<script src = '{{ $scripts.Permalink }}'></script>
+<script src="{{ $scripts.Permalink }}"></script>

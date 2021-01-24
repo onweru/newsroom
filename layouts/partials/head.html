@@ -4,14 +4,13 @@
   {{- with .Site.Params.ga_verify }}
   <meta name="google-site-verification" content="{{ . }}" />
   {{- end }}
-  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
-  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   {{- partial "analytics" . }}
   {{- partial "opengraph" . }}
   {{- partial "favicon" . }}
-  <link rel='canonical' href='{{ .Permalink }}'>
   {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
   {{ $mainSassFile :=  "sass/main.sass" }}
   {{- $styles := resources.Get $mainSassFile | resources.ExecuteAsTemplate $mainSassFile . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
-  <link rel = 'stylesheet' href = '{{ $styles.Permalink }}' integrity = '{{ $styles.Data.Integrity }}'>
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 </head>
