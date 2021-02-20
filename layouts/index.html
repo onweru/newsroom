@@ -13,7 +13,7 @@
     {{ $image := $scratch.Get "image" }}
     {{ $bg := (absURL (printf "images/%s" $image)) }}
     {{- if in $image "https://" }}
-      {{- $bg = . }}
+      {{- $bg = $image }}
     {{- end }}
   <article class = 'article mb-2'>
     <a href = '{{ $value.Permalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
