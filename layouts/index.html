@@ -12,6 +12,9 @@
     {{ end }}
     {{ $image := $scratch.Get "image" }}
     {{ $bg := (absURL (printf "images/%s" $image)) }}
+    {{- if in $image "https://" }}
+      {{- $bg = . }}
+    {{- end }}
   <article class = 'article mb-2'>
     <a href = '{{ $value.Permalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
       <div class = 'article_thumb' style='background-image: url({{ $bg }})'></div>

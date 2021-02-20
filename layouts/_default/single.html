@@ -8,6 +8,9 @@
         <div class="post_inner">
         {{ with .Params.image }}
           {{- $image := absURL (printf "images/%s" .) }}
+          {{ if in . "https://" }}
+            {{- $image = . }}
+          {{ end }}
           <img src="{{ $image }}" alt="{{ . }}" class="post_thumbnail">
         {{ end }}
           {{ .Content }}

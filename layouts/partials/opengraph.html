@@ -9,9 +9,16 @@
 {{- end }}
 {{- $summary = truncate 160 "" $summary }}
 {{- $logo := absURL (printf "images/%s" $params.logo) }}
+{{- if in $params.logo "https://" }}
+  {{- $logo = $params.logo }}
+{{- end }}
 {{ $image := "" }}
 {{- with .Params.image }}
-  {{- $image = absURL (printf "images/%s" .) }}
+  {{ if in . "https://" }}
+    {{- $image = . }}
+  {{ else }}
+    {{- $image = absURL (printf "images/%s" .) }}
+  {{ end }}
 {{- else }}
   {{- $image = $logo }}
 {{- end }}
