@@ -16,7 +16,7 @@
           {{ .Content }}
         </div>
         <div class="post_extra mb-2">
-          {{ partial "share" . }}
+          {{ partialCached "share" . }}
         </div>
         <div>
         {{ template "_internal/disqus.html" . }}

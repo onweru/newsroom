@@ -3,11 +3,11 @@
 <html lang="{{ .Lang }}" {{ if $params.disableDarkMode }}class="nodarkmode"{{ end }}>
   {{ partial "head" . }}
   <body>
-    {{ partial "nav" . }}
+    {{ partialCached "nav" . }}
     <main>
       {{ block "main" . }}{{ end }}
     </main>
-    {{ partial "footer" . }}
-    {{ partial "sprites" . }}
+    {{ partialCached "footer" . }}
+    {{ partialCached "sprites" . }}
   </body>
 </html>
