@@ -1,6 +1,6 @@
-{{- $params := .Site.Params }}
+{{- $params := site.Params }}
 {{- $pl := .Permalink }}
-{{ $st := .Site.Title }}
+{{ $st := site.Title }}
 {{- $summary := "" }}
 {{- with .Summary }}
   {{-  $summary = . }}

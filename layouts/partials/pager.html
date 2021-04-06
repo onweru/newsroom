@@ -1,6 +1,6 @@
 {{- $paginator := .Paginator }}
 {{- $pages := $paginator.TotalPages -}}
-{{- $root := .Site.BaseURL -}}
+{{- $root := absURL "" -}}
 {{- if gt $pages 1 }}
   <div class="pager">
     {{ if $paginator.HasPrev }}
