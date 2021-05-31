@@ -4,7 +4,7 @@
 {{- if gt $pages 1 }}
   <div class="pager">
     {{ if $paginator.HasPrev }}
-      <a href="{{ $root }}{{ $paginator.Prev.URL }}"  class="pager_item pager_prev">
+      <a href="{{ $root }}{{ $paginator.Prev.URL }}"  class="pager_item pager_prev" rel="prev">
         <svg class="icon icon_scale icon_invert">
           <use xlink:href="#double-arrow"></use>
         </svg>
@@ -20,7 +20,7 @@
     <span>{{ $paginator.PageNumber }} of {{ $pages }}</span>
 
     {{- if $paginator.HasNext -}}
-      <a href="{{ $root }}{{ $paginator.Next.URL }}" class="pager_item pager_next">
+      <a href="{{ $root }}{{ $paginator.Next.URL }}" class="pager_item pager_next" rel="next">
         <svg class="icon icon_scale">
           <use xlink:href="#double-arrow"></use>
         </svg>
