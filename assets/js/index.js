@@ -227,7 +227,7 @@
     }
   });
 
-  const copyToClipboard = str => {
+  function copyToClipboard(str) {
     // Create a <textarea> element
     const el = createEl('textarea');
     // Set its value to the string that you want copied
