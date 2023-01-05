@@ -1,8 +1,22 @@
-[designed_by]
-  other = "Diseño por  <a href = '{{ .url }}' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'>{{ .name }}</a>"
-[share_story]
-  other = "Compartir"
-[link_copied]
-  other = "Link copiado!"
+[archive]
+  other = "Archive"
+[archive_text]
+  other = "Todo el contenido"
 [author_profile]
   other = "Perfil de {{ . }}"
+[designed_by]
+  other = "Diseño por  <a href = '{{ .url }}' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'>{{ .name }}</a>"
+[go_back]
+  other = "Go Back"
+[latest_posts]
+  other = "Recientes"
+[link_copied]
+  other = "Link copiado!"
+[not_found_text]
+  other = "We couldn't find the page you're looking for"
+[not_found_title]
+  other = "Uh Ohhh!"
+[share_story]
+  other = "Compartir"
+[toggle_dark_mode]
+  other = "Toggle Dark Mode"

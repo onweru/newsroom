@@ -1,8 +1,22 @@
-[designed_by]
-  other = "由 <a href = '{{ .url }}' target = '_blank' title = '领英个人档案' rel = 'nonopener'>{{ .name }}</a> 设计"
-[share_story]
-  other = "分享故事"
-[link_copied]
-  other = "已复制"
+[archive]
+  other = "Archive"
+[archive_text]
+  other = "View Archive"
 [author_profile]
   other = "{{ . }} 的个人档案"
+[designed_by]
+  other = "由 <a href = '{{ .url }}' target = '_blank' title = '领英个人档案' rel = 'nonopener'>{{ .name }}</a> 设计"
+[go_back]
+  other = "Go Back"
+[latest_posts]
+  other = "Latest Posts"
+[link_copied]
+  other = "已复制"
+[not_found_text]
+  other = "We couldn't find the page you're looking for"
+[not_found_title]
+  other = "Uh Ohhh!"
+[share_story]
+  other = "分享故事"
+[toggle_dark_mode]
+    other = "Toggle Dark Mode"

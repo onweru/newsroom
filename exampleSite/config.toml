@@ -2,7 +2,6 @@ baseurl = "https://example.com/"  # Include trailing slash
 title = "Newsroom"
 theme = "newsroom"
 author = "Weru"
-copyright = "Copyright © 2019, Weru and the Hugo Authors; all rights reserved."
 canonifyurls = true
 paginate = 6
 
@@ -33,3 +32,5 @@ paginate = 6
   # mainSections = ["blog", "docs"] see https://gohugo.io/functions/where/#mainsections
   # uncomment the line below will disable darkmode by default.
   # disableDarkMode = true  # note that the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
+  logo = "" # if the value is an empty string, the site title will be shown instead
+  faviconsDir = "images/icons/" # with a trailing slash
