@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{{- $params := .Site.Params }}
-<html lang="{{ .Lang }}" {{ if $params.disableDarkMode }} class="nodarkmode"{{ end }}{{ with $params.enforceDarkMode }} data-mode="dim"{{ end }}>
+{{- $mode := partialCached "func/getMode" . }}
+<html lang="{{ .Lang }}" {{ if $mode }} data-mode="{{ $mode }}"{{ end }}>
   {{ partial "head" . }}
   <body>
     {{ partialCached "nav" . }}

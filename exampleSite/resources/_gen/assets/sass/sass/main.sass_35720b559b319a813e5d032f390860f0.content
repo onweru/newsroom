@@ -36,7 +36,7 @@ html[data-mode="dim"] .color_choice::after {
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not(.nodarkmode):not([data-mode="lit"]) {
+  html:not([data-mode="lit"]) {
     --light: #eee;
     --color-mode: 'dim';
     --bg: var(--bg-dark);
@@ -44,10 +44,10 @@ html[data-mode="dim"] .color_choice::after {
     --accent: var(--bubble);
     --theme: rgb(48,209,88);
   }
-  html:not(.nodarkmode):not([data-mode="lit"]) * {
+  html:not([data-mode="lit"]) * {
     box-shadow: none !important;
   }
-  html:not(.nodarkmode):not([data-mode="lit"]) main p {
+  html:not([data-mode="lit"]) main p {
     opacity: 0.9;
   }
 }

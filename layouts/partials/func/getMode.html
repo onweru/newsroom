@@ -1,0 +1,21 @@
+{{ $params := site.Params }}
+{{ $dark := "dark" }}
+{{ $light := "light" }}
+{{ $mode := false }}
+{{ $dim := "dim" }}
+{{ $lit := "lit" }}
+{{ with $params.disableDarkMode }}
+  {{ $mode = . }}
+{{ end }}
+{{ with $params.defaultMode }}
+  {{ $mode = trim . " " }}
+{{ end}}
+{{ if or (eq $mode $light) (eq $mode true) }}
+<!-- second check enables backward compatibility with disableDarkMode knob -->
+    {{ $mode = $lit }}
+{{ else if eq $mode $dark }}
+  {{ $mode = $dim }}
+{{ else }}
+  {{ $mode = false }}
+{{ end }}
+{{ return $mode }}
