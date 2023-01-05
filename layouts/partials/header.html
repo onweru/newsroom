@@ -1,7 +1,6 @@
-{{ $home := absURL "" }}
 <header class="nav">
   <nav class="nav-menu">
-    <div><a href="{{ $home }}"><img src="/images/wp-content/uploads/2020/08/cropped-cropped-cropped-cropped-banner-light-e1641680429969-300x100.png" alt="{{ .Site.Title }}"  width="130px" /></a></div>
+    <a href={{ absURL "" }} class="nav-brand nav_item">{{ site.Title }}</a>
     <div class="nav_bar-wrap">
       <div class="nav_bar"></div>
     </div>
