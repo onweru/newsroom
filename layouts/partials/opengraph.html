@@ -4,7 +4,7 @@
 {{- $summary := "" }}
 {{- with .Summary }}
   {{- $summary = . }}
-{{- else  }
+{{- else }}
   {{- $summary = $config.description }}
 {{- end }}
 {{- $summary = truncate 160 "" $summary }}
