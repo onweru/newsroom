@@ -1,7 +1,7 @@
 <head>
   <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
   <meta charset='utf-8'>
-  {{- with .Site.Params.ga_verify }}
+  {{- with site.Params.ga_verify }}
   <meta name="google-site-verification" content="{{ . }}" />
   {{- end }}
   <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
