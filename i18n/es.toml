@@ -1,0 +1,8 @@
+[designed_by]
+  other = "Diseño por  <a href = '{{ .url }}' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'>{{ .name }}</a>"
+[share_story]
+  other = "Compartir"
+[link_copied]
+  other = "Link copiado!"
+[author_profile]
+  other = "Perfil de {{ . }}"
