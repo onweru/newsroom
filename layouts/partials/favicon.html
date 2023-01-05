@@ -1,4 +1,5 @@
-<link rel="apple-touch-icon" sizes="180x180" href='{{ absURL "images/icons/apple-touch-icon.png" }}'>
-<link rel="icon" type="image/png" sizes="32x32" href='{{ absURL "images/icons/favicon-32x32.png" }}'>
-<link rel="icon" type="image/png" sizes='16x16' href='{{ absURL "images/icons/favicon-16x16.png" }}'>
-<link rel="manifest" href='{{ absURL "images/icons/site.webmanifest" }}'>
+{{- $faviconsDir := absURL site.Params.faviconsDir }}
+<link rel="apple-touch-icon" sizes="180x180" href='{{ printf "%sapple-touch-icon.png" $faviconsDir }}'>
+<link rel="icon" type="image/png" sizes="32x32" href='{{ printf "%sfavicon-32x32.png" $faviconsDir }}'>
+<link rel="icon" type="image/png" sizes='16x16' href='{{ printf "%sfavicon-16x16.png" $faviconsDir }}'>
+<link rel="manifest" href='{{ printf "%ssite.webmanifest" $faviconsDir }}'>

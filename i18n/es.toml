@@ -1,22 +1,22 @@
 [archive]
   other = "Archive"
 [archive_text]
-  other = "View Archive"
+  other = "Todo el contenido"
 [author_profile]
-  other = "Profil de {{ . }}"
+  other = "Perfil de {{ . }}"
 [designed_by]
-  other = "Conçu par  <a href = '{{ .url }}' target = '_blank' title = 'Profil Linkedin' rel = 'nonopener'>{{ .name }}</a>"
+  other = "Diseño por  <a href = '{{ .url }}' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'>{{ .name }}</a>"
 [go_back]
   other = "Go Back"
 [latest_posts]
-  other = "Latest Posts"
+  other = "Recientes"
 [link_copied]
-  other = "Lien copié"
+  other = "Link copiado!"
 [not_found_text]
   other = "We couldn't find the page you're looking for"
 [not_found_title]
   other = "Uh Ohhh!"
 [share_story]
-  other = "Partager l'histoire"
+  other = "Compartir"
 [toggle_dark_mode]
   other = "Toggle Dark Mode"
