@@ -1,6 +1,15 @@
+{{- $title := site.Title }}
+{{- $logoText := printf "%s %s" $title (T "logo") }}
+{{- $logo := trim site.Params.logo " " }}
 <header class="nav">
   <nav class="nav-menu">
-    <a href={{ absURL "" }} class="nav-brand nav_item">{{ site.Title }}</a>
+    <a href={{ absURL "" }} class="nav-brand nav_item">
+      {{- if and $logo (ne $logo "") }}
+        <img src="{{ $logo }}" alt="{{ $logoText }}"  width="130px" />
+      {{- else }}
+        {{ $title }}
+      {{- end -}}
+    </a>
     <div class="nav_bar-wrap">
       <div class="nav_bar"></div>
     </div>
