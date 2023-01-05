@@ -1,16 +1,16 @@
-{{- $params := site.Params }}
-{{- $pl := .Permalink }}
+{{- $config := site.Params }}
+{{- $permalink := .Permalink }}
 {{ $st := site.Title }}
 {{- $summary := "" }}
 {{- with .Summary }}
-  {{-  $summary = . }}
-{{- else  }}
-  {{- $summary = $params.description }}
+  {{- $summary = . }}
+{{- else  }
+  {{- $summary = $config.description }}
 {{- end }}
 {{- $summary = truncate 160 "" $summary }}
-{{- $logo := absURL (printf "images/%s" $params.logo) }}
-{{- if in $params.logo "https://" }}
-  {{- $logo = $params.logo }}
+{{- $logo := absURL (printf "images/%s" $config.logo) }}
+{{- if in $config.logo "https://" }}
+  {{- $logo = $config.logo }}
 {{- end }}
 {{ $image := "" }}
 {{- with .Params.image }}
@@ -23,24 +23,24 @@
   {{- $image = $logo }}
 {{- end }}
 <meta name="keywords" content="{{ $st }}">
-<meta property="og:locale" content='{{ default "en_US" $params.locale }}'>
+<meta property="og:locale" content='{{ default "en_US" $config.locale }}'>
 <meta property="og:type" content="article">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ $summary }}">
-<meta property="og:url" content="{{ $pl }}">
+<meta property="og:url" content="{{ $permalink }}">
 <meta property="og:image" content="{{ $image }}">
-{{- if eq .Section "blog" -}}
+{{- if eq .Section $config.blogDir -}}
   {{- $date := .Date.Format "2006-02-01" -}}
   <meta property="article:published_time" content="{{ htmlUnescape $date }}" />
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
-      "mainEntityOfPage":"{{ $pl }}",
+      "mainEntityOfPage":"{{ $permalink }}",
       "name": "{{ $st }}",
       "headline": "{{ .Title  }}",
       "description": "{{ $summary }}",
-      "url": "{{ $pl }}",
+      "url": "{{ $permalink }}",
       "datePublished": "{{ $date }}",
       "dateModified": "{{ $date }}",
       "author": {
@@ -62,9 +62,9 @@
     }
   </script>
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="{{ $params.twitter }}">
+  <meta name="twitter:creator" content="{{ $config.twitter }}">
   <meta name="twitter:title" content="{{ .Title }}">
   <meta name="twitter:description" content="{{ $summary }}">
   <meta name="twitter:image" content="{{ $image }}">
 {{- end }}
-<link rel="canonical" href="{{ $pl }}">
+<link rel="canonical" href="{{ $permalink }}">

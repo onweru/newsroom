@@ -35,3 +35,4 @@ paginate = 6
   # defaultMode = "" # Note that the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
   logo = "" # if the value is an empty string, the site title will be shown instead
   faviconsDir = "images/icons/" # with a trailing slash
+  blogDir = "post" # edit
