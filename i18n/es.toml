@@ -7,16 +7,16 @@
 [designed_by]
   other = "Diseño por  <a href = '{{ .url }}' target = '_blank' title = 'Linkedin Profile' rel = 'nonopener'>{{ .name }}</a>"
 [go_back]
-  other = "Go Back"
+  other = "Atrás"
 [latest_posts]
   other = "Recientes"
 [link_copied]
   other = "Link copiado!"
 [not_found_text]
-  other = "We couldn't find the page you're looking for"
+  other = "No pudimos encontrar la página que estás buscando."
 [not_found_title]
-  other = "Uh Ohhh!"
+  other = "Uuups!"
 [share_story]
   other = "Compartir"
 [toggle_dark_mode]
-  other = "Toggle Dark Mode"
+  other = "Activar modo oscuro"
