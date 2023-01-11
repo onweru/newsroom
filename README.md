@@ -18,7 +18,11 @@ This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom pag
 
 For all content published using markdown, deeplinks will be added to the pages so that you can share with precision :smiley: Just   hover on a heading and the link button will pop. Click it to copy.
 
-## Installation
+## Install Newsroom Theme
+
+__Note:__ Newsroom uses is styled in sass. Thefore, __hugo-extended version__ must be installed on your system.
+
+### Option 1: Add Newsroom as a git submodule
 
 Add this theme as a Git submodule inside your Hugo site folder:
 
@@ -26,7 +30,34 @@ Add this theme as a Git submodule inside your Hugo site folder:
 git submodule add https://github.com/onweru/newsroom.git themes/newsroom
 ```
 
-> Theme hugo sass and hugo-extended version.
+### Option 2: Add Newsroom as a hugo module __(Recommended)__
+
+In your config.toml file, set `theme` field value as follows
+
+```toml
+theme = ["github.com/onweru/newsroom"]
+```
+
+Then run
+
+```
+hugo mod init yourWebsiteName && hugo mod get -u .
+```
+
+### Option 3: Install Newsroom into your theme directory __(Least diserable)__
+
+From the root of your Hugo website run:
+
+```
+git clone https://github.com/onweru/newsroom themes/newsroom
+```
+
+In your config.toml file, set `theme` field value as follows
+
+```toml
+theme = "newsroom"
+```
+
 
 ## Configuration
 
@@ -50,11 +81,13 @@ Today, operating systems have a system-wide __light ~ dark mode__ switch. Your w
 
 ![Dark Mode](https://github.com/onweru/newsroom/blob/master/images/screenshot-dark.png)
 
-#### How do I disable dark mode?
+#### Set a default lighting mode
 
-Under `params` add `disableDarkMode = true` to your `config.toml` file. If your site is based on the exampleSite, the value is already included; you only need to uncomment it.
+Using your site's config.toml file, set the value of `defaultMode` to either `"dark"` or `"light"`.
 
-> ⚠️ If you disable darkmode, the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
+If your site is built from a copy of the exampleSite, the field is already included; you only need to uncomment and set its value.
+
+> The UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
 
 ### Custom 404 Page
 
