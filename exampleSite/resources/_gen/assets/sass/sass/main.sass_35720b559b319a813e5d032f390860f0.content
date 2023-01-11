@@ -799,6 +799,11 @@ aside h3 {
   padding: 1rem 1.25rem;
 }
 
+.post ul {
+  padding: 0 0.7rem;
+  list-style-type: disc;
+}
+
 .post_body img {
   width: 100%;
   max-width: 100%;
