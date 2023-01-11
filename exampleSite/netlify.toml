@@ -1,6 +1,7 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+# command = "hugo --gc --minify" # uncomment in production
+command = "hugo --gc --minify --baseURL https://rooms.netlify.app/" # comment out in production
 
 [context.production.environment]
 HUGO_VERSION = "0.109.0"
