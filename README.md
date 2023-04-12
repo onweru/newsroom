@@ -140,6 +140,7 @@ This theme ships with __2 custom shortcodes__ (they both use positional paramete
 1. [Clarity Theme](https://github.com/chipzoller/hugo-clarity)
 2. [Compose Theme](https://github.com/onweru/compose)
 3. [Swift Theme](https://github.com/onweru/hugo-swift-theme)
+4. [Browse](https://github.com/onweru/browse)
 
 ## License
 
