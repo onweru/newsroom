@@ -1,0 +1,12 @@
+# ids used below are not valid. Replace with valid ones
+# locale = "en_US"
+# ga_analytics = "" # google analytics ID e.g UA-116386578-1
+# ga_verify = "" # google verification code e.g 5jb-rxeBfITeJQKOuUss3ud6FPGTxXkCho-ZN5qlrZg
+# twitter = "" # twitter handle e.g @weru
+# mainSections = ["blog", "docs"] see https://gohugo.io/functions/where/#mainsections
+# uncomment the line below will disable darkmode by default.
+# uncomment and set value below to either "light" or "dark" to make default mode dark.
+# defaultMode = "" # Note that the UI control for toggling darkmode will remain in place. This way, the user can decide which mode they would like to use while browsing your website
+logo = "" # if the value is an empty string, the site title will be shown instead
+faviconsDir = "images/icons/" # with a trailing slash
+blogDir = "posts" # edit
