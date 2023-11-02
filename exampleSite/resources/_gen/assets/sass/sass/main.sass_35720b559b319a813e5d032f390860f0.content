@@ -427,6 +427,7 @@ aside h3 {
   margin: 1rem 0 1.5rem;
   display: inline-block;
   padding: 7.5px 12.5px;
+  background-color: var(--theme);
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
   color: var(--light);
   text-align: center;
