@@ -1,9 +1,9 @@
----
-author: Michael Henderson
-date: 2014-09-28
-title: Creating a New Theme
-image: boy.jpg
----
++++
+author = "Michael Henderson"
+date = "2014-09-28"
+title = "Creating a New Theme"
+image = "/images/boy.jpg"
++++
 
 ## Introduction
 
@@ -75,7 +75,7 @@ Content is stored in text files that contain two sections. The first section is 
 
 #### Front Matter
 
-The front matter is information about the content. Like the configuration file, it can be written in TOML, YAML, or JSON. Unlike the configuration file, Hugo doesn’t use the file’s extension to know the format. It looks for markers to signal the type. TOML is surrounded by “`+++`”, YAML by “`---`”, and JSON is enclosed in curly braces. I prefer to use TOML, so you’ll need to translate my examples if you prefer YAML or JSON.
+The front matter is information about the content. Like the configuration file, it can be written in TOML, YAML, or JSON. Unlike the configuration file, Hugo doesn’t use the file’s extension to know the format. It looks for markers to signal the type. TOML is surrounded by “`+++`”, YAML by “`+++`”, and JSON is enclosed in curly braces. I prefer to use TOML, so you’ll need to translate my examples if you prefer YAML or JSON.
 
 The information in the front matter is passed into the template before the content is rendere into HTML.
 
