@@ -16,7 +16,7 @@ This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom pag
 
 ### Deeplinks
 
-For all content published using markdown, deeplinks will be added to the pages so that you can share with precision :smiley: Just   hover on a heading and the link button will pop. Click it to copy.
+For all content published using markdown, deeplinks will be added to the pages so that you can share with precision 😃 Just   hover on a heading and the link button will pop. Click it to copy.
 
 ## Install Newsroom Theme
 
