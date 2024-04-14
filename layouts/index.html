@@ -22,7 +22,7 @@
   {{- if and (eq $index (add $size -1)) (gt $size 1) }}</div>{{ end }}
   {{- end }}
 </div>
-<a href='{{ absURL (printf "post/%s" "") }}' class=post_nav><span class=post_next>{{ T "archive_text" }}
+<a href='{{ absURL (printf "posts/%s" "") }}' class=post_nav><span class=post_next>{{ T "archive_text" }}
   <svg class="icon icon_scale">
     <use xlink:href="#double-arrow"></use>
   </svg>
