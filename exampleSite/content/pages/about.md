@@ -2,6 +2,7 @@
 title = "About Hugo"
 date = "2014-04-09"
 image = "/images/street.jpg"
+# url = "/about/" # override permalinks section of hugo.toml file
 +++
 
 Hugo is the **world’s fastest framework for building websites**. It is written in Go.
