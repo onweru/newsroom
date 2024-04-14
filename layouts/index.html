@@ -1,5 +1,7 @@
 {{ define "main" }}
-{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $config := site.Params }}
+{{- $blog_dir := default "posts" $config.blogDir }}
+{{- $pages := where site.RegularPages "Type" "in" $config.mainSections }}
 <div class="wrap pt-2 mt-2">
   {{- $paginator := .Paginate $pages -}}
   {{- $size := $paginator.PageSize }}
@@ -22,7 +24,7 @@
   {{- if and (eq $index (add $size -1)) (gt $size 1) }}</div>{{ end }}
   {{- end }}
 </div>
-<a href='{{ absURL (printf "posts/%s" "") }}' class=post_nav><span class=post_next>{{ T "archive_text" }}
+<a href='{{ absURL (printf "%s/%s" $blog_dir "") }}' class=post_nav><span class=post_next>{{ T "archive_text" }}
   <svg class="icon icon_scale">
     <use xlink:href="#double-arrow"></use>
   </svg>
