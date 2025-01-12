@@ -6,7 +6,9 @@ theme = ["github.com/onweru/newsroom"] # edit this if you'ld rather use a fork o
 # theme = "newsroom"
 author = "Weru"
 canonifyurls = true
-paginate = 6
+
+[pagination]
+  pageSize = 6
 
 [permalinks]
   pages = ':filename/'
