@@ -1,4 +1,5 @@
 {{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
-{{ $mainSassFile :=  "sass/main.sass" }}
-{{- $styles := resources.Get $mainSassFile | resources.ExecuteAsTemplate $mainSassFile . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+{{ $mainSassFile := "sass/main.sass" }}
+{{- $styles := resources.Get $mainSassFile | resources.ExecuteAsTemplate $mainSassFile . | toCSS $options |
+fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
