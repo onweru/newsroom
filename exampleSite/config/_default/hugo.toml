@@ -14,7 +14,7 @@ pagerSize = 10
 path = 'page'
 
 [permalinks]
-pages = ':filename/'
+pages = ':contentbasename/'
 
 # If you want to use disqus, uncomment the line below
 # disqusShortname = "yourdiscussshortname"
