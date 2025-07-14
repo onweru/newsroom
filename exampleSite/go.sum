@@ -8,3 +8,5 @@ github.com/onweru/newsroom v0.0.0-20250123181833-75601f4c7f58 h1:SGwLohpg6L2aFep
 github.com/onweru/newsroom v0.0.0-20250123181833-75601f4c7f58/go.mod h1:CnPS3gSJseLHZMhLLbxe+qDzR54HQ7s5RaLujOkejuM=
 github.com/onweru/newsroom v0.0.0-20250123184812-38b5c3a85b4a h1:xhzUcJ8Zn8O/x3X8OGtzBws1kSYSoYWQq7jfh4Q4oAI=
 github.com/onweru/newsroom v0.0.0-20250123184812-38b5c3a85b4a/go.mod h1:CnPS3gSJseLHZMhLLbxe+qDzR54HQ7s5RaLujOkejuM=
+github.com/onweru/newsroom v0.0.0-20250714145732-9200ab8c3f10 h1:zomFXgWNhtJVlAfl+YcAVA3dyqsnapMivXzxKJvw1dU=
+github.com/onweru/newsroom v0.0.0-20250714145732-9200ab8c3f10/go.mod h1:CnPS3gSJseLHZMhLLbxe+qDzR54HQ7s5RaLujOkejuM=
