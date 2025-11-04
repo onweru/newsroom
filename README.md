@@ -7,12 +7,21 @@ This is a simple, minimalistic theme, which is inspired by [Apple's Newsroom pag
 ## Features
 
 * Blog
+* Tina CMS configuration
 * Modern
 * Responsive
 * Deeplinks
 * Dark Mode
 * Supports native lazy loading of images & iframes
 * Syntax highlighting
+
+### Try Tina CMS
+
+From the root of your project, run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/onweru/newsroom/master/install-tina-cms.sh | bash
+```
 
 ### Deeplinks
 
