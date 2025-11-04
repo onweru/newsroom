@@ -3,7 +3,7 @@ import { Collection } from "tinacms";
 const Post: Collection = {
   name: "post",
   label: "Posts",
-  path: "content/blog",
+  path: "content/posts",
   frontmatterFormat: "toml",
   frontmatterDelimiters: "+++",
   format: "md",
