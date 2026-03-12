@@ -1,8 +1,9 @@
-- item: About
-  url: about/
-- item: Blog
-  url: ""
-- item: Category
-  url: categories
-- item: Tag
-  url: tags
+main:
+  - item: About
+    url: about/
+  - item: Blog
+    url: ""
+  - item: Category
+    url: categories
+  - item: Tag
+    url: tags

@@ -24,6 +24,11 @@ const Post: Collection = {
       }
     },
     {
+      type: "datetime",
+      name: "date",
+      label: "Date",
+    },
+    {
       type: "string",
       name: "author",
       label: "Author",

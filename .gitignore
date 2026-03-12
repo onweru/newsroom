@@ -3,3 +3,4 @@ docs
 yarn.lock
 bun.lock
 .DS_Store
+CLAUDE.md

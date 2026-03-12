@@ -5,7 +5,6 @@
 <div class="wrap pt-2 mt-2">
   {{- $paginator := .Paginate $pages -}}
   {{- $size := $paginator.PagerSize }}
-  {{- $scratch := newScratch }}
   {{- range $index, $value := $paginator.Pages }}
   {{ $bg := partial "func/getImage" . }}
   <article class="article mb-2">
@@ -26,7 +25,7 @@
 </div>
 <a href='{{ absURL (printf "%s/%s" $blog_dir "") }}' class=post_nav><span class=post_next>{{ T "archive_text" }}
     <svg class="icon icon_scale">
-      <use xlink:href="#double-arrow"></use>
+      <use href="#double-arrow"></use>
     </svg>
   </span></a>
 {{ end }}

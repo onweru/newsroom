@@ -1,9 +1,9 @@
 import { Collection } from "tinacms";
 
 const Page: Collection = {
-  name: "docs",
-  label: "Docs",
-  path: "content/docs",
+  name: "page",
+  label: "Pages",
+  path: "content/pages",
   frontmatterFormat: "toml",
   frontmatterDelimiters: "+++",
   format: "md",

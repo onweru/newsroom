@@ -2,9 +2,12 @@ import { Collection } from "tinacms";
 
 const Menu: Collection = {
   name: "menu",
-  label: "Menus",
-  path: "config/_default/menus/",
-  format: "toml",
+  label: "Navigation",
+  path: "data",
+  format: "yaml",
+  match: {
+    include: "menu"
+  },
   ui: {
     allowedActions: {
       create: false,
@@ -19,25 +22,19 @@ const Menu: Collection = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item?.name };
+          return { label: item?.item };
         }
       },
       fields: [
         {
           type: "string",
-          name: "name",
-          label: "Name"
+          name: "item",
+          label: "Label"
         },
         {
           type: "string",
           name: "url",
           label: "URL"
-        },
-        {
-          type: "number",
-          name: "weight",
-          label: "Weight",
-          description: "Controls ordering"
         },
       ]
     }

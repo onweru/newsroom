@@ -1,6 +1,6 @@
 <div class="nav-drop">
   <div class="nav-body">
-    {{- range site.Data.menu }}
+    {{- range site.Data.menu.main }}
       <a href="{{ absURL .url }}" class="nav_item">{{ .item }}</a>
     {{- end }}
     <div class="nav-close"></div>

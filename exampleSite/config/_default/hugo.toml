@@ -7,7 +7,6 @@ theme = [
 ] # edit this if you'ld rather use a fork of this repo
 # theme = "newsroom"
 author = "Weru"
-canonifyurls = true
 [pagination]
 disableAliases = false
 pagerSize = 10
