@@ -1,34 +1,21 @@
+[build.environment]
+DART_SASS_VERSION = "1.97.3"
+GO_VERSION = "1.26.1"
+HUGO_VERSION = "0.157.0"
+NODE_VERSION = "24.13.1"
+TZ = "Europe/Oslo"
+
 [build]
 publish = "public"
-# command = "hugo --gc --minify" # uncomment in production
-command = "tinacms build && hugo --gc --minify --baseURL https://rooms.netlify.app/" # comment out in production
-
-[context.production.environment]
-HUGO_VERSION = "0.146.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
-
-[context.split1]
-command = "hugo --gc --minify --enableGitInfo"
-
-[context.split1.environment]
-HUGO_VERSION = "0.146.0"
-HUGO_ENV = "production"
-
-[context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.146.0"
-
-[context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.146.0"
-
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
+command = """\
+  curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" && \
+  tar -C "${HOME}/.local" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" && \
+  rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" && \
+  export PATH="${HOME}/.local/dart-sass:${PATH}" && \
+  git config core.quotepath false && \
+  tinacms build && \
+  hugo --gc --minify --baseURL "https://rooms.netlify.app/" \
+  """
 
 [[redirects]]
 from = "/npmjs/*"
