@@ -4,9 +4,12 @@
   {{ partial "head" . }}
   <body>
     {{ partialCached "nav" . }}
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
+    <div class="layout-with-sidebar">
+      {{ partial "sidebar" . }}
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
     {{ partialCached "footer" . }}
     {{ partialCached "sprites" . }}
   </body>
