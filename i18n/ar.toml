@@ -18,5 +18,9 @@
   other = "عذراً!"
 [share_story]
   other = "شارك القصة"
+[featured_posts]
+  other = "مميز"
+[featured]
+  other = "مميز"
 [toggle_dark_mode]
   other = "تبديل الوضع الداكن"

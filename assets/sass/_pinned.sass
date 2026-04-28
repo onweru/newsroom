@@ -1,0 +1,60 @@
+// Pinned / Featured Posts Section
+
+.pinned-posts
+  &_heading
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    font-size: 1.1rem
+    text-transform: uppercase
+    letter-spacing: 0.08em
+    opacity: 0.85
+    margin-bottom: 1.25rem
+
+  &_heading-icon
+    fill: var(--theme)
+    flex-shrink: 0
+
+  &_grid
+    display: grid
+    grid-template-columns: 1fr
+    gap: 1.5rem
+    @media screen and (min-width: 42rem)
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr))
+
+  &_item
+    position: relative
+    .article_thumb
+      height: 14rem
+      @media screen and (min-width: 35rem)
+        height: 18rem
+
+  &_badge
+    position: absolute
+    top: 0.75rem
+    left: 0.75rem
+    display: inline-flex
+    align-items: center
+    gap: 0.3rem
+    background: var(--theme)
+    color: var(--light)
+    font-size: 0.72rem
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.06em
+    padding: 0.2rem 0.55rem
+    border-radius: 2rem
+    z-index: 3
+    pointer-events: none
+
+  &_badge-icon
+    width: 0.85rem
+    height: 0.85rem
+    fill: var(--light)
+    flex-shrink: 0
+
+  &_divider
+    border: none
+    border-top: 1px solid rgba(128, 128, 128, 0.2)
+    margin-top: 2rem
+    margin-bottom: 0
