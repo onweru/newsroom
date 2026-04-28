@@ -1,0 +1,9 @@
+{{ with .Site.Params.sidebar.links }}
+<aside class="sidebar">
+  <ul>
+    {{ range . }}
+    <li><a href="{{ .url }}" target="_blank">{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+</aside>
+{{ end }}

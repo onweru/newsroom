@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 {{- $mode := partialCached "func/getMode" . }}
-<html lang="{{ .Lang }}" {{ if $mode }} data-mode="{{ $mode }}"{{ end }}>
+{{- $rtlLangs := slice "ar" "he" "fa" "ur" "yi" "dv" "ku" "ps" "sd" "ug" }}
+{{- $isRTL := .Site.Params.rtl | default false }}
+{{- if not $isRTL }}{{ $isRTL = in $rtlLangs .Lang }}{{ end }}
+{{- if isset .Params "rtl" }}{{ $isRTL = .Params.rtl }}{{ end }}
+<html lang="{{ .Lang }}" dir="{{ if $isRTL }}rtl{{ else }}ltr{{ end }}"{{ if $mode }} data-mode="{{ $mode }}"{{ end }}>
   {{ partial "head" . }}
-  <body>
+  <body class="{{ if $isRTL }}rtl{{ end }}">
     {{ partialCached "nav" . }}
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
+    <div class="layout-with-sidebar">
+      {{ partial "sidebar" . }}
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
     {{ partialCached "footer" . }}
     {{ partialCached "sprites" . }}
   </body>

@@ -1,0 +1,115 @@
+// RTL (Right-to-Left) language support
+// Activated when the <html> element carries dir="rtl"
+
+[dir="rtl"]
+  // ─── Base typography ─────────────────────────────────────────────────────
+
+  body
+    font-family: var(--font-rtl, var(--font))
+
+  blockquote
+    &::before
+      left: auto
+      right: 0
+
+  // ─── Grid utilities ───────────────────────────────────────────────────────
+
+  @media screen and (min-width: 42rem)
+    .grid-auto
+      // sidebar on the right in LTR → sidebar on the left in RTL
+      grid-template-columns: 3fr 1fr
+
+    .grid-reverse
+      // flipped in LTR (3fr 1fr) → flip back to 1fr 3fr in RTL
+      grid-template-columns: 1fr 3fr
+
+  // ─── Sidebar layout ───────────────────────────────────────────────────────
+
+  .layout-with-sidebar
+    direction: rtl
+
+  .sidebar
+    direction: rtl
+
+  // ─── Navigation ──────────────────────────────────────────────────────────
+
+  .nav-body
+    right: auto
+    left: 10px
+
+  .nav_bar
+    &::after
+      right: auto
+      left: 0
+
+  .nav-close
+    right: auto
+    left: 0
+
+  .nav-menu
+    padding: 10px 0 10px 25px
+
+  // ─── Posts list ──────────────────────────────────────────────────────────
+
+  .post
+    h2, h3, h4
+      text-align: right
+
+    &_link
+      text-align: right
+
+    &_extra
+      justify-content: flex-start
+
+  // ─── Article cards ───────────────────────────────────────────────────────
+
+  .article_meta
+    &.center_y
+      left: auto
+      right: -2rem
+
+  // Override the LTR translateX hover on article meta
+  .article:hover .article_meta
+    @media screen and (min-width: 769px)
+      &.center_y
+        transform: translateX(3rem)
+
+  // ─── Post next/prev navigation ───────────────────────────────────────────
+
+  .post_next
+    // Flip the arrow icon direction for RTL reading
+    &::after
+      transform: scaleX(-1)
+
+  // ─── Pager ───────────────────────────────────────────────────────────────
+
+  .pager_item
+    margin-left: 5px
+    margin-right: 5px
+
+  // ─── Utility text helpers ─────────────────────────────────────────────────
+
+  .left
+    text-align: right
+
+  .never
+    background-position: left bottom
+
+  .never_title
+    text-align: right
+
+  // ─── Post body content ───────────────────────────────────────────────────
+
+  .post
+    ol
+      padding: 1rem 1.25rem 1rem 0
+
+    ul
+      padding: 0 0.7rem 0 0
+
+  // ─── Code blocks ─────────────────────────────────────────────────────────
+
+  code, pre
+    direction: ltr
+    text-align: left
+    unicode-bidi: embed

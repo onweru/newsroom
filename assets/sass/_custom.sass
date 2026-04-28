@@ -1,2 +1,29 @@
 // put your custom styles here.
-// It's better to override this file from projectDirectory/assets/sass/custom 
+// It's better to override this file from projectDirectory/assets/sass/custom
+
+.layout-with-sidebar
+	display: flex
+	align-items: flex-start
+	gap: 2rem
+
+.sidebar
+	min-width: 200px
+	max-width: 250px
+	background: #f8f9fa
+	padding: 1.5rem 1rem
+	border-radius: 8px
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04)
+	font-size: 1rem
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+	li
+		margin-bottom: 1rem
+	a
+		color: #0077cc
+		text-decoration: none
+		transition: color 0.2s
+		&:hover
+			color: #005fa3
+			text-decoration: underline

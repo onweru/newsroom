@@ -10,3 +10,16 @@
 logo = "" # if the value is an empty string, the site title will be shown instead
 faviconsDir = "images/icons/" # with a trailing slash
 blogDir = "posts" # edit
+
+# RTL (Right-to-Left) language support
+# Set to true to force RTL layout for the entire site.
+# RTL is also automatically detected for languages: ar, he, fa, ur, yi, dv, ku, ps, sd, ug
+# You can also override RTL per-page by adding `rtl: true` or `rtl: false` in front matter.
+# rtl = false
+
+# ---------------------------------------------------------------------------
+# Pinned / Featured Posts
+# ---------------------------------------------------------------------------
+# Maximum number of pinned posts shown in the featured section on the home page.
+# Defaults to 3 if not set.
+# pinnedPostsLimit = 3

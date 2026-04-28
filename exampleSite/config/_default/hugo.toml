@@ -17,3 +17,20 @@ pages = ':contentbasename/'
 
 # If you want to use disqus, uncomment the line below
 # disqusShortname = "yourdiscussshortname"
+
+# ─── RTL (Right-to-Left) multilingual example ─────────────────────────────────
+# To add an Arabic version of your site alongside English, uncomment the block
+# below. RTL layout is applied automatically when the language code is one of:
+# ar, he, fa, ur, yi, dv, ku, ps, sd, ug.
+# You can also force RTL site-wide via params.toml: rtl = true
+# Or per-page in front matter: rtl: true
+#
+# [languages]
+#   [languages.en]
+#     languageName = "English"
+#     weight = 1
+#   [languages.ar]
+#     languageName = "العربية"
+#     weight = 2
+#     contentDir = "content/ar"
+#     title = "غرفة الأخبار"
