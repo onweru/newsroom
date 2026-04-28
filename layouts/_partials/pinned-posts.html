@@ -1,0 +1,58 @@
+{{- $config := site.Params }}
+{{- $limit := $config.pinnedPostsLimit | default 3 }}
+{{- $pages := where site.RegularPages "Type" "in" $config.mainSections }}
+
+{{/* Collect posts where pinned=true OR featured=true */}}
+{{- $byPinned := where $pages "Params.pinned" true }}
+{{- $byFeatured := where $pages "Params.featured" true }}
+{{- $allPinned := $byPinned | append $byFeatured | uniq }}
+
+{{/* Filter out posts with an expired pin_expires date */}}
+{{- $activePinned := slice }}
+{{- range $allPinned }}
+  {{- $expires := .Params.pin_expires }}
+  {{- if or (not $expires) (after (time $expires) now) }}
+    {{- $activePinned = $activePinned | append . }}
+  {{- end }}
+{{- end }}
+
+{{/* Sort: first by date descending, then stable-sort by Weight ascending
+     (Hugo weight=0 means "unset"; use weight 1,2,3… for explicit ordering) */}}
+{{- $byDate := sort $activePinned "Date" "desc" }}
+{{- $sorted := sort $byDate "Weight" "asc" }}
+
+{{- if gt (len $sorted) 0 }}
+<section class="pinned-posts wrap pt-2">
+  <h2 class="pinned-posts_heading">
+    <svg class="icon pinned-posts_heading-icon" aria-hidden="true">
+      <use href="#pin"></use>
+    </svg>
+    {{ T "featured_posts" }}
+  </h2>
+  <div class="pinned-posts_grid">
+    {{- range first $limit $sorted }}
+    {{- $bg := partial "func/getImage" . }}
+    <article class="article pinned-posts_item">
+      <a href="{{ .Permalink }}">
+        <div class="article_thumb" style="background-image: url({{ $bg }})">
+          <span class="pinned-posts_badge" aria-label="{{ T `featured` }}">
+            <svg class="icon pinned-posts_badge-icon" aria-hidden="true">
+              <use href="#pin"></use>
+            </svg>
+            {{ T "featured" }}
+          </span>
+        </div>
+        <div class="article_meta">
+          <time class="post_date">{{ dateFormat "January 02, 2006" .Date }}</time>
+          <h3 class="article_title">{{ .Title }}</h3>
+          <div class="article_excerpt visible">
+            <p>{{ truncate 120 .Summary }}</p>
+          </div>
+        </div>
+      </a>
+    </article>
+    {{- end }}
+  </div>
+</section>
+<hr class="pinned-posts_divider wrap">
+{{- end }}
