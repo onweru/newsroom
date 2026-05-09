@@ -18,5 +18,9 @@
   other = "Uh Ohhh!"
 [share_story]
   other = "Partager l'histoire"
+[featured_posts]
+  other = "À la une"
+[featured]
+  other = "À la une"
 [toggle_dark_mode]
   other = "Toggle Dark Mode"

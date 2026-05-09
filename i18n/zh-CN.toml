@@ -18,5 +18,9 @@
   other = "Uh Ohhh!"
 [share_story]
   other = "分享故事"
+[featured_posts]
+  other = "精选文章"
+[featured]
+  other = "精选"
 [toggle_dark_mode]
     other = "Toggle Dark Mode"

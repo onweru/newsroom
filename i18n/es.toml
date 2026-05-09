@@ -18,5 +18,9 @@
   other = "Uuups!"
 [share_story]
   other = "Compartir"
+[featured_posts]
+  other = "Destacados"
+[featured]
+  other = "Destacado"
 [toggle_dark_mode]
   other = "Activar modo oscuro"

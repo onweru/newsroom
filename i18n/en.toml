@@ -20,3 +20,7 @@
   other = "Share Story"
 [toggle_dark_mode]
   other = "Toggle Dark Mode"
+[featured_posts]
+  other = "Featured"
+[featured]
+  other = "Featured"

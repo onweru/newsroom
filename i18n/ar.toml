@@ -1,0 +1,26 @@
+[archive]
+  other = "الأرشيف"
+[archive_text]
+  other = "عرض الأرشيف"
+[author_profile]
+  other = "الملف الشخصي لـ {{ . }}"
+[designed_by]
+  other = "تصميم <a href='{{ .url }}' target='_blank' title='ملف LinkedIn' rel='nonopener'>{{ .name }}</a>"
+[go_back]
+  other = "العودة"
+[latest_posts]
+  other = "أحدث المقالات"
+[link_copied]
+  other = "تم نسخ الرابط"
+[not_found_text]
+  other = "لم نتمكن من العثور على الصفحة التي تبحث عنها"
+[not_found_title]
+  other = "عذراً!"
+[share_story]
+  other = "شارك القصة"
+[featured_posts]
+  other = "مميز"
+[featured]
+  other = "مميز"
+[toggle_dark_mode]
+  other = "تبديل الوضع الداكن"

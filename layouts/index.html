@@ -1,7 +1,30 @@
 {{ define "main" }}
 {{- $config := site.Params }}
 {{- $blog_dir := default "posts" $config.blogDir }}
-{{- $pages := where site.RegularPages "Type" "in" $config.mainSections }}
+{{- $allPages := where site.RegularPages "Type" "in" $config.mainSections }}
+
+{{/* Collect pinned/featured post permalinks so we can exclude them from regular flow */}}
+{{- $pinnedPages := where $allPages "Params.pinned" true }}
+{{- $featuredPages := where $allPages "Params.featured" true }}
+{{- $allPinned := $pinnedPages | append $featuredPages | uniq }}
+{{- $pinnedPermalinks := slice }}
+{{- range $allPinned }}
+  {{- $pinnedPermalinks = $pinnedPermalinks | append .Permalink }}
+{{- end }}
+
+{{/* Regular posts exclude pinned ones to avoid duplication */}}
+{{- $pages := slice }}
+{{- range $allPages }}
+  {{- if not (in $pinnedPermalinks .Permalink) }}
+    {{- $pages = $pages | append . }}
+  {{- end }}
+{{- end }}
+
+{{/* Render the pinned posts section (only on the first page) */}}
+{{- if not .Paginator.HasPrev }}
+  {{- partial "pinned-posts" . }}
+{{- end }}
+
 <div class="wrap pt-2 mt-2">
   {{- $paginator := .Paginate $pages -}}
   {{- $size := $paginator.PagerSize }}
